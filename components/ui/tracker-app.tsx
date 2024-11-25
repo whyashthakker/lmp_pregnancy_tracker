@@ -427,17 +427,32 @@ const PregnancyTracker: React.FC = () => {
         </div>
       </div>
 
-      {/* Progress Stats */}
-      <div className="grid grid-cols-2 gap-3">
-        <div className="bg-indigo-50 rounded-lg p-2">
-          <div className="text-xs text-indigo-600 font-pixel mb-1">Current Level</div>
-          <div className="text-lg text-indigo-700 font-pixel">Week {weeksPregnant}</div>
+    {/* Progress Stats */}
+    <div className="grid grid-cols-1 gap-4">
+    <div className="bg-indigo-50 rounded-lg p-4">
+        <div className="text-sm text-indigo-600 font-pixel mb-2">Time Until Boss Battle</div>
+        <div className="space-y-3">
+        <div className="flex items-center justify-between">
+            <span className="text-xs text-indigo-400 font-pixel">Months</span>
+            <span className="text-lg text-indigo-700 font-pixel">
+            {Math.ceil((PREGNANCY_DURATION - daysPregnant) / 30)} to go
+            </span>
         </div>
-        <div className="bg-violet-50 rounded-lg p-2">
-          <div className="text-xs text-violet-600 font-pixel mb-1">Days Bonus</div>
-          <div className="text-lg text-violet-700 font-pixel">+{daysRemaining}</div>
+        <div className="flex items-center justify-between">
+            <span className="text-xs text-indigo-400 font-pixel">Weeks</span>
+            <span className="text-lg text-indigo-700 font-pixel">
+            {40 - weeksPregnant} to go
+            </span>
         </div>
-      </div>
+        <div className="flex items-center justify-between">
+            <span className="text-xs text-indigo-400 font-pixel">Days</span>
+            <span className="text-lg text-indigo-700 font-pixel">
+            {PREGNANCY_DURATION - daysPregnant} to go
+            </span>
+        </div>
+        </div>
+    </div>
+    </div>
     </CardContent>
   </Card>
 
