@@ -250,38 +250,35 @@ const PregnancyTracker: React.FC = () => {
     setShowDateError(false);
   };
 
-  // Add this at the top of your component's return statement
   const DateInput = () => (
-    <Card className="card-game mb-6">
-      <CardHeader className="border-b border-indigo-100">
-        <CardTitle className="flex items-center gap-2 text-indigo-600 milestone-text">
-          <CalendarDays className="text-blue-500" size={20} />
-          Set Last Menstrual Period Date
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="mt-4">
-        <div className="space-y-4">
-          <div className="flex items-center gap-4">
+    <Card className="mb-4">
+      <CardContent className="p-3">
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center gap-2 min-w-fit">
+            <CalendarDays className="text-blue-500" size={16} />
             <Input
               type="date"
               value={lmpInput}
               onChange={handleDateChange}
-              className="font-pixel text-sm p-2"
+              className="text-xs h-8"
               max={format(TODAY, 'yyyy-MM-dd')}
             />
             <Button
               onClick={resetToDefault}
-              className="bg-indigo-600 hover:bg-indigo-700 text-white font-pixel text-xs"
+              variant="ghost"
+              size="sm"
+              className="h-8 px-2"
             >
-              Reset to Default
+              Reset
             </Button>
           </div>
-          {showDateError && (
-            <p className="text-rose-500 text-xs font-pixel">Please enter a valid date</p>
-          )}
-          <div className="text-sm text-gray-600 font-pixel">
-            <p>Current LMP: {format(lmpDate, 'MMM dd, yyyy')}</p>
-            <p>Estimated Due Date: {format(DUE_DATE, 'MMM dd, yyyy')}</p>
+          
+          <div className="flex items-center gap-4 text-xs text-gray-500">
+            <span>LMP: {format(lmpDate, 'MMM dd, yyyy')}</span>
+            <span>Due: {format(DUE_DATE, 'MMM dd, yyyy')}</span>
+            {showDateError && (
+              <span className="text-rose-500">Invalid date</span>
+            )}
           </div>
         </div>
       </CardContent>
@@ -382,205 +379,212 @@ const PregnancyTracker: React.FC = () => {
         }
       `}</style>
 
-    <DateInput />
 
+<DateInput />
 
-      {/* Level and Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Card className="card-game">
-          <CardHeader className="border-b border-indigo-100">
-            <CardTitle className="flex items-center gap-2 text-indigo-600 milestone-text">
-              <Trophy className="text-amber-500" size={20} />
-              Level Progress
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="mt-4">
-            <p className="text-2xl font-bold text-indigo-600 milestone-text">LVL {weeksPregnant}</p>
-            <p className="text-sm text-indigo-400 font-pixel">+{daysRemaining} days EXP</p>
-            <p className="text-sm text-gray-500 font-pixel">{daysPregnant} days logged</p>
-          </CardContent>
-        </Card>
-
-        <Card className="card-game">
-          <CardHeader className="border-b border-indigo-100">
-            <CardTitle className="flex items-center gap-2 text-indigo-600 milestone-text">
-              <Calendar className="text-blue-500" size={20} />
-              Quest Timeline
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="mt-4 space-y-4">
-            <div className="relative">
-              <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-indigo-100"></div>
-              <div className="space-y-4">
-                {getCriticalDates(LMP).map((milestone, idx) => (
-                  <div 
-                    key={idx}
-                    className={`flex items-center gap-3 ${
-                      differenceInDays(milestone.date, TODAY) <= 0 ? 'milestone-active' : 'opacity-50'
-                    }`}
-                  >
-                    <div className={`timeline-dot w-4 h-4 rounded-full ${
-                      milestone.type === 'boss' ? 'bg-purple-500' :
-                      milestone.type === 'checkpoint' ? 'bg-emerald-500' : 'bg-amber-500'
-                    }`}></div>
-                    <div>
-                      <p className="milestone-text text-indigo-600">{milestone.title}</p>
-                      <p className="text-xs text-gray-500">{format(milestone.date, 'MMM dd')}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card className="card-game">
-            <CardHeader className="border-b border-indigo-100">
-                <CardTitle className="flex items-center gap-2 text-indigo-600 milestone-text">
-                <Baby className="text-pink-500" size={20} />
-                Growth Stats
-                </CardTitle>
-            </CardHeader>
-            <CardContent className="mt-4">
-                <p className="text-xl font-bold text-pink-500 milestone-text">{getBabySize(weeksPregnant).size}</p>
-                <p className="text-sm text-gray-500 font-pixel">Size: {getBabySize(weeksPregnant).length}</p>
-                <div className="mt-2 bg-gray-50 p-2 rounded-lg">
-                <div className="flex gap-1 my-2">
-                    {/* Show all 40 weeks (total pregnancy duration) */}
-                    {[...Array(40)].map((_, i) => (
-                    <div
-                        key={i}
-                        className={`w-2 h-2 rounded-sm transform transition-all duration-300 ${
-                        i < weeksPregnant 
-                            ? 'bg-green-500' 
-                            : 'bg-gray-200'
-                        } ${
-                        i === weeksPregnant - 1 
-                            ? 'scale-125 ring-2 ring-green-300' 
-                            : ''
-                        }`}
-                        style={{
-                        opacity: i < weeksPregnant ? ((i + 1) / weeksPregnant) : 0.3,
-                        animation: i === weeksPregnant - 1 
-                            ? `pulse 1.5s ease-in-out infinite`
-                            : 'none'
-                        }}
-                    />
-                    ))}
-                </div>
-                <div className="flex justify-between mt-1">
-                    <span className="text-xs text-gray-400 font-pixel">Week {weeksPregnant}/40</span>
-                    <span className="text-xs text-gray-400 font-pixel">{Math.round((weeksPregnant/40) * 100)}%</span>
-                </div>
-                </div>
-            </CardContent>
-        </Card>
-
-      {/* Progress Bar */}
-      <Card className="card-game">
-        <CardHeader className="border-b border-indigo-100">
-            <CardTitle className="flex items-center gap-2 text-indigo-600 milestone-text">
-            <Activity className="text-violet-500" size={20} />
-            Quest Progress
-            </CardTitle>
-        </CardHeader>
-        <CardContent className="mt-4 space-y-4">
-            {/* Main Progress Bar */}
-            <div className="w-full bg-gray-100 rounded-lg p-3 space-y-2">
-            <div className="flex justify-between items-center mb-1">
-                <span className="text-sm text-indigo-600 font-pixel">EXP Progress</span>
-                <span className="text-sm text-indigo-600 font-pixel">{`${daysPregnant}/${PREGNANCY_DURATION} days`}</span>
-            </div>
-            <div className="w-full bg-indigo-100 rounded-full h-6 p-1 relative overflow-hidden">
-                <div 
-                className="progress-bar h-4 rounded-full transition-all duration-500 flex items-center justify-end pr-2"
-                style={{ width: `${progressPercentage}%` }}
-                >
-                <span className="text-xs text-white font-pixel drop-shadow-lg">{progressPercentage.toFixed(1)}%</span>
-                </div>
-                {/* Progress Markers */}
-                {[25, 50, 75].map((marker) => (
-                <div
-                    key={marker}
-                    className="absolute top-0 bottom-0 w-px bg-indigo-200"
-                    style={{ left: `${marker}%` }}
-                />
-                ))}
-            </div>
-            {/* Progress Milestones */}
-            <div className="flex justify-between px-1 mt-1">
-                <span className="text-xs text-gray-500 font-pixel">First</span>
-                <span className="text-xs text-gray-500 font-pixel">Second</span>
-                <span className="text-xs text-gray-500 font-pixel">Third</span>
-                <span className="text-xs text-gray-500 font-pixel">Final</span>
-            </div>
-            </div>
-
-            {/* Progress Stats */}
-            <div className="grid grid-cols-2 gap-3">
-            <div className="bg-indigo-50 rounded-lg p-2">
-                <div className="text-xs text-indigo-600 font-pixel mb-1">Current Level</div>
-                <div className="text-lg text-indigo-700 font-pixel">Week {weeksPregnant}</div>
-            </div>
-            <div className="bg-violet-50 rounded-lg p-2">
-                <div className="text-xs text-violet-600 font-pixel mb-1">Days Bonus</div>
-                <div className="text-lg text-violet-700 font-pixel">+{daysRemaining}</div>
-            </div>
-            </div>
-        </CardContent>
-        </Card>
-
-
-      <Card className="card-game">
-          <CardHeader className="border-b border-indigo-100">
-            <CardTitle className="flex items-center gap-2 text-indigo-600 milestone-text">
-              <Heart className="text-rose-500" size={20} />
-              Mom&apos;s Status
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="mt-4">
-            <div className="space-y-2">
-              <p className="text-gray-600 font-pixel">
-                {getWeeklyInfo(weeksPregnant).symptoms}
-              </p>
-              <div className="flex flex-wrap gap-2 mt-2">
-                {getWeeklyInfo(weeksPregnant).symptoms.split(', ').map((symptom, idx) => (
-                  <span
-                    key={idx}
-                    className="px-2 py-1 bg-rose-50 text-rose-500 rounded-md text-xs font-pixel"
-                  >
-                    {symptom}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card className="card-game">
-          <CardHeader className="border-b border-indigo-100">
-            <CardTitle className="flex items-center gap-2 text-indigo-600 milestone-text">
-              <Clock className="text-amber-500" size={20} />
-              Weekly Side Quests
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="mt-4">
-            <div className="space-y-4">
-              <div className="bg-amber-50 p-3 rounded-lg">
-                <pre className="text-sm text-amber-700 whitespace-pre-wrap font-pixel leading-relaxed">
-                  {getWeeklyInfo(weeksPregnant).husbandTips}
-                </pre>
-              </div>
-              <div className="flex items-center gap-2 text-xs text-gray-500 font-pixel">
-                <Star className="text-amber-500" size={14} />
-                <span>Complete all quests for bonus EXP!</span>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  {/* Card 1: Combined Level & Quest Progress */}
+  <Card className="card-game">
+    <CardHeader className="border-b border-indigo-100">
+      <CardTitle className="flex items-center gap-2 text-indigo-600 milestone-text">
+        <Trophy className="text-amber-500" size={20} />
+        Progress & Stats
+      </CardTitle>
+    </CardHeader>
+    <CardContent className="mt-4 space-y-6">
+      {/* Level Info */}
+      <div>
+        <p className="text-2xl font-bold text-indigo-600 milestone-text">LVL {weeksPregnant}</p>
+        <p className="text-sm text-indigo-400 font-pixel">+{daysRemaining} days EXP</p>
+        <p className="text-sm text-gray-500 font-pixel">{daysPregnant} days logged</p>
       </div>
-    </div>
-  );
+
+      {/* Progress Bar Section */}
+      <div className="w-full bg-gray-100 rounded-lg p-3 space-y-2">
+        <div className="flex justify-between items-center mb-1">
+          <span className="text-sm text-indigo-600 font-pixel">EXP Progress</span>
+          <span className="text-sm text-indigo-600 font-pixel">{`${daysPregnant}/${PREGNANCY_DURATION} days`}</span>
+        </div>
+        <div className="w-full bg-indigo-100 rounded-full h-6 p-1 relative overflow-hidden">
+          <div 
+            className="progress-bar h-4 rounded-full transition-all duration-500 flex items-center justify-end pr-2"
+            style={{ width: `${progressPercentage}%` }}
+          >
+            <span className="text-xs text-white font-pixel drop-shadow-lg">{progressPercentage.toFixed(1)}%</span>
+          </div>
+          {[25, 50, 75].map((marker) => (
+            <div
+              key={marker}
+              className="absolute top-0 bottom-0 w-px bg-indigo-200"
+              style={{ left: `${marker}%` }}
+            />
+          ))}
+        </div>
+        <div className="flex justify-between px-1 mt-1">
+          <span className="text-xs text-gray-500 font-pixel">First</span>
+          <span className="text-xs text-gray-500 font-pixel">Second</span>
+          <span className="text-xs text-gray-500 font-pixel">Third</span>
+          <span className="text-xs text-gray-500 font-pixel">Final</span>
+        </div>
+      </div>
+
+      {/* Progress Stats */}
+      <div className="grid grid-cols-2 gap-3">
+        <div className="bg-indigo-50 rounded-lg p-2">
+          <div className="text-xs text-indigo-600 font-pixel mb-1">Current Level</div>
+          <div className="text-lg text-indigo-700 font-pixel">Week {weeksPregnant}</div>
+        </div>
+        <div className="bg-violet-50 rounded-lg p-2">
+          <div className="text-xs text-violet-600 font-pixel mb-1">Days Bonus</div>
+          <div className="text-lg text-violet-700 font-pixel">+{daysRemaining}</div>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+
+  {/* Card 2: Quest Timeline */}
+  <Card className="card-game">
+    <CardHeader className="border-b border-indigo-100">
+      <CardTitle className="flex items-center gap-2 text-indigo-600 milestone-text">
+        <Calendar className="text-blue-500" size={20} />
+        Quest Timeline
+      </CardTitle>
+    </CardHeader>
+    <CardContent className="mt-4 space-y-4">
+      <div className="relative">
+        <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-indigo-100"></div>
+        <div className="space-y-4">
+          {getCriticalDates(lmpDate).map((milestone, idx) => {
+            const isPast = milestone.date <= TODAY;
+            const isToday = differenceInDays(milestone.date, TODAY) === 0;
+            const isFuture = milestone.date > TODAY;
+
+            return (
+              <div 
+                key={idx}
+                className={`flex items-center gap-3 transition-all duration-300 ${
+                  isPast ? 'opacity-50' : 
+                  isToday ? 'milestone-active opacity-100' : 
+                  isFuture ? 'opacity-75' : ''
+                }`}
+              >
+                <div 
+                  className={`timeline-dot w-4 h-4 rounded-full transition-all duration-300 ${
+                    milestone.type === 'boss' ? 'bg-purple-500' :
+                    milestone.type === 'checkpoint' ? 'bg-emerald-500' : 'bg-amber-500'
+                  } ${
+                    isToday ? 'ring-2 ring-offset-2 ring-indigo-300 scale-125' : ''
+                  }`}
+                ></div>
+                <div>
+                  <p className={`milestone-text ${
+                    isToday ? 'text-indigo-600 font-bold' : 'text-indigo-500'
+                  }`}>
+                    {milestone.title}
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    {format(milestone.date, 'MMM dd')}
+                    {isToday && " (Today!)"}
+                  </p>
+                  {isToday && (
+                    <p className="text-xs text-indigo-400 mt-1">
+                      {milestone.description}
+                    </p>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+
+  {/* Card 3: Combined Status & Growth */}
+  <Card className="card-game">
+    <CardHeader className="border-b border-indigo-100">
+      <CardTitle className="flex items-center gap-2 text-indigo-600 milestone-text">
+        <Baby className="text-pink-500" size={20} />
+        Status & Growth
+      </CardTitle>
+    </CardHeader>
+    <CardContent className="mt-4 space-y-6">
+      {/* Growth Stats */}
+      <div>
+        <p className="text-xl font-bold text-pink-500 milestone-text">{getBabySize(weeksPregnant).size}</p>
+        <p className="text-sm text-gray-500 font-pixel">Size: {getBabySize(weeksPregnant).length}</p>
+        <div className="mt-2 bg-gray-50 p-2 rounded-lg">
+          <div className="flex gap-1 my-2">
+            {[...Array(40)].map((_, i) => (
+              <div
+                key={i}
+                className={`w-2 h-2 rounded-sm transform transition-all duration-300 ${
+                  i < weeksPregnant 
+                    ? 'bg-green-500' 
+                    : 'bg-gray-200'
+                } ${
+                  i === weeksPregnant - 1 
+                    ? 'scale-125 ring-2 ring-green-300' 
+                    : ''
+                }`}
+                style={{
+                  opacity: i < weeksPregnant ? ((i + 1) / weeksPregnant) : 0.3,
+                  animation: i === weeksPregnant - 1 
+                    ? `pulse 1.5s ease-in-out infinite`
+                    : 'none'
+                }}
+              />
+            ))}
+          </div>
+          <div className="flex justify-between mt-1">
+            <span className="text-xs text-gray-400 font-pixel">Week {weeksPregnant}/40</span>
+            <span className="text-xs text-gray-400 font-pixel">{Math.round((weeksPregnant/40) * 100)}%</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Mom's Status */}
+      <div className="space-y-2">
+        <div className="flex items-center gap-2 mb-2">
+          <Heart className="text-rose-500" size={16} />
+          <span className="text-sm font-bold text-rose-500 font-pixel">Mom's Status</span>
+        </div>
+        <p className="text-gray-600 font-pixel">
+          {getWeeklyInfo(weeksPregnant).symptoms}
+        </p>
+        <div className="flex flex-wrap gap-2 mt-2">
+          {getWeeklyInfo(weeksPregnant).symptoms.split(', ').map((symptom, idx) => (
+            <span
+              key={idx}
+              className="px-2 py-1 bg-rose-50 text-rose-500 rounded-md text-xs font-pixel"
+            >
+              {symptom}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Weekly Side Quests */}
+      <div className="space-y-2">
+        <div className="flex items-center gap-2 mb-2">
+          <Clock className="text-amber-500" size={16} />
+          <span className="text-sm font-bold text-amber-500 font-pixel">Weekly Quests</span>
+        </div>
+        <div className="bg-amber-50 p-3 rounded-lg">
+          <pre className="text-sm text-amber-700 whitespace-pre-wrap font-pixel leading-relaxed">
+            {getWeeklyInfo(weeksPregnant).husbandTips}
+          </pre>
+        </div>
+        <div className="flex items-center gap-2 text-xs text-gray-500 font-pixel">
+          <Star className="text-amber-500" size={14} />
+          <span>Complete all quests for bonus EXP!</span>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+</div>
+</div>
+);
 };
 
 export default PregnancyTracker;
