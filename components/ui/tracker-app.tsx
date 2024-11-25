@@ -52,19 +52,80 @@ const PregnancyTracker: React.FC = () => {
   const daysRemaining: number = Math.floor(daysPregnant % 7);
   
   const getBabySize = (weeks: number): BabySize => {
+    if (weeks >= 40) {
+      return { 
+        size: "👶 Congratulations! You have a baby!", 
+        length: "18-22 inches", 
+        commits: 40 
+      };
+    }
+  
     const sizes: BabySizes = {
-      4: { size: "Poppy seed", length: "0.04 inches", commits: 2 },
-      5: { size: "Sesame seed", length: "0.05 inches", commits: 3 },
-      6: { size: "Lentil", length: "0.08 inches", commits: 4 },
-      7: { size: "Blueberry", length: "0.3 inches", commits: 5 },
-      8: { size: "Raspberry", length: "0.6 inches", commits: 6 },
-      9: { size: "Green olive", length: "0.9 inches", commits: 7 },
-      10: { size: "Prune", length: "1.2 inches", commits: 8 },
-      11: { size: "Lime", length: "1.6 inches", commits: 9 },
-      12: { size: "Plum", length: "2.1 inches", commits: 10 },
-      13: { size: "Peach", length: "2.9 inches", commits: 11 }
+      1: { size: "Poppy seed", length: "0.01 inches", commits: 1 },
+      2: { size: "Caraway seed", length: "0.02 inches", commits: 1 },
+      3: { size: "Sesame seed", length: "0.03 inches", commits: 2 },
+      4: { size: "Poppy seed", length: "0.04 inches", commits: 3 },
+      5: { size: "Sesame seed", length: "0.05 inches", commits: 4 },
+      6: { size: "Lentil", length: "0.08 inches", commits: 5 },
+      7: { size: "Blueberry", length: "0.3 inches", commits: 6 },
+      8: { size: "Raspberry", length: "0.6 inches", commits: 7 },
+      9: { size: "Green olive", length: "0.9 inches", commits: 8 },
+      10: { size: "Prune", length: "1.2 inches", commits: 9 },
+      11: { size: "Lime", length: "1.6 inches", commits: 10 },
+      12: { size: "Plum", length: "2.1 inches", commits: 11 },
+      13: { size: "Peach", length: "2.9 inches", commits: 12 },
+      14: { size: "Lemon", length: "3.4 inches", commits: 13 },
+      15: { size: "Apple", length: "4.0 inches", commits: 14 },
+      16: { size: "Avocado", length: "4.6 inches", commits: 15 },
+      17: { size: "Pear", length: "5.1 inches", commits: 16 },
+      18: { size: "Sweet Potato", length: "5.6 inches", commits: 17 },
+      19: { size: "Mango", length: "6.0 inches", commits: 18 },
+      20: { size: "Banana", length: "6.5 inches", commits: 19 },
+      21: { size: "Carrot", length: "7.2 inches", commits: 20 },
+      22: { size: "Corn", length: "7.6 inches", commits: 21 },
+      23: { size: "Large Mango", length: "8.0 inches", commits: 22 },
+      24: { size: "Cantaloupe", length: "8.4 inches", commits: 23 },
+      25: { size: "Cauliflower", length: "8.8 inches", commits: 24 },
+      26: { size: "Lettuce", length: "9.2 inches", commits: 25 },
+      27: { size: "Rutabaga", length: "9.6 inches", commits: 26 },
+      28: { size: "Eggplant", length: "10.2 inches", commits: 27 },
+      29: { size: "Butternut Squash", length: "10.8 inches", commits: 28 },
+      30: { size: "Cabbage", length: "11.4 inches", commits: 29 },
+      31: { size: "Coconut", length: "11.8 inches", commits: 30 },
+      32: { size: "Jicama", length: "12.4 inches", commits: 31 },
+      33: { size: "Pineapple", length: "13.2 inches", commits: 32 },
+      34: { size: "Cantaloupe", length: "14.0 inches", commits: 33 },
+      35: { size: "Honeydew Melon", length: "14.8 inches", commits: 34 },
+      36: { size: "Large Romaine Lettuce", length: "15.7 inches", commits: 35 },
+      37: { size: "Winter Melon", length: "16.5 inches", commits: 36 },
+      38: { size: "Pumpkin", length: "17.2 inches", commits: 37 },
+      39: { size: "Watermelon", length: "18.0 inches", commits: 38 },
+      40: { size: "Small Pumpkin 🎃", length: "18.9-20.9 inches", commits: 39 }
     };
-    return sizes[weeks] || { size: "Too early to compare", length: "N/A", commits: 1 };
+  
+    // For early weeks
+    if (weeks < 1) {
+      return { 
+        size: "The journey begins! 🌟", 
+        length: "Not yet visible", 
+        commits: 1 
+      };
+    }
+  
+    // For weeks beyond 40 but before birth
+    if (weeks > 40) {
+      return { 
+        size: "Ready to meet you! 👶", 
+        length: "18-22 inches", 
+        commits: 40 
+      };
+    }
+  
+    return sizes[weeks] || { 
+      size: "Loading size data...", 
+      length: "measurement pending", 
+      commits: 1 
+    };
   };
 
   const getWeeklyInfo = (weeks: number): WeeklyInfo => {
