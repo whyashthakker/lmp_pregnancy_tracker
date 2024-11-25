@@ -50,7 +50,6 @@ const PregnancyTracker: React.FC = () => {
   const daysPregnant: number = differenceInDays(TODAY, lmpDate);
   const weeksPregnant: number = Math.floor(daysPregnant / 7);
   const daysRemaining: number = Math.floor(daysPregnant % 7);
-  const monthsPregnant: number = Math.floor(daysPregnant / 30.44);
   
   const getBabySize = (weeks: number): BabySize => {
     const sizes: BabySizes = {
@@ -171,24 +170,6 @@ const PregnancyTracker: React.FC = () => {
   };
 
   const progressPercentage: number = (daysPregnant / PREGNANCY_DURATION) * 100;
-
-  // GitHub-like commit visualization
-  const renderCommits = (commits: number) => {
-    return (
-      <div className="flex gap-1 my-2">
-        {[...Array(commits)].map((_, i) => (
-          <div
-            key={i}
-            className="w-4 h-4 rounded-sm bg-green-500"
-            style={{
-              opacity: (i + 1) / commits,
-              animation: `pulse 1.5s ease-in-out ${i * 0.2}s infinite`
-            }}
-          />
-        ))}
-      </div>
-    );
-  };
 
   const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLmpInput(event.target.value);
@@ -493,7 +474,7 @@ const PregnancyTracker: React.FC = () => {
           <CardHeader className="border-b border-indigo-100">
             <CardTitle className="flex items-center gap-2 text-indigo-600 milestone-text">
               <Heart className="text-rose-500" size={20} />
-              Mom's Status
+              Mom&apos;s Status
             </CardTitle>
           </CardHeader>
           <CardContent className="mt-4">
