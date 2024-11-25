@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { differenceInDays, addDays, format, addWeeks, isValid, parse } from 'date-fns';
-import { Trophy, Heart, Calendar, Baby, Activity, Clock, Star, CalendarDays } from 'lucide-react';
+import { Trophy, Heart, Calendar, Baby, Clock, Star, CalendarDays } from 'lucide-react';
 import { Button } from './button';
 import { Input } from './input';
 
@@ -36,7 +36,6 @@ interface MilestoneDate {
 const PregnancyTracker: React.FC = () => {
   // Constants
   const DEFAULT_LMP = new Date('2024-10-14');
-  const LMP: Date = new Date('2024-10-14');
 
   const [lmpDate, setLmpDate] = useState<Date>(DEFAULT_LMP);
   const [lmpInput, setLmpInput] = useState<string>('2024-10-14');
@@ -547,7 +546,7 @@ const PregnancyTracker: React.FC = () => {
       <div className="space-y-2">
         <div className="flex items-center gap-2 mb-2">
           <Heart className="text-rose-500" size={16} />
-          <span className="text-sm font-bold text-rose-500 font-pixel">Mom's Status</span>
+          <span className="text-sm font-bold text-rose-500 font-pixel">Mom&apos;s Status</span>
         </div>
         <p className="text-gray-600 font-pixel">
           {getWeeklyInfo(weeksPregnant).symptoms}
