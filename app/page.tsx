@@ -1,6 +1,11 @@
 import PregnancyTracker from '@/components/ui/tracker-app';
 import { Baby } from 'lucide-react';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: 'Egspect | Smart Pregnancy Tracking & Medical Monitoring',
@@ -21,7 +26,6 @@ export const metadata: Metadata = {
     site: '@egspect',
   },
   authors: [{ name: 'Egspect Team' }],
-  viewport: 'width=device-width, initial-scale=1',
   robots: {
     index: true,
     follow: true,
