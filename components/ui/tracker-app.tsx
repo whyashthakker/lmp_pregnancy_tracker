@@ -1,11 +1,16 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { differenceInDays, addDays, format, addWeeks, isValid, parse } from 'date-fns';
-import { Trophy, Heart, Calendar, Baby, Clock, Star, CalendarDays } from 'lucide-react';
+import { Trophy, Heart, Calendar, Baby, Clock, Star, CalendarDays, Stethoscope, FileText, Activity, Plus, LineChart, AlertCircle, CalendarRange } from 'lucide-react';
 import { Button } from './button';
 import { Input } from './input';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 
 interface BabySize {
   size: string;
@@ -29,17 +34,57 @@ interface WeeklyNotes {
 interface MilestoneDate {
   date: Date;
   title: string;
-  type: 'checkpoint' | 'boss' | 'quest';
+  type: 'screening' | 'checkup' | 'test' | 'milestone';
   description: string;
+  urgent?: boolean;
+}
+
+interface VitalSigns {
+  bloodPressure: string;
+  weight: number;
+  temperature: number;
+  heartRate: number;
+  date: string;
+}
+
+interface MedicalNote {
+  date: string;
+  note: string;
+  doctor: string;
+}
+
+interface PregnancyData {
+  lmpDate: string;
+  vitalSigns: VitalSigns[];
+  medicalNotes: MedicalNote[];
+  symptoms: string[];
+}
+
+interface VitalSignsForm {
+  bloodPressure: string;
+  weight: string;
+  temperature: string;
+  heartRate: string;
 }
 
 const PregnancyTracker: React.FC = () => {
   // Constants
-  const DEFAULT_LMP = new Date('2024-10-14');
+  const DEFAULT_LMP = new Date('2025-01-19');
 
   const [lmpDate, setLmpDate] = useState<Date>(DEFAULT_LMP);
-  const [lmpInput, setLmpInput] = useState<string>('2024-10-14');
+  const [lmpInput, setLmpInput] = useState<string>('2025-01-19');
   const [showDateError, setShowDateError] = useState<boolean>(false);
+  const [vitalSigns, setVitalSigns] = useState<VitalSigns[]>([]);
+  const [medicalNotes, setMedicalNotes] = useState<MedicalNote[]>([]);
+  const [currentSymptoms, setCurrentSymptoms] = useState<string[]>([]);
+  const [doctorName, setDoctorName] = useState<string>('');
+  const [newNote, setNewNote] = useState<string>('');
+  const [vitalSignsForm, setVitalSignsForm] = useState<VitalSignsForm>({
+    bloodPressure: '',
+    weight: '',
+    temperature: '',
+    heartRate: ''
+  });
 
   const TODAY: Date = new Date();
   const PREGNANCY_DURATION: number = 280;
@@ -179,65 +224,186 @@ const PregnancyTracker: React.FC = () => {
   const getCriticalDates = (lmpDate: Date): MilestoneDate[] => {
     return [
       {
+        date: addWeeks(lmpDate, 4),
+        title: "First Prenatal Visit",
+        type: 'checkup',
+        description: "Confirm pregnancy, medical history, initial screenings",
+        urgent: true
+      },
+      {
         date: addWeeks(lmpDate, 6),
-        title: "⚔️ First Heartbeat Quest",
-        type: 'quest',
-        description: "Baby's heart starts beating"
+        title: "First Heartbeat",
+        type: 'milestone',
+        description: "Early ultrasound to detect heartbeat"
       },
       {
         date: addWeeks(lmpDate, 8),
-        title: "🛡️ First Prenatal Checkpoint",
-        type: 'checkpoint',
-        description: "First major health check"
+        title: "Initial Blood Tests",
+        type: 'test',
+        description: "Blood type, infections, hemoglobin"
+      },
+      {
+        date: addWeeks(lmpDate, 10),
+        title: "NIPT Test",
+        type: 'screening',
+        description: "Non-invasive prenatal testing available"
+      },
+      {
+        date: addWeeks(lmpDate, 11),
+        title: "NT Scan",
+        type: 'screening',
+        description: "Nuchal translucency ultrasound"
       },
       {
         date: addWeeks(lmpDate, 12),
-        title: "🏆 First Trimester Boss",
-        type: 'boss',
-        description: "Major milestone reached"
+        title: "First Trimester Screening",
+        type: 'screening',
+        description: "Combined screening for chromosomal conditions",
+        urgent: true
+      },
+      {
+        date: addWeeks(lmpDate, 16),
+        title: "Quad Screen Test",
+        type: 'test',
+        description: "Second trimester screening test"
+      },
+      {
+        date: addWeeks(lmpDate, 18),
+        title: "Fetal Movement",
+        type: 'milestone',
+        description: "Begin monitoring fetal movements"
       },
       {
         date: addWeeks(lmpDate, 20),
-        title: "🎯 Gender Reveal Quest",
-        type: 'quest',
-        description: "Anatomy scan available"
+        title: "Anatomy Scan",
+        type: 'screening',
+        description: "Detailed ultrasound of baby's anatomy",
+        urgent: true
       },
       {
         date: addWeeks(lmpDate, 24),
-        title: "🛡️ Glucose Challenge",
-        type: 'checkpoint',
-        description: "Health check point"
+        title: "Glucose Test",
+        type: 'test',
+        description: "Gestational diabetes screening"
       },
       {
-        date: addWeeks(lmpDate, 27),
-        title: "🏆 Second Trimester Boss",
-        type: 'boss',
-        description: "Entering final trimester"
+        date: addWeeks(lmpDate, 26),
+        title: "Tdap Vaccine",
+        type: 'milestone',
+        description: "Recommended vaccination"
+      },
+      {
+        date: addWeeks(lmpDate, 28),
+        title: "RhoGAM Shot",
+        type: 'test',
+        description: "If Rh negative blood type"
+      },
+      {
+        date: addWeeks(lmpDate, 32),
+        title: "Growth Scan",
+        type: 'screening',
+        description: "Monitor baby's growth and position"
+      },
+      {
+        date: addWeeks(lmpDate, 34),
+        title: "Group B Strep Test",
+        type: 'test',
+        description: "Screening for GBS infection"
       },
       {
         date: addWeeks(lmpDate, 36),
-        title: "⚔️ Weekly Quest Chain",
-        type: 'quest',
-        description: "Weekly check-ups begin"
+        title: "Weekly Checkups Begin",
+        type: 'checkup',
+        description: "More frequent monitoring",
+        urgent: true
+      },
+      {
+        date: addWeeks(lmpDate, 37),
+        title: "Full Term Begins",
+        type: 'milestone',
+        description: "Baby is considered early term"
+      },
+      {
+        date: addWeeks(lmpDate, 39),
+        title: "Full Term",
+        type: 'milestone',
+        description: "Optimal time for delivery"
       },
       {
         date: DUE_DATE,
-        title: "👑 FINAL BOSS BATTLE",
-        type: 'boss',
-        description: "The big day!"
+        title: "Due Date",
+        type: 'milestone',
+        description: "Estimated delivery date",
+        urgent: true
       }
     ];
   };
 
   const progressPercentage: number = (daysPregnant / PREGNANCY_DURATION) * 100;
 
+  // Load data from storage
+  useEffect(() => {
+    const loadData = () => {
+      try {
+        const storedData = localStorage.getItem('pregnancyData');
+        if (storedData) {
+          const pregnancyData: PregnancyData = JSON.parse(storedData);
+          
+          // Validate and parse the date
+          const parsedDate = parse(pregnancyData.lmpDate, 'yyyy-MM-dd', new Date());
+          if (isValid(parsedDate)) {
+            setLmpDate(parsedDate);
+            setLmpInput(pregnancyData.lmpDate);
+          } else {
+            // If date is invalid, reset to default
+            setLmpDate(DEFAULT_LMP);
+            setLmpInput(format(DEFAULT_LMP, 'yyyy-MM-dd'));
+          }
+
+          // Load other data
+          setVitalSigns(pregnancyData.vitalSigns || []);
+          setMedicalNotes(pregnancyData.medicalNotes || []);
+          setCurrentSymptoms(pregnancyData.symptoms || []);
+        }
+      } catch (error) {
+        console.error('Error loading pregnancy data:', error);
+        // Reset to defaults on error
+        setLmpDate(DEFAULT_LMP);
+        setLmpInput(format(DEFAULT_LMP, 'yyyy-MM-dd'));
+      }
+    };
+    loadData();
+  }, []);
+
+  // Save data to storage
+  const saveToStorage = (data: Partial<PregnancyData>) => {
+    try {
+      const storedData = localStorage.getItem('pregnancyData');
+      const currentData = storedData ? JSON.parse(storedData) : {};
+      
+      // Ensure lmpDate is stored in the correct format
+      const updatedData = {
+        ...currentData,
+        ...data,
+        lmpDate: format(lmpDate, 'yyyy-MM-dd') // Always use the current lmpDate when saving
+      };
+      
+      localStorage.setItem('pregnancyData', JSON.stringify(updatedData));
+    } catch (error) {
+      console.error('Error saving pregnancy data:', error);
+    }
+  };
+
+  // Handle date change
   const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setLmpInput(event.target.value);
-    const parsedDate = parse(event.target.value, 'yyyy-MM-dd', new Date());
+    const newDate = event.target.value;
+    setLmpInput(newDate);
     
+    const parsedDate = parse(newDate, 'yyyy-MM-dd', new Date());
     if (isValid(parsedDate)) {
       setLmpDate(parsedDate);
       setShowDateError(false);
+      saveToStorage({ lmpDate: newDate });
     } else {
       setShowDateError(true);
     }
@@ -284,321 +450,440 @@ const PregnancyTracker: React.FC = () => {
     </Card>
   );
 
+  // Handle vital signs update
+  const handleVitalSignsUpdate = (newVitals: VitalSigns) => {
+    const updatedVitals = [...vitalSigns, newVitals];
+    setVitalSigns(updatedVitals);
+    saveToStorage({ vitalSigns: updatedVitals });
+  };
+
+  const handleVitalSignsSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const newVitals: VitalSigns = {
+      bloodPressure: vitalSignsForm.bloodPressure,
+      weight: parseFloat(vitalSignsForm.weight) || 0,
+      temperature: parseFloat(vitalSignsForm.temperature) || 0,
+      heartRate: parseFloat(vitalSignsForm.heartRate) || 0,
+      date: format(new Date(), 'yyyy-MM-dd')
+    };
+    handleVitalSignsUpdate(newVitals);
+    setVitalSignsForm({
+      bloodPressure: '',
+      weight: '',
+      temperature: '',
+      heartRate: ''
+    });
+  };
+
+  // Handle medical note addition
+  const handleAddNote = () => {
+    if (newNote && doctorName) {
+      const newMedicalNote: MedicalNote = {
+        date: format(new Date(), 'yyyy-MM-dd'),
+        note: newNote,
+        doctor: doctorName
+      };
+      const updatedNotes = [...medicalNotes, newMedicalNote];
+      setMedicalNotes(updatedNotes);
+      saveToStorage({ medicalNotes: updatedNotes });
+      setNewNote('');
+    }
+  };
+
+  // Handle symptom tracking
+  const handleSymptomUpdate = (symptom: string) => {
+    const updatedSymptoms = currentSymptoms.includes(symptom)
+      ? currentSymptoms.filter(s => s !== symptom)
+      : [...currentSymptoms, symptom];
+    setCurrentSymptoms(updatedSymptoms);
+    saveToStorage({ symptoms: updatedSymptoms });
+  };
 
   return (
-    <div className="p-4 max-w-5xl mx-auto space-y-6">
-      <style jsx global>{`
-        @keyframes pulse {
-            0% { transform: scale(1.1); }
-            50% { transform: scale(1.3); }
-            100% { transform: scale(1.1); }
-        }
-        
-        @keyframes subtle-glow {
-          0% { box-shadow: 0 0 2px #6366f1; }
-          50% { box-shadow: 0 0 8px #6366f1; }
-          100% { box-shadow: 0 0 2px #6366f1; }
-        }
-
-        @keyframes float {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-5px); }
-          100% { transform: translateY(0px); }
-        }
-
-        .font-pixel {
-          font-family: 'Press Start 2P', system-ui, sans-serif;
-          font-size: 0.8rem;
-          letter-spacing: 0.05em;
-        }
-
-        .card-game {
-          background: linear-gradient(145deg, #ffffff, #f3f4f6);
-          border: 1px solid #e5e7eb;
-          animation: subtle-glow 3s infinite;
-          transition: all 0.3s ease;
-        }
-
-        .card-game:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
-        }
-
-        .progress-bar {
-            background: linear-gradient(90deg, #6366f1, #8b5cf6);
-            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
-        }
-
-        .milestone-text {
-          font-family: 'Press Start 2P', monospace;
-          text-transform: uppercase;
-          font-size: 0.7rem;
-          line-height: 1.4;
-        }
-
-        .milestone-active {
-          animation: float 3s ease-in-out infinite;
-        }
-
-        .timeline-dot {
-          transition: all 0.3s ease;
-        }
-
-        .timeline-dot:hover {
-          transform: scale(1.2);
-        }
-
-        .progress-bar::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(
-            45deg,
-            rgba(255, 255, 255, 0.1) 25%,
-            transparent 25%,
-            transparent 50%,
-            rgba(255, 255, 255, 0.1) 50%,
-            rgba(255, 255, 255, 0.1) 75%,
-            transparent 75%
-            );
-            background-size: 20px 20px;
-            animation: progress-stripe 1s linear infinite;
-        }
-
-        @keyframes progress-stripe {
-            0% {
-            background-position: 0 0;
-            }
-            100% {
-            background-position: 20px 0;
-            }
-        }
-      `}</style>
-
-
-<DateInput />
-
-<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-  {/* Card 1: Combined Level & Quest Progress */}
-  <Card className="card-game">
-    <CardHeader className="border-b border-indigo-100">
-      <CardTitle className="flex items-center gap-2 text-indigo-600 milestone-text">
-        <Trophy className="text-amber-500" size={20} />
-        Progress & Stats
-      </CardTitle>
-    </CardHeader>
-    <CardContent className="mt-4 space-y-6">
-      {/* Level Info */}
-      <div>
-        <p className="text-2xl font-bold text-indigo-600 milestone-text">LVL {weeksPregnant}</p>
-        <p className="text-sm text-indigo-400 font-pixel">+{daysRemaining} days EXP</p>
-        <p className="text-sm text-gray-500 font-pixel">{daysPregnant} days logged</p>
+    <div className="p-4 max-w-7xl mx-auto space-y-6">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8">
+        <div>
+          <h1 className="text-2xl font-semibold text-gray-900">Pregnancy Progress Tracker</h1>
+          <p className="text-sm text-gray-500 mt-1">Professional pregnancy monitoring system</p>
+        </div>
+        <Card className="w-full md:w-auto">
+          <CardContent className="p-3">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
+              <div className="flex items-center gap-2">
+                <CalendarDays className="text-blue-500" size={16} />
+                <Input
+                  type="date"
+                  value={lmpInput}
+                  onChange={handleDateChange}
+                  className="h-9"
+                  max={format(TODAY, 'yyyy-MM-dd')}
+                />
+              </div>
+              <div className="flex items-center gap-4 text-sm">
+                <Badge variant="outline">LMP: {format(lmpDate, 'MMM dd, yyyy')}</Badge>
+                <Badge variant="outline" className="bg-blue-50">Due: {format(DUE_DATE, 'MMM dd, yyyy')}</Badge>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
 
-      {/* Progress Bar Section */}
-      <div className="w-full bg-gray-100 rounded-lg p-3 space-y-2">
-        <div className="flex justify-between items-center mb-1">
-          <span className="text-sm text-indigo-600 font-pixel">EXP Progress</span>
-          <span className="text-sm text-indigo-600 font-pixel">{`${daysPregnant}/${PREGNANCY_DURATION} days`}</span>
-        </div>
-        <div className="w-full bg-indigo-100 rounded-full h-6 p-1 relative overflow-hidden">
-          <div 
-            className="progress-bar h-4 rounded-full transition-all duration-500 flex items-center justify-end pr-2"
-            style={{ width: `${progressPercentage}%` }}
-          >
-            <span className="text-xs text-white font-pixel drop-shadow-lg">{progressPercentage.toFixed(1)}%</span>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <Card>
+          <CardContent className="p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <Calendar className="text-blue-500" size={20} />
+              <h3 className="font-medium">Gestational Age</h3>
+            </div>
+            <p className="text-2xl font-semibold text-gray-900">{weeksPregnant} weeks {daysRemaining} days</p>
+            <p className="text-sm text-gray-500 mt-1">{daysPregnant} days from LMP</p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <LineChart className="text-emerald-500" size={20} />
+              <h3 className="font-medium">Progress</h3>
+            </div>
+            <p className="text-2xl font-semibold text-emerald-600">{progressPercentage.toFixed(1)}%</p>
+            <div className="w-full bg-gray-100 rounded-full h-2 mt-2">
+              <div
+                className="bg-emerald-500 h-2 rounded-full transition-all duration-500"
+                style={{ width: `${progressPercentage}%` }}
+              />
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <AlertCircle className="text-amber-500" size={20} />
+              <h3 className="font-medium">Time Remaining</h3>
+            </div>
+            <p className="text-2xl font-semibold text-gray-900">{40 - weeksPregnant} weeks</p>
+            <p className="text-sm text-gray-500 mt-1">{PREGNANCY_DURATION - daysPregnant} days to due date</p>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* New Timeline Section */}
+      <Card className="mb-6">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <CalendarRange className="text-blue-500" size={20} />
+            Important Dates & Checkpoints
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="relative">
+            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+            <div className="space-y-6">
+              {getCriticalDates(lmpDate)
+                .sort((a, b) => a.date.getTime() - b.date.getTime())
+                .map((milestone, idx) => {
+                  const isPast = milestone.date <= TODAY;
+                  const isToday = differenceInDays(milestone.date, TODAY) === 0;
+                  const isFuture = milestone.date > TODAY;
+                  const weekNumber = Math.floor(differenceInDays(milestone.date, lmpDate) / 7);
+
+                  return (
+                    <div 
+                      key={idx}
+                      className={`relative flex items-start gap-4 ${
+                        isPast ? 'opacity-50' : 
+                        isToday ? 'opacity-100' : 
+                        'opacity-90'
+                      }`}
+                    >
+                      <div 
+                        className={`absolute left-4 -translate-x-1/2 w-3 h-3 rounded-full mt-1.5 ${
+                          milestone.urgent ? 'ring-2 ring-offset-2 ring-red-500' : ''
+                        } ${
+                          milestone.type === 'screening' ? 'bg-purple-500' :
+                          milestone.type === 'checkup' ? 'bg-blue-500' :
+                          milestone.type === 'test' ? 'bg-amber-500' :
+                          'bg-emerald-500'
+                        }`}
+                      ></div>
+                      <div className="ml-8">
+                        <div className="flex items-center gap-2">
+                          <Badge 
+                            variant={
+                              milestone.type === 'screening' ? 'default' :
+                              milestone.type === 'checkup' ? 'secondary' :
+                              milestone.type === 'test' ? 'outline' :
+                              'default'
+                            }
+                            className={
+                              milestone.urgent ? 'border-red-500 text-red-500' : ''
+                            }
+                          >
+                            Week {weekNumber}
+                          </Badge>
+                          <span className="text-sm text-gray-500">
+                            {format(milestone.date, 'MMM dd, yyyy')}
+                          </span>
+                          {isToday && (
+                            <Badge variant="default" className="bg-green-500">Today</Badge>
+                          )}
+                        </div>
+                        <h3 className="text-base font-medium text-gray-900 mt-1">
+                          {milestone.title}
+                        </h3>
+                        <p className="text-sm text-gray-600 mt-0.5">
+                          {milestone.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
           </div>
-          {[25, 50, 75].map((marker) => (
-            <div
-              key={marker}
-              className="absolute top-0 bottom-0 w-px bg-indigo-200"
-              style={{ left: `${marker}%` }}
-            />
-          ))}
-        </div>
-        <div className="flex justify-between px-1 mt-1">
-          <span className="text-xs text-gray-500 font-pixel">First</span>
-          <span className="text-xs text-gray-500 font-pixel">Second</span>
-          <span className="text-xs text-gray-500 font-pixel">Third</span>
-          <span className="text-xs text-gray-500 font-pixel">Final</span>
-        </div>
-      </div>
+        </CardContent>
+      </Card>
 
-    {/* Progress Stats */}
-    <div className="grid grid-cols-1 gap-4">
-    <div className="bg-indigo-50 rounded-lg p-4">
-        <div className="text-sm text-indigo-600 font-pixel mb-2">Time Until Boss Battle</div>
-        <div className="space-y-3">
-        <div className="flex items-center justify-between">
-            <span className="text-xs text-indigo-400 font-pixel">Months</span>
-            <span className="text-lg text-indigo-700 font-pixel">
-            {Math.ceil((PREGNANCY_DURATION - daysPregnant) / 30)} to go
-            </span>
-        </div>
-        <div className="flex items-center justify-between">
-            <span className="text-xs text-indigo-400 font-pixel">Weeks</span>
-            <span className="text-lg text-indigo-700 font-pixel">
-            {40 - weeksPregnant} to go
-            </span>
-        </div>
-        <div className="flex items-center justify-between">
-            <span className="text-xs text-indigo-400 font-pixel">Days</span>
-            <span className="text-lg text-indigo-700 font-pixel">
-            {PREGNANCY_DURATION - daysPregnant} to go
-            </span>
-        </div>
-        </div>
-    </div>
-    </div>
-    </CardContent>
-  </Card>
+      <Tabs defaultValue="vitals" className="w-full">
+        <TabsList className="grid w-full grid-cols-1 md:grid-cols-4 lg:max-w-[600px]">
+          <TabsTrigger value="vitals">Vital Signs</TabsTrigger>
+          <TabsTrigger value="notes">Medical Notes</TabsTrigger>
+          <TabsTrigger value="symptoms">Symptoms</TabsTrigger>
+          <TabsTrigger value="growth">Fetal Growth</TabsTrigger>
+        </TabsList>
 
-  {/* Card 2: Quest Timeline */}
-  <Card className="card-game">
-    <CardHeader className="border-b border-indigo-100">
-      <CardTitle className="flex items-center gap-2 text-indigo-600 milestone-text">
-        <Calendar className="text-blue-500" size={20} />
-        Quest Timeline
-      </CardTitle>
-    </CardHeader>
-    <CardContent className="mt-4 space-y-4">
-      <div className="relative">
-        <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-indigo-100"></div>
-        <div className="space-y-4">
-          {getCriticalDates(lmpDate).map((milestone, idx) => {
-            const isPast = milestone.date <= TODAY;
-            const isToday = differenceInDays(milestone.date, TODAY) === 0;
-            const isFuture = milestone.date > TODAY;
+        <TabsContent value="vitals" className="mt-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Stethoscope className="text-emerald-500" size={20} />
+                Vital Signs Monitoring
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <form onSubmit={handleVitalSignsSubmit} className="space-y-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label>Blood Pressure</Label>
+                        <Input
+                          type="text"
+                          placeholder="e.g., 120/80"
+                          value={vitalSignsForm.bloodPressure}
+                          onChange={(e) => setVitalSignsForm(prev => ({
+                            ...prev,
+                            bloodPressure: e.target.value
+                          }))}
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label>Weight (kg)</Label>
+                        <Input
+                          type="number"
+                          placeholder="Weight"
+                          value={vitalSignsForm.weight}
+                          onChange={(e) => setVitalSignsForm(prev => ({
+                            ...prev,
+                            weight: e.target.value
+                          }))}
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label>Temperature (°C)</Label>
+                        <Input
+                          type="number"
+                          placeholder="Temperature"
+                          value={vitalSignsForm.temperature}
+                          onChange={(e) => setVitalSignsForm(prev => ({
+                            ...prev,
+                            temperature: e.target.value
+                          }))}
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label>Heart Rate (bpm)</Label>
+                        <Input
+                          type="number"
+                          placeholder="Heart Rate"
+                          value={vitalSignsForm.heartRate}
+                          onChange={(e) => setVitalSignsForm(prev => ({
+                            ...prev,
+                            heartRate: e.target.value
+                          }))}
+                        />
+                      </div>
+                    </div>
+                    <Button
+                      type="submit"
+                      className="w-full md:w-auto"
+                    >
+                      <Plus className="w-4 h-4 mr-2" />
+                      Add Record
+                    </Button>
+                  </form>
+                </div>
 
-            return (
-              <div 
-                key={idx}
-                className={`flex items-center gap-3 transition-all duration-300 ${
-                  isPast ? 'opacity-50' : 
-                  isToday ? 'milestone-active opacity-100' : 
-                  isFuture ? 'opacity-75' : ''
-                }`}
-              >
-                <div 
-                  className={`timeline-dot w-4 h-4 rounded-full transition-all duration-300 ${
-                    milestone.type === 'boss' ? 'bg-purple-500' :
-                    milestone.type === 'checkpoint' ? 'bg-emerald-500' : 'bg-amber-500'
-                  } ${
-                    isToday ? 'ring-2 ring-offset-2 ring-indigo-300 scale-125' : ''
-                  }`}
-                ></div>
-                <div>
-                  <p className={`milestone-text ${
-                    isToday ? 'text-indigo-600 font-bold' : 'text-indigo-500'
-                  }`}>
-                    {milestone.title}
-                  </p>
-                  <p className="text-xs text-gray-500">
-                    {format(milestone.date, 'MMM dd')}
-                    {isToday && " (Today!)"}
-                  </p>
-                  {isToday && (
-                    <p className="text-xs text-indigo-400 mt-1">
-                      {milestone.description}
-                    </p>
-                  )}
+                <div className="space-y-4">
+                  <div className="overflow-hidden rounded-lg border">
+                    <table className="min-w-full divide-y divide-gray-200">
+                      <thead className="bg-gray-50">
+                        <tr>
+                          <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Date</th>
+                          <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">BP</th>
+                          <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Weight</th>
+                          <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Temp</th>
+                          <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">HR</th>
+                        </tr>
+                      </thead>
+                      <tbody className="bg-white divide-y divide-gray-200">
+                        {vitalSigns.slice().reverse().map((vital, idx) => (
+                          <tr key={idx} className="hover:bg-gray-50">
+                            <td className="px-4 py-2 text-sm text-gray-900">{vital.date}</td>
+                            <td className="px-4 py-2 text-sm text-gray-900">{vital.bloodPressure}</td>
+                            <td className="px-4 py-2 text-sm text-gray-900">{vital.weight} kg</td>
+                            <td className="px-4 py-2 text-sm text-gray-900">{vital.temperature}°C</td>
+                            <td className="px-4 py-2 text-sm text-gray-900">{vital.heartRate} bpm</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
-            );
-          })}
-        </div>
-      </div>
-    </CardContent>
-  </Card>
+            </CardContent>
+          </Card>
+        </TabsContent>
 
-  {/* Card 3: Combined Status & Growth */}
-  <Card className="card-game">
-    <CardHeader className="border-b border-indigo-100">
-      <CardTitle className="flex items-center gap-2 text-indigo-600 milestone-text">
-        <Baby className="text-pink-500" size={20} />
-        Status & Growth
-      </CardTitle>
-    </CardHeader>
-    <CardContent className="mt-4 space-y-6">
-      {/* Growth Stats */}
-      <div>
-        <p className="text-xl font-bold text-pink-500 milestone-text">{getBabySize(weeksPregnant).size}</p>
-        <p className="text-sm text-gray-500 font-pixel">Size: {getBabySize(weeksPregnant).length}</p>
-        <div className="mt-2 bg-gray-50 p-2 rounded-lg">
-          <div className="flex gap-1 my-2">
-            {[...Array(40)].map((_, i) => (
-              <div
-                key={i}
-                className={`w-2 h-2 rounded-sm transform transition-all duration-300 ${
-                  i < weeksPregnant 
-                    ? 'bg-green-500' 
-                    : 'bg-gray-200'
-                } ${
-                  i === weeksPregnant - 1 
-                    ? 'scale-125 ring-2 ring-green-300' 
-                    : ''
-                }`}
-                style={{
-                  opacity: i < weeksPregnant ? ((i + 1) / weeksPregnant) : 0.3,
-                  animation: i === weeksPregnant - 1 
-                    ? `pulse 1.5s ease-in-out infinite`
-                    : 'none'
-                }}
-              />
-            ))}
-          </div>
-          <div className="flex justify-between mt-1">
-            <span className="text-xs text-gray-400 font-pixel">Week {weeksPregnant}/40</span>
-            <span className="text-xs text-gray-400 font-pixel">{Math.round((weeksPregnant/40) * 100)}%</span>
-          </div>
-        </div>
-      </div>
+        <TabsContent value="notes" className="mt-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <FileText className="text-blue-500" size={20} />
+                Medical Notes
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="lg:col-span-1 space-y-4">
+                  <div className="space-y-2">
+                    <Label>Doctor's Name</Label>
+                    <Input
+                      type="text"
+                      placeholder="Enter name"
+                      value={doctorName}
+                      onChange={(e) => setDoctorName(e.target.value)}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label>Medical Notes</Label>
+                    <Textarea
+                      placeholder="Add medical notes..."
+                      value={newNote}
+                      onChange={(e) => setNewNote(e.target.value)}
+                      className="h-32 resize-none"
+                    />
+                  </div>
+                  <Button
+                    onClick={handleAddNote}
+                    className="w-full"
+                    disabled={!newNote || !doctorName}
+                  >
+                    <Plus className="w-4 h-4 mr-2" />
+                    Add Note
+                  </Button>
+                </div>
+                <div className="lg:col-span-2">
+                  <div className="space-y-4">
+                    {medicalNotes.slice().reverse().map((note, idx) => (
+                      <div key={idx} className="p-4 rounded-lg border">
+                        <div className="flex items-center justify-between mb-2">
+                          <div className="flex items-center gap-2">
+                            <Badge variant="outline">Dr. {note.doctor}</Badge>
+                            <span className="text-sm text-gray-500">{note.date}</span>
+                          </div>
+                        </div>
+                        <p className="text-gray-700 whitespace-pre-wrap">{note.note}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
 
-      {/* Mom's Status */}
-      <div className="space-y-2">
-        <div className="flex items-center gap-2 mb-2">
-          <Heart className="text-rose-500" size={16} />
-          <span className="text-sm font-bold text-rose-500 font-pixel">Mom&apos;s Status</span>
-        </div>
-        <p className="text-gray-600 font-pixel">
-          {getWeeklyInfo(weeksPregnant).symptoms}
-        </p>
-        <div className="flex flex-wrap gap-2 mt-2">
-          {getWeeklyInfo(weeksPregnant).symptoms.split(', ').map((symptom, idx) => (
-            <span
-              key={idx}
-              className="px-2 py-1 bg-rose-50 text-rose-500 rounded-md text-xs font-pixel"
-            >
-              {symptom}
-            </span>
-          ))}
-        </div>
-      </div>
+        <TabsContent value="symptoms" className="mt-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Activity className="text-rose-500" size={20} />
+                Symptom Tracking
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                {[
+                  'Nausea', 'Fatigue', 'Headache', 'Back Pain',
+                  'Swelling', 'Cramping', 'Mood Changes', 'Insomnia',
+                  'Heartburn', 'Dizziness', 'Constipation', 'Breast Tenderness'
+                ].map((symptom) => (
+                  <button
+                    key={symptom}
+                    onClick={() => handleSymptomUpdate(symptom)}
+                    className={`p-3 rounded-lg text-sm transition-all border ${
+                      currentSymptoms.includes(symptom)
+                        ? 'bg-rose-500 text-white border-rose-500'
+                        : 'bg-white text-gray-700 border-gray-200 hover:border-rose-500 hover:text-rose-500'
+                    }`}
+                  >
+                    {symptom}
+                  </button>
+                ))}
+              </div>
+              
+              <Separator className="my-6" />
+              
+              <div className="space-y-2">
+                <h3 className="text-sm font-medium text-gray-900">Current Symptoms</h3>
+                <div className="flex flex-wrap gap-2">
+                  {currentSymptoms.map((symptom) => (
+                    <Badge key={symptom} variant="secondary">
+                      {symptom}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
 
-      {/* Weekly Side Quests */}
-      <div className="space-y-2">
-        <div className="flex items-center gap-2 mb-2">
-          <Clock className="text-amber-500" size={16} />
-          <span className="text-sm font-bold text-amber-500 font-pixel">Weekly Quests</span>
-        </div>
-        <div className="bg-amber-50 p-3 rounded-lg">
-          <pre className="text-sm text-amber-700 whitespace-pre-wrap font-pixel leading-relaxed">
-            {getWeeklyInfo(weeksPregnant).husbandTips}
-          </pre>
-        </div>
-        <div className="flex items-center gap-2 text-xs text-gray-500 font-pixel">
-          <Star className="text-amber-500" size={14} />
-          <span>Complete all quests for bonus EXP!</span>
-        </div>
-      </div>
-    </CardContent>
-  </Card>
-</div>
-</div>
-);
+        <TabsContent value="growth" className="mt-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <LineChart className="text-blue-500" size={20} />
+                Fetal Growth Tracking
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="text-lg font-medium mb-2">Current Size</h3>
+                  <p className="text-2xl font-semibold text-gray-900">{getBabySize(weeksPregnant).size}</p>
+                  <p className="text-gray-500 mt-1">Approximately {getBabySize(weeksPregnant).length}</p>
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium mb-2">Weekly Development</h3>
+                  <p className="text-gray-700">{getWeeklyInfo(weeksPregnant).symptoms}</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
+    </div>
+  );
 };
 
 export default PregnancyTracker;
