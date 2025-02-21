@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { differenceInDays, addDays, format, addWeeks, isValid, parse } from 'date-fns';
-import { Trophy, Heart, Calendar, Baby, Clock, Star, CalendarDays, Stethoscope, FileText, Activity, Plus, LineChart, AlertCircle, CalendarRange } from 'lucide-react';
+import { Calendar, CalendarDays, Stethoscope, FileText, Activity, Plus, LineChart, AlertCircle, CalendarRange } from 'lucide-react';
 import { Button } from './button';
 import { Input } from './input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -373,7 +373,7 @@ const PregnancyTracker: React.FC = () => {
       }
     };
     loadData();
-  }, []);
+  }, [DEFAULT_LMP]);
 
   // Save data to storage
   const saveToStorage = (data: Partial<PregnancyData>) => {
@@ -409,46 +409,6 @@ const PregnancyTracker: React.FC = () => {
     }
   };
 
-  const resetToDefault = () => {
-    setLmpDate(DEFAULT_LMP);
-    setLmpInput('2024-10-14');
-    setShowDateError(false);
-  };
-
-  const DateInput = () => (
-    <Card className="mb-4">
-      <CardContent className="p-3">
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2 min-w-fit">
-            <CalendarDays className="text-blue-500" size={16} />
-            <Input
-              type="date"
-              value={lmpInput}
-              onChange={handleDateChange}
-              className="text-xs h-8"
-              max={format(TODAY, 'yyyy-MM-dd')}
-            />
-            <Button
-              onClick={resetToDefault}
-              variant="ghost"
-              size="sm"
-              className="h-8 px-2"
-            >
-              Reset
-            </Button>
-          </div>
-          
-          <div className="flex items-center gap-4 text-xs text-gray-500">
-            <span>LMP: {format(lmpDate, 'MMM dd, yyyy')}</span>
-            <span>Due: {format(DUE_DATE, 'MMM dd, yyyy')}</span>
-            {showDateError && (
-              <span className="text-rose-500">Invalid date</span>
-            )}
-          </div>
-        </div>
-      </CardContent>
-    </Card>
-  );
 
   // Handle vital signs update
   const handleVitalSignsUpdate = (newVitals: VitalSigns) => {
@@ -511,13 +471,20 @@ const PregnancyTracker: React.FC = () => {
             <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
               <div className="flex items-center gap-2">
                 <CalendarDays className="text-blue-500" size={16} />
-                <Input
-                  type="date"
-                  value={lmpInput}
-                  onChange={handleDateChange}
-                  className="h-9"
-                  max={format(TODAY, 'yyyy-MM-dd')}
-                />
+                <div className="relative w-full">
+                  <Input
+                    type="date"
+                    value={lmpInput}
+                    onChange={handleDateChange}
+                    className={`h-9 ${showDateError ? 'border-red-500' : ''}`}
+                    max={format(TODAY, 'yyyy-MM-dd')}
+                  />
+                  {showDateError && (
+                    <p className="absolute -bottom-5 left-0 text-xs text-red-500">
+                      Please enter a valid date
+                    </p>
+                  )}
+                </div>
               </div>
               <div className="flex items-center gap-4 text-sm">
                 <Badge variant="outline">LMP: {format(lmpDate, 'MMM dd, yyyy')}</Badge>
@@ -585,7 +552,6 @@ const PregnancyTracker: React.FC = () => {
                 .map((milestone, idx) => {
                   const isPast = milestone.date <= TODAY;
                   const isToday = differenceInDays(milestone.date, TODAY) === 0;
-                  const isFuture = milestone.date > TODAY;
                   const weekNumber = Math.floor(differenceInDays(milestone.date, lmpDate) / 7);
 
                   return (
@@ -767,7 +733,7 @@ const PregnancyTracker: React.FC = () => {
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div className="lg:col-span-1 space-y-4">
                   <div className="space-y-2">
-                    <Label>Doctor's Name</Label>
+                    <Label>Doctor&apos;s Name</Label>
                     <Input
                       type="text"
                       placeholder="Enter name"
