@@ -1,5 +1,5 @@
-import PregnancyTracker from '@/components/ui/tracker-app';
-import { Baby } from 'lucide-react';
+import PregnancyTracker from '@/components/pregnancy-tracker';
+import { Baby, Heart, Calendar, Sparkles } from 'lucide-react';
 import { Metadata, Viewport } from 'next';
 
 export const viewport: Viewport = {
@@ -21,37 +21,20 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Egspect - Smart Pregnancy Companion',
-    description: 'Track your pregnancy journey with precision and care. Professional medical monitoring meets modern technology.',
-    site: '@egspect',
+    title: 'Egspect - Smart Pregnancy Tracking',
+    description: 'Professional pregnancy tracking with medical monitoring and personalized insights.',
+    creator: '@egspect',
   },
-  authors: [{ name: 'Egspect Team' }],
-  robots: {
-    index: true,
-    follow: true,
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-icon.png',
   },
-  alternates: {
-    canonical: 'https://www.egspect.com'
-  }
 };
 
 export default function Home(): JSX.Element {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-indigo-50">
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="flex flex-col items-center justify-center text-center mb-12">
-          <div className="flex items-center justify-center gap-3 mb-2">
-            <Baby className="w-10 h-10 text-indigo-600" />
-            <h1 className="font-pixel text-4xl text-indigo-600 tracking-tight">
-              egspect
-            </h1>
-          </div>
-          <p className="text-indigo-400 text-lg font-light">
-            Smart pregnancy tracking for modern parents
-          </p>
-        </div>
-        <PregnancyTracker />
-      </div>
+    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <PregnancyTracker />
     </main>
   );
 }
