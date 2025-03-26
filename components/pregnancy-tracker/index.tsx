@@ -79,8 +79,45 @@ const PregnancyTracker: React.FC = () => {
   const dueDate = calculateDueDate(lmpDate);
   const { weeksPregnant, daysRemaining, progressPercentage } = calculatePregnancyProgress(lmpDate);
   const trimester = getCurrentTrimester(weeksPregnant);
-  const babySize = getBabySize(weeksPregnant, daysRemaining);
-  const weeklyInfo = getWeeklyInfo(weeksPregnant) || {
+  
+  // Calculate adjusted weeks based on ultrasound measurements
+  const getAdjustedWeeks = () => {
+    if (!pregnancyData.ultrasoundMeasurements?.length) {
+      return weeksPregnant;
+    }
+
+    // Get the most recent ultrasound measurement
+    const latestMeasurement = pregnancyData.ultrasoundMeasurements.reduce((latest, current) => {
+      return new Date(current.date) > new Date(latest.date) ? current : latest;
+    });
+
+    // Calculate days ahead
+    const daysAhead = (latestMeasurement.weeksAhead * 7) + latestMeasurement.daysAhead;
+
+    // Calculate the difference between ultrasound date and LMP date
+    const ultrasoundDate = new Date(latestMeasurement.date);
+    
+    // Add the days ahead to the ultrasound date
+    const adjustedDate = addDays(ultrasoundDate, daysAhead);
+    
+    // Calculate weeks from adjusted date
+    const totalDaysPregnant = differenceInDays(new Date(), adjustedDate);
+    return Math.floor(totalDaysPregnant / 7);
+  };
+
+  // Calculate both LMP and ultrasound-based measurements
+  const lmpBasedWeeks = weeksPregnant;
+  const ultrasoundBasedWeeks = getAdjustedWeeks();
+  const lmpBabySize = getBabySize(lmpBasedWeeks, daysRemaining);
+  const ultrasoundBabySize = getBabySize(ultrasoundBasedWeeks, daysRemaining);
+  const lmpWeeklyInfo = getWeeklyInfo(lmpBasedWeeks) || {
+    developmentHighlights: [],
+    symptoms: '',
+    husbandTips: '',
+    nutrition: '',
+    exercise: ''
+  };
+  const ultrasoundWeeklyInfo = getWeeklyInfo(ultrasoundBasedWeeks) || {
     developmentHighlights: [],
     symptoms: '',
     husbandTips: '',
@@ -227,43 +264,6 @@ const PregnancyTracker: React.FC = () => {
     saveToStorage({ ultrasoundMeasurements: updatedMeasurements });
   };
 
-  // Calculate adjusted weeks based on ultrasound measurements
-  const getAdjustedWeeks = () => {
-    if (!pregnancyData.ultrasoundMeasurements?.length) {
-      return weeksPregnant;
-    }
-
-    // Get the most recent ultrasound measurement
-    const latestMeasurement = pregnancyData.ultrasoundMeasurements.reduce((latest, current) => {
-      return new Date(current.date) > new Date(latest.date) ? current : latest;
-    });
-
-    // Calculate days ahead
-    const daysAhead = (latestMeasurement.weeksAhead * 7) + latestMeasurement.daysAhead;
-
-    // Calculate the difference between ultrasound date and LMP date
-    const ultrasoundDate = new Date(latestMeasurement.date);
-    const daysSinceUltrasound = differenceInDays(new Date(), ultrasoundDate);
-
-    // Add the days ahead to the ultrasound date
-    const adjustedDate = addDays(ultrasoundDate, daysAhead);
-    
-    // Calculate weeks from adjusted date
-    const totalDaysPregnant = differenceInDays(new Date(), adjustedDate);
-    return Math.floor(totalDaysPregnant / 7);
-  };
-
-  // Use adjusted weeks for calculations
-  const adjustedWeeks = getAdjustedWeeks();
-  const adjustedBabySize = getBabySize(adjustedWeeks, daysRemaining);
-  const adjustedWeeklyInfo = getWeeklyInfo(adjustedWeeks) || {
-    developmentHighlights: [],
-    symptoms: '',
-    husbandTips: '',
-    nutrition: '',
-    exercise: ''
-  };
-
   return (
     <div className="container mx-auto py-4 md:py-6 px-3 md:px-4 max-w-6xl">
       <div className="mb-4 md:mb-6">
@@ -319,33 +319,39 @@ const PregnancyTracker: React.FC = () => {
         <TabsContent value="dashboard" className="space-y-6">
           {/* Progress Dashboard */}
           <ProgressDashboard
-            weeksPregnant={adjustedWeeks}
+            weeksPregnant={ultrasoundBasedWeeks}
             daysRemaining={daysRemaining}
             progressPercentage={progressPercentage}
             lmpDate={lmpDate}
             dueDate={dueDate}
-            babySize={adjustedBabySize}
+            babySize={ultrasoundBabySize}
+            lmpBabySize={lmpBabySize}
             trimester={trimester}
-            successRate={calculateAdjustedSuccessRate(adjustedWeeks)}
+            successRate={calculateAdjustedSuccessRate(ultrasoundBasedWeeks)}
+            ultrasoundAdjustment={pregnancyData.ultrasoundMeasurements?.length ? 
+              pregnancyData.ultrasoundMeasurements.reduce((latest, current) => 
+                new Date(current.date) > new Date(latest.date) ? current : latest
+              ).weeksAhead : undefined
+            }
           />
           
           {/* Miscarriage Risk (Stability) */}
           <MiscarriageRisk
-            weeksPregnant={adjustedWeeks}
+            weeksPregnant={ultrasoundBasedWeeks}
             hasHeartbeat={hasHeartbeat}
             onHeartbeatChange={handleHeartbeatChange}
           />
           
           {/* Weekly Insights */}
           <WeeklyInsights
-            weeklyInfo={adjustedWeeklyInfo}
-            weeksPregnant={adjustedWeeks}
+            weeklyInfo={ultrasoundWeeklyInfo}
+            weeksPregnant={ultrasoundBasedWeeks}
           />
           
           {/* Partner Tips */}
           <PartnerTips
-            tips={adjustedWeeklyInfo?.husbandTips || ''}
-            weeksPregnant={adjustedWeeks}
+            tips={ultrasoundWeeklyInfo?.husbandTips || ''}
+            weeksPregnant={ultrasoundBasedWeeks}
           />
         </TabsContent>
         

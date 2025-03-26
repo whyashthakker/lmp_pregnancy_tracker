@@ -16,8 +16,10 @@ interface ProgressDashboardProps {
   lmpDate: Date;
   dueDate: Date;
   babySize: BabySize;
+  lmpBabySize: BabySize;
   trimester: number;
   successRate: number;
+  ultrasoundAdjustment?: number;
 }
 
 const ProgressDashboard: React.FC<ProgressDashboardProps> = ({
@@ -27,8 +29,10 @@ const ProgressDashboard: React.FC<ProgressDashboardProps> = ({
   lmpDate,
   dueDate,
   babySize,
+  lmpBabySize,
   trimester,
-  successRate
+  successRate,
+  ultrasoundAdjustment
 }) => {
   const getMessage = () => {
     if (progressPercentage < 20) {
@@ -163,6 +167,44 @@ const ProgressDashboard: React.FC<ProgressDashboardProps> = ({
                     className="max-w-full max-h-full object-contain"
                   />
                 </div>
+              </div>
+            )}
+          </div>
+
+          {/* Baby Size Information */}
+          <div className="mt-4 space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-gray-700">Current size:</span>
+              <span className="font-medium text-gray-900">{babySize.size}</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-gray-700">Length:</span>
+              <span className="font-medium text-gray-900">{babySize.length}</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-gray-700">Weight:</span>
+              <span className="font-medium text-gray-900">{babySize.weight}</span>
+            </div>
+
+            {/* Show LMP-based size if different from ultrasound-based size */}
+            {ultrasoundAdjustment !== undefined && (
+              <div className="mt-3 pt-3 border-t border-gray-100">
+                <p className="text-xs text-gray-500 mb-2">LMP-based size (for reference):</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-700">Size:</span>
+                  <span className="font-medium text-gray-900">{lmpBabySize.size}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-700">Length:</span>
+                  <span className="font-medium text-gray-900">{lmpBabySize.length}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-700">Weight:</span>
+                  <span className="font-medium text-gray-900">{lmpBabySize.weight}</span>
+                </div>
+                <p className="text-xs text-gray-500 mt-2">
+                  Baby is measuring {ultrasoundAdjustment} week{ultrasoundAdjustment !== 1 ? 's' : ''} ahead
+                </p>
               </div>
             )}
           </div>
