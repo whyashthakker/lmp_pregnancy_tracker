@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { format, isValid, parse } from 'date-fns';
+import { format, isValid, parse, differenceInDays, addDays } from 'date-fns';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -25,7 +25,8 @@ import {
   getBabySize,
   getWeeklyInfo,
   getCriticalDates,
-  extractNumeric
+  extractNumeric,
+  calculateAdjustedSuccessRate
 } from './utils/pregnancy-calculations';
 
 // Import components
@@ -34,6 +35,7 @@ import WeeklyInsights from './weekly-insights/weekly-insights';
 import PartnerTips from './weekly-insights/partner-tips';
 import RecentSymptoms from './symptoms/recent-symptoms';
 import SymptomForm from './symptoms/symptom-form';
+import UltrasoundMeasurements from './medical/ultrasound-measurements';
 
 // Import medical components
 import VitalSignsFormComponent from './medical/vital-signs-form';
@@ -53,7 +55,9 @@ const DEFAULT_PREGNANCY_DATA: PregnancyData = {
   medicalNotes: [],
   symptoms: [],
   appointments: [],
-  customMilestones: []
+  customMilestones: [],
+  ultrasoundMeasurements: [],
+  hasHeartbeat: false
 };
 
 const PregnancyTracker: React.FC = () => {
@@ -76,7 +80,13 @@ const PregnancyTracker: React.FC = () => {
   const { weeksPregnant, daysRemaining, progressPercentage } = calculatePregnancyProgress(lmpDate);
   const trimester = getCurrentTrimester(weeksPregnant);
   const babySize = getBabySize(weeksPregnant, daysRemaining);
-  const weeklyInfo = getWeeklyInfo(weeksPregnant);
+  const weeklyInfo = getWeeklyInfo(weeksPregnant) || {
+    developmentHighlights: [],
+    symptoms: '',
+    husbandTips: '',
+    nutrition: '',
+    exercise: ''
+  };
   
   // State for heartbeat confirmation (now only used by MiscarriageRisk component)
   const [hasHeartbeat, setHasHeartbeat] = useState(false);
@@ -160,10 +170,8 @@ const PregnancyTracker: React.FC = () => {
   
   // Handle delete vital sign
   const handleDeleteVitalSign = (id: string) => {
-    setPregnancyData(prev => ({
-      ...prev,
-      vitalSigns: prev.vitalSigns.filter(vs => vs.id !== id)
-    }));
+    const updatedVitalSigns = pregnancyData.vitalSigns.filter(vs => vs.id !== id);
+    saveToStorage({ vitalSigns: updatedVitalSigns });
   };
   
   // Handle add symptom
@@ -175,18 +183,14 @@ const PregnancyTracker: React.FC = () => {
       severity,
       notes
     };
-    setPregnancyData(prev => ({
-      ...prev,
-      symptoms: [...prev.symptoms, newSymptom]
-    }));
+    const updatedSymptoms = [...pregnancyData.symptoms, newSymptom];
+    saveToStorage({ symptoms: updatedSymptoms });
   };
   
   // Handle delete symptom
   const handleDeleteSymptom = (id: string) => {
-    setPregnancyData(prev => ({
-      ...prev,
-      symptoms: prev.symptoms.filter(s => s.id !== id)
-    }));
+    const updatedSymptoms = pregnancyData.symptoms.filter(s => s.id !== id);
+    saveToStorage({ symptoms: updatedSymptoms });
   };
 
   // Handle clear all data
@@ -207,6 +211,57 @@ const PregnancyTracker: React.FC = () => {
   // Add a function to handle heartbeat changes from the MiscarriageRisk component
   const handleHeartbeatChange = (hasHeartbeat: boolean) => {
     setHasHeartbeat(hasHeartbeat);
+    // Save heartbeat status to localStorage
+    const updatedData = { ...pregnancyData, hasHeartbeat };
+    localStorage.setItem('pregnancyData', JSON.stringify(updatedData));
+  };
+
+  // Handle add ultrasound measurement
+  const handleAddUltrasoundMeasurement = (measurement: {
+    date: string;
+    weeksAhead: number;
+    daysAhead: number;
+    notes?: string;
+  }) => {
+    const updatedMeasurements = [...(pregnancyData.ultrasoundMeasurements || []), measurement];
+    saveToStorage({ ultrasoundMeasurements: updatedMeasurements });
+  };
+
+  // Calculate adjusted weeks based on ultrasound measurements
+  const getAdjustedWeeks = () => {
+    if (!pregnancyData.ultrasoundMeasurements?.length) {
+      return weeksPregnant;
+    }
+
+    // Get the most recent ultrasound measurement
+    const latestMeasurement = pregnancyData.ultrasoundMeasurements.reduce((latest, current) => {
+      return new Date(current.date) > new Date(latest.date) ? current : latest;
+    });
+
+    // Calculate days ahead
+    const daysAhead = (latestMeasurement.weeksAhead * 7) + latestMeasurement.daysAhead;
+
+    // Calculate the difference between ultrasound date and LMP date
+    const ultrasoundDate = new Date(latestMeasurement.date);
+    const daysSinceUltrasound = differenceInDays(new Date(), ultrasoundDate);
+
+    // Add the days ahead to the ultrasound date
+    const adjustedDate = addDays(ultrasoundDate, daysAhead);
+    
+    // Calculate weeks from adjusted date
+    const totalDaysPregnant = differenceInDays(new Date(), adjustedDate);
+    return Math.floor(totalDaysPregnant / 7);
+  };
+
+  // Use adjusted weeks for calculations
+  const adjustedWeeks = getAdjustedWeeks();
+  const adjustedBabySize = getBabySize(adjustedWeeks, daysRemaining);
+  const adjustedWeeklyInfo = getWeeklyInfo(adjustedWeeks) || {
+    developmentHighlights: [],
+    symptoms: '',
+    husbandTips: '',
+    nutrition: '',
+    exercise: ''
   };
 
   return (
@@ -264,32 +319,33 @@ const PregnancyTracker: React.FC = () => {
         <TabsContent value="dashboard" className="space-y-6">
           {/* Progress Dashboard */}
           <ProgressDashboard
-            weeksPregnant={weeksPregnant}
+            weeksPregnant={adjustedWeeks}
             daysRemaining={daysRemaining}
             progressPercentage={progressPercentage}
             lmpDate={lmpDate}
             dueDate={dueDate}
-            babySize={babySize}
+            babySize={adjustedBabySize}
             trimester={trimester}
+            successRate={calculateAdjustedSuccessRate(adjustedWeeks)}
           />
           
           {/* Miscarriage Risk (Stability) */}
           <MiscarriageRisk
-            weeksPregnant={weeksPregnant}
+            weeksPregnant={adjustedWeeks}
             hasHeartbeat={hasHeartbeat}
             onHeartbeatChange={handleHeartbeatChange}
           />
           
           {/* Weekly Insights */}
           <WeeklyInsights
-            weeklyInfo={weeklyInfo}
-            weeksPregnant={weeksPregnant}
+            weeklyInfo={adjustedWeeklyInfo}
+            weeksPregnant={adjustedWeeks}
           />
           
           {/* Partner Tips */}
           <PartnerTips
-            tips={weeklyInfo.husbandTips}
-            weeksPregnant={weeksPregnant}
+            tips={adjustedWeeklyInfo?.husbandTips || ''}
+            weeksPregnant={adjustedWeeks}
           />
         </TabsContent>
         
@@ -298,7 +354,7 @@ const PregnancyTracker: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Recent Vital Signs */}
             <RecentVitalSigns
-              vitalSigns={pregnancyData.vitalSigns}
+              vitalSigns={pregnancyData.vitalSigns || []}
               onDelete={handleDeleteVitalSign}
             />
             
@@ -308,6 +364,14 @@ const PregnancyTracker: React.FC = () => {
               onChange={handleVitalSignsChange}
               onSubmit={handleVitalSignsUpdate}
             />
+
+            {/* Ultrasound Measurements */}
+            <div className="lg:col-span-2">
+              <UltrasoundMeasurements
+                measurements={pregnancyData.ultrasoundMeasurements || []}
+                onAddMeasurement={handleAddUltrasoundMeasurement}
+              />
+            </div>
           </div>
         </TabsContent>
         
@@ -316,7 +380,7 @@ const PregnancyTracker: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Recent Symptoms */}
             <RecentSymptoms
-              symptoms={pregnancyData.symptoms}
+              symptoms={pregnancyData.symptoms || []}
               onDeleteSymptom={handleDeleteSymptom}
             />
             

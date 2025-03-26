@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { format } from 'date-fns';
-import { Calendar } from 'lucide-react';
+import { Calendar, Info } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -17,6 +17,7 @@ interface ProgressDashboardProps {
   dueDate: Date;
   babySize: BabySize;
   trimester: number;
+  successRate: number;
 }
 
 const ProgressDashboard: React.FC<ProgressDashboardProps> = ({
@@ -26,8 +27,25 @@ const ProgressDashboard: React.FC<ProgressDashboardProps> = ({
   lmpDate,
   dueDate,
   babySize,
-  trimester
+  trimester,
+  successRate
 }) => {
+  const getMessage = () => {
+    if (progressPercentage < 20) {
+      return "You're in the early stages of pregnancy.";
+    } else if (progressPercentage < 40) {
+      return "You're in the middle of pregnancy.";
+    } else if (progressPercentage < 60) {
+      return "You're in the late stages of pregnancy.";
+    } else if (progressPercentage < 80) {
+      return "You're in the early stages of labor.";
+    } else if (progressPercentage < 100) {
+      return "You're in the late stages of labor.";
+    } else {
+      return "You've given birth!";
+    }
+  };
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
       {/* Current Progress Card */}
@@ -147,6 +165,39 @@ const ProgressDashboard: React.FC<ProgressDashboardProps> = ({
                 </div>
               </div>
             )}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Success Rate Card */}
+      <Card className="border-none shadow-md md:col-span-3 hover:shadow-lg transition-shadow">
+        <CardContent className="p-4 md:p-6">
+          <div className="space-y-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm text-gray-700">Current stability rate:</span>
+              <span className="font-semibold text-green-600">{successRate.toFixed(1)}%</span>
+            </div>
+            
+            <div className="w-full bg-gray-100 rounded-full h-2.5">
+              <div 
+                className="bg-green-500 h-2.5 rounded-full" 
+                style={{ width: `${successRate}%` }}
+              ></div>
+            </div>
+            
+            <p className="text-sm text-gray-700">{getMessage()}</p>
+            
+            {/* Ultrasound Measurement Note */}
+            <div className="mt-3 p-3 bg-blue-50 border border-blue-100 rounded-lg">
+              <div className="flex items-start gap-2">
+                <Info className="text-blue-600 mt-0.5" size={14} />
+                <p className="text-xs text-blue-800">
+                  <strong>Note about measurements:</strong> The baby&apos;s size shown here is based on your LMP date. 
+                  Ultrasound measurements may show your baby measuring ahead or behind these estimates, which is normal. 
+                  Your healthcare provider will help determine if any adjustments to your due date are needed based on ultrasound findings.
+                </p>
+              </div>
+            </div>
           </div>
         </CardContent>
       </Card>

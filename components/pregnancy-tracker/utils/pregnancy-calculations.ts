@@ -233,4 +233,21 @@ export const generateFetalGrowthData = (): FetalGrowthData[] => {
 export const extractNumeric = (str: string): number => {
   const match = str.match(/[\d.]+/);
   return match ? parseFloat(match[0]) : 0;
+};
+
+/**
+ * Calculate the adjusted success rate based on weeks pregnant and selected factors
+ */
+export const calculateAdjustedSuccessRate = (weeksPregnant: number): number => {
+  // Calculate base success rate based on weeks
+  let baseRate = 0;
+  if (weeksPregnant < 6) baseRate = 60;
+  else if (weeksPregnant < 8) baseRate = 75;
+  else if (weeksPregnant < 10) baseRate = 85;
+  else if (weeksPregnant < 12) baseRate = 90;
+  else if (weeksPregnant < 14) baseRate = 95;
+  else if (weeksPregnant < 20) baseRate = 98;
+  else baseRate = 99.5; // After 20 weeks
+
+  return baseRate;
 }; 

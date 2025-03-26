@@ -67,6 +67,13 @@ export interface PregnancyData {
   symptoms: SymptomEntry[];
   appointments: MilestoneDate[];
   customMilestones: MilestoneDate[];
+  hasHeartbeat: boolean;
+  ultrasoundMeasurements: {
+    date: string;
+    weeksAhead: number;
+    daysAhead: number;
+    notes?: string;
+  }[];
 }
 
 export interface VitalSignsForm {
