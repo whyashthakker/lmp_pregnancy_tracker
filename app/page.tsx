@@ -1,5 +1,4 @@
 import PregnancyTracker from '@/components/pregnancy-tracker';
-import { Baby, Heart, Calendar, Sparkles } from 'lucide-react';
 import { Metadata, Viewport } from 'next';
 
 export const viewport: Viewport = {

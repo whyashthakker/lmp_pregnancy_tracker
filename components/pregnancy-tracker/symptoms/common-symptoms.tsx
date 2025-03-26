@@ -49,19 +49,6 @@ const CommonSymptoms: React.FC<CommonSymptomsProps> = ({ trimester }) => {
     { name: "Varicose veins", description: "Swollen, visible veins in legs", severity: "Common", management: "Avoid standing for long periods. Elevate legs. Consider compression stockings." }
   ];
 
-  const getSymptomsByTrimester = () => {
-    switch (trimester) {
-      case 1:
-        return firstTrimesterSymptoms;
-      case 2:
-        return secondTrimesterSymptoms;
-      case 3:
-        return thirdTrimesterSymptoms;
-      default:
-        return firstTrimesterSymptoms;
-    }
-  };
-
   const [expandedSymptom, setExpandedSymptom] = React.useState<string | null>(null);
 
   const toggleSymptom = (symptomName: string) => {

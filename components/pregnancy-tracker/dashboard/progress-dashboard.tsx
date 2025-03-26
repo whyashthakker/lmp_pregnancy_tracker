@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { BabySize } from '../types';
+import Image from 'next/image';
 
 interface ProgressDashboardProps {
   weeksPregnant: number;
@@ -136,9 +137,11 @@ const ProgressDashboard: React.FC<ProgressDashboardProps> = ({
             {babySize.imageUrl && (
               <div className="flex-shrink-0 flex items-center justify-center">
                 <div className="bg-pink-50 p-4 rounded-full w-32 h-32 md:w-40 md:h-40 flex items-center justify-center">
-                  <img 
+                  <Image 
                     src={babySize.imageUrl} 
                     alt={`Baby at week ${weeksPregnant}`} 
+                    width={160}
+                    height={160}
                     className="max-w-full max-h-full object-contain"
                   />
                 </div>

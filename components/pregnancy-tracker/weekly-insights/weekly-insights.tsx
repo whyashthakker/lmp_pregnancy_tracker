@@ -35,7 +35,7 @@ const WeeklyInsights: React.FC<WeeklyInsightsProps> = ({ weeklyInfo, weeksPregna
               <div className="bg-purple-100 p-1.5 md:p-2 rounded-full">
                 <Brain className="text-purple-600" size={16} />
               </div>
-              <h4 className="font-medium text-purple-900 text-sm">Baby's Development</h4>
+              <h4 className="font-medium text-purple-900 text-sm">Baby&apos;s Development</h4>
             </div>
             
             <ul className="list-disc pl-5 space-y-1.5 md:space-y-2">

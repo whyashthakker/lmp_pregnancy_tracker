@@ -2,35 +2,18 @@
 
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { differenceInDays, format, isValid, parse } from 'date-fns';
+import { format, isValid, parse } from 'date-fns';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Calendar, CalendarDays, Stethoscope, FileText, Activity, Heart } from 'lucide-react';
-import { Switch } from "@/components/ui/switch";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { 
-  AlertDialog, 
-  AlertDialogAction, 
-  AlertDialogCancel, 
-  AlertDialogContent, 
-  AlertDialogDescription, 
-  AlertDialogFooter, 
-  AlertDialogHeader, 
-  AlertDialogTitle, 
-  AlertDialogTrigger 
-} from "@/components/ui/alert-dialog";
-import { Progress } from "@/components/ui/progress";
-import { Slider } from "@/components/ui/slider";
+import { Calendar, CalendarDays } from 'lucide-react';
+
 
 // Import types
 import { 
   PregnancyData, 
   VitalSigns, 
-  MedicalNote, 
   SymptomEntry, 
-  MilestoneDate,
   VitalSignsForm as VitalSignsFormType
 } from './types';
 
@@ -86,9 +69,6 @@ const PregnancyTracker: React.FC = () => {
     heartRate: '',
     note: ''
   });
-  const [medicalNoteInput, setMedicalNoteInput] = useState('');
-  const [doctorInput, setDoctorInput] = useState('');
-  const [noteCategoryInput, setNoteCategoryInput] = useState<'general' | 'test' | 'prescription' | 'concern' | 'advice'>('general');
   
   // Derived state
   const lmpDate = pregnancyData.lmpDate ? new Date(pregnancyData.lmpDate) : new Date();
@@ -180,67 +160,33 @@ const PregnancyTracker: React.FC = () => {
   
   // Handle delete vital sign
   const handleDeleteVitalSign = (id: string) => {
-    const updatedVitalSigns = pregnancyData.vitalSigns.filter(vs => vs.id !== id);
-    saveToStorage({ vitalSigns: updatedVitalSigns });
-  };
-  
-  // Handle add medical note
-  const handleAddNote = () => {
-    if (medicalNoteInput.trim() && doctorInput.trim()) {
-      const newNote: MedicalNote = {
-        id: uuidv4(),
-        date: new Date().toISOString(),
-        note: medicalNoteInput,
-        doctor: doctorInput,
-        category: noteCategoryInput
-      };
-      
-      const updatedNotes = [...pregnancyData.medicalNotes, newNote];
-      saveToStorage({ medicalNotes: updatedNotes });
-      
-      // Reset form
-      setMedicalNoteInput('');
-      setDoctorInput('');
-      setNoteCategoryInput('general');
-    }
-  };
-  
-  // Handle delete medical note
-  const handleDeleteNote = (id: string) => {
-    const updatedNotes = pregnancyData.medicalNotes.filter(note => note.id !== id);
-    saveToStorage({ medicalNotes: updatedNotes });
+    setPregnancyData(prev => ({
+      ...prev,
+      vitalSigns: prev.vitalSigns.filter(vs => vs.id !== id)
+    }));
   };
   
   // Handle add symptom
   const handleAddSymptom = (symptom: string, severity: number, notes?: string) => {
     const newSymptom: SymptomEntry = {
       id: uuidv4(),
+      date: new Date().toISOString(),
       symptom,
       severity,
-      date: new Date().toISOString(),
       notes
     };
-    
-    const updatedSymptoms = [...pregnancyData.symptoms, newSymptom];
-    saveToStorage({ symptoms: updatedSymptoms });
+    setPregnancyData(prev => ({
+      ...prev,
+      symptoms: [...prev.symptoms, newSymptom]
+    }));
   };
   
   // Handle delete symptom
   const handleDeleteSymptom = (id: string) => {
-    const updatedSymptoms = pregnancyData.symptoms.filter(symptom => symptom.id !== id);
-    saveToStorage({ symptoms: updatedSymptoms });
-  };
-  
-  // Handle appointment complete
-  const handleAppointmentComplete = (date: Date, title: string) => {
-    const updatedAppointments = pregnancyData.appointments.map(appointment => {
-      if (appointment.date.getTime() === date.getTime() && appointment.title === title) {
-        return { ...appointment, completed: !appointment.completed };
-      }
-      return appointment;
-    });
-    
-    saveToStorage({ appointments: updatedAppointments });
+    setPregnancyData(prev => ({
+      ...prev,
+      symptoms: prev.symptoms.filter(s => s.id !== id)
+    }));
   };
 
   // Handle clear all data
@@ -255,9 +201,6 @@ const PregnancyTracker: React.FC = () => {
       heartRate: '',
       note: ''
     });
-    setMedicalNoteInput('');
-    setDoctorInput('');
-    setNoteCategoryInput('general');
     setHasHeartbeat(false);
   };
 

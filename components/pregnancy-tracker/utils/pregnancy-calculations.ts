@@ -1,4 +1,4 @@
-import { addDays, differenceInDays, format, addWeeks } from 'date-fns';
+import { addDays, differenceInDays, addWeeks } from 'date-fns';
 import { BabySize, WeeklyInfo, MilestoneDate, FetalGrowthData } from '../types';
 import { babySizes, weeklyNotes } from './data';
 

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Info, Check, X } from 'lucide-react';
+import { Heart, Info, Check } from 'lucide-react';
 import { 
   Tooltip, 
   TooltipContent, 
@@ -250,7 +250,7 @@ const MiscarriageRisk: React.FC<MiscarriageRiskProps> = ({
 
   // Calculate adjusted success rate based on selected factors
   const calculateAdjustedSuccessRate = (): number => {
-    let baseRate = getBaseSuccessRate();
+    const baseRate = getBaseSuccessRate();
     let adjustment = 0;
     
     // Get all selected factors
