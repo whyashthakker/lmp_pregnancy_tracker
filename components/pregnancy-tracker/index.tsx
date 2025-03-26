@@ -110,13 +110,6 @@ const PregnancyTracker: React.FC = () => {
   const ultrasoundBasedWeeks = getAdjustedWeeks();
   const lmpBabySize = getBabySize(lmpBasedWeeks, daysRemaining);
   const ultrasoundBabySize = getBabySize(ultrasoundBasedWeeks, daysRemaining);
-  const lmpWeeklyInfo = getWeeklyInfo(lmpBasedWeeks) || {
-    developmentHighlights: [],
-    symptoms: '',
-    husbandTips: '',
-    nutrition: '',
-    exercise: ''
-  };
   const ultrasoundWeeklyInfo = getWeeklyInfo(ultrasoundBasedWeeks) || {
     developmentHighlights: [],
     symptoms: '',
