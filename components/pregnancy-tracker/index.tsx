@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { format, isValid, parse, differenceInDays, addDays } from 'date-fns';
+import { format, isValid, parse } from 'date-fns';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -35,7 +35,6 @@ import WeeklyInsights from './weekly-insights/weekly-insights';
 import PartnerTips from './weekly-insights/partner-tips';
 import RecentSymptoms from './symptoms/recent-symptoms';
 import SymptomForm from './symptoms/symptom-form';
-import UltrasoundMeasurements from './medical/ultrasound-measurements';
 
 // Import medical components
 import VitalSignsFormComponent from './medical/vital-signs-form';
@@ -56,7 +55,6 @@ const DEFAULT_PREGNANCY_DATA: PregnancyData = {
   symptoms: [],
   appointments: [],
   customMilestones: [],
-  ultrasoundMeasurements: [],
   hasHeartbeat: false
 };
 
@@ -80,37 +78,9 @@ const PregnancyTracker: React.FC = () => {
   const { weeksPregnant, daysRemaining, progressPercentage } = calculatePregnancyProgress(lmpDate);
   const trimester = getCurrentTrimester(weeksPregnant);
   
-  // Calculate adjusted weeks based on ultrasound measurements
-  const getAdjustedWeeks = () => {
-    if (!pregnancyData.ultrasoundMeasurements?.length) {
-      return weeksPregnant;
-    }
 
-    // Get the most recent ultrasound measurement
-    const latestMeasurement = pregnancyData.ultrasoundMeasurements.reduce((latest, current) => {
-      return new Date(current.date) > new Date(latest.date) ? current : latest;
-    });
-
-    // Calculate days ahead
-    const daysAhead = (latestMeasurement.weeksAhead * 7) + latestMeasurement.daysAhead;
-
-    // Calculate the difference between ultrasound date and LMP date
-    const ultrasoundDate = new Date(latestMeasurement.date);
-    
-    // Add the days ahead to the ultrasound date
-    const adjustedDate = addDays(ultrasoundDate, daysAhead);
-    
-    // Calculate weeks from adjusted date
-    const totalDaysPregnant = differenceInDays(new Date(), adjustedDate);
-    return Math.floor(totalDaysPregnant / 7);
-  };
-
-  // Calculate both LMP and ultrasound-based measurements
-  const lmpBasedWeeks = weeksPregnant;
-  const ultrasoundBasedWeeks = getAdjustedWeeks();
-  const lmpBabySize = getBabySize(lmpBasedWeeks, daysRemaining);
-  const ultrasoundBabySize = getBabySize(ultrasoundBasedWeeks, daysRemaining);
-  const ultrasoundWeeklyInfo = getWeeklyInfo(ultrasoundBasedWeeks) || {
+  const babySize = getBabySize(weeksPregnant, daysRemaining);
+  const weeklyInfo = getWeeklyInfo(weeksPregnant) || {
     developmentHighlights: [],
     symptoms: '',
     husbandTips: '',
@@ -246,22 +216,12 @@ const PregnancyTracker: React.FC = () => {
     localStorage.setItem('pregnancyData', JSON.stringify(updatedData));
   };
 
-  // Handle add ultrasound measurement
-  const handleAddUltrasoundMeasurement = (measurement: {
-    date: string;
-    weeksAhead: number;
-    daysAhead: number;
-    notes?: string;
-  }) => {
-    const updatedMeasurements = [...(pregnancyData.ultrasoundMeasurements || []), measurement];
-    saveToStorage({ ultrasoundMeasurements: updatedMeasurements });
-  };
 
   return (
     <div className="container mx-auto py-4 md:py-6 px-3 md:px-4 max-w-6xl">
       <div className="mb-4 md:mb-6">
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1 md:mb-2">Pregnancy Tracker</h1>
-        <p className="text-sm md:text-base text-gray-600">Track your pregnancy journey week by week</p>
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1 md:mb-2">Your Pregnancy Journey</h1>
+        <p className="text-sm md:text-base text-gray-600">Simple tracking for you and your baby</p>
       </div>
       
       {/* LMP Date Input */}
@@ -270,7 +230,7 @@ const PregnancyTracker: React.FC = () => {
           <div className="flex flex-col md:flex-row md:items-end gap-3 md:gap-4">
             <div className="flex-1">
               <label htmlFor="lmpDate" className="block text-xs md:text-sm font-medium text-gray-700 mb-1">
-                First Day of Last Menstrual Period
+                When was your last period?
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -312,39 +272,33 @@ const PregnancyTracker: React.FC = () => {
         <TabsContent value="dashboard" className="space-y-6">
           {/* Progress Dashboard */}
           <ProgressDashboard
-            weeksPregnant={ultrasoundBasedWeeks}
+            weeksPregnant={weeksPregnant}
             daysRemaining={daysRemaining}
             progressPercentage={progressPercentage}
             lmpDate={lmpDate}
             dueDate={dueDate}
-            babySize={ultrasoundBabySize}
-            lmpBabySize={lmpBabySize}
+            babySize={babySize}
             trimester={trimester}
-            successRate={calculateAdjustedSuccessRate(ultrasoundBasedWeeks)}
-            ultrasoundAdjustment={pregnancyData.ultrasoundMeasurements?.length ? 
-              pregnancyData.ultrasoundMeasurements.reduce((latest, current) => 
-                new Date(current.date) > new Date(latest.date) ? current : latest
-              ).weeksAhead : undefined
-            }
+            successRate={calculateAdjustedSuccessRate(weeksPregnant)}
           />
           
           {/* Miscarriage Risk (Stability) */}
           <MiscarriageRisk
-            weeksPregnant={ultrasoundBasedWeeks}
+            weeksPregnant={weeksPregnant}
             hasHeartbeat={hasHeartbeat}
             onHeartbeatChange={handleHeartbeatChange}
           />
           
           {/* Weekly Insights */}
           <WeeklyInsights
-            weeklyInfo={ultrasoundWeeklyInfo}
-            weeksPregnant={ultrasoundBasedWeeks}
+            weeklyInfo={weeklyInfo}
+            weeksPregnant={weeksPregnant}
           />
           
           {/* Partner Tips */}
           <PartnerTips
-            tips={ultrasoundWeeklyInfo?.husbandTips || ''}
-            weeksPregnant={ultrasoundBasedWeeks}
+            tips={weeklyInfo?.husbandTips || ''}
+            weeksPregnant={weeksPregnant}
           />
         </TabsContent>
         
@@ -364,13 +318,6 @@ const PregnancyTracker: React.FC = () => {
               onSubmit={handleVitalSignsUpdate}
             />
 
-            {/* Ultrasound Measurements */}
-            <div className="lg:col-span-2">
-              <UltrasoundMeasurements
-                measurements={pregnancyData.ultrasoundMeasurements || []}
-                onAddMeasurement={handleAddUltrasoundMeasurement}
-              />
-            </div>
           </div>
         </TabsContent>
         

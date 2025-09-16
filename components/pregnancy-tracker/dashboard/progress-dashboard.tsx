@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { format } from 'date-fns';
-import { Calendar, Info } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -16,10 +16,8 @@ interface ProgressDashboardProps {
   lmpDate: Date;
   dueDate: Date;
   babySize: BabySize;
-  lmpBabySize: BabySize;
   trimester: number;
   successRate: number;
-  ultrasoundAdjustment?: number;
 }
 
 const ProgressDashboard: React.FC<ProgressDashboardProps> = ({
@@ -29,10 +27,8 @@ const ProgressDashboard: React.FC<ProgressDashboardProps> = ({
   lmpDate,
   dueDate,
   babySize,
-  lmpBabySize,
   trimester,
-  successRate,
-  ultrasoundAdjustment
+  successRate
 }) => {
   const getMessage = () => {
     if (progressPercentage < 20) {
@@ -186,27 +182,6 @@ const ProgressDashboard: React.FC<ProgressDashboardProps> = ({
               <span className="font-medium text-gray-900">{babySize.weight}</span>
             </div>
 
-            {/* Show LMP-based size if different from ultrasound-based size */}
-            {ultrasoundAdjustment !== undefined && (
-              <div className="mt-3 pt-3 border-t border-gray-100">
-                <p className="text-xs text-gray-500 mb-2">LMP-based size (for reference):</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-700">Size:</span>
-                  <span className="font-medium text-gray-900">{lmpBabySize.size}</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-700">Length:</span>
-                  <span className="font-medium text-gray-900">{lmpBabySize.length}</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-700">Weight:</span>
-                  <span className="font-medium text-gray-900">{lmpBabySize.weight}</span>
-                </div>
-                <p className="text-xs text-gray-500 mt-2">
-                  Baby is measuring {ultrasoundAdjustment} week{ultrasoundAdjustment !== 1 ? 's' : ''} ahead
-                </p>
-              </div>
-            )}
           </div>
         </CardContent>
       </Card>
@@ -230,16 +205,6 @@ const ProgressDashboard: React.FC<ProgressDashboardProps> = ({
             <p className="text-sm text-gray-700">{getMessage()}</p>
             
             {/* Ultrasound Measurement Note */}
-            <div className="mt-3 p-3 bg-blue-50 border border-blue-100 rounded-lg">
-              <div className="flex items-start gap-2">
-                <Info className="text-blue-600 mt-0.5" size={14} />
-                <p className="text-xs text-blue-800">
-                  <strong>Note about measurements:</strong> The baby&apos;s size shown here is based on your LMP date. 
-                  Ultrasound measurements may show your baby measuring ahead or behind these estimates, which is normal. 
-                  Your healthcare provider will help determine if any adjustments to your due date are needed based on ultrasound findings.
-                </p>
-              </div>
-            </div>
           </div>
         </CardContent>
       </Card>
