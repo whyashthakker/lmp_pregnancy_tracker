@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { PostHogProvider } from "../components/PostHogProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,12 +17,12 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: {
     default: "Pregnancy Tracker - Track Your Journey Week by Week",
-    template: "%s | Pregnancy Tracker"
+    template: "%s | Pregnancy Tracker",
   },
   description: "Simple and intuitive pregnancy tracking app. Monitor your baby's growth, track symptoms, and stay informed about your pregnancy journey week by week.",
   keywords: [
     "pregnancy tracker",
-    "pregnancy app", 
+    "pregnancy app",
     "baby tracker",
     "pregnancy calendar",
     "prenatal tracker",
@@ -90,24 +91,24 @@ export default function RootLayout({
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Pregnancy Tracker",
-    "description": "Simple and intuitive pregnancy tracking app. Monitor your baby's growth, track symptoms, and stay informed about your pregnancy journey week by week.",
-    "url": "https://www.egspect.com",
-    "applicationCategory": "HealthApplication",
-    "operatingSystem": "Web Browser",
-    "offers": {
+    name: "Pregnancy Tracker",
+    description: "Simple and intuitive pregnancy tracking app. Monitor your baby's growth, track symptoms, and stay informed about your pregnancy journey week by week.",
+    url: "https://www.egspect.com",
+    applicationCategory: "HealthApplication",
+    operatingSystem: "Web Browser",
+    offers: {
       "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+      price: "0",
+      priceCurrency: "USD",
     },
-    "featureList": [
+    featureList: [
       "Pregnancy timeline tracking",
-      "Baby development milestones", 
+      "Baby development milestones",
       "Symptom tracking",
       "Weekly pregnancy insights",
       "Partner tips",
-      "Medical records"
-    ]
+      "Medical records",
+    ],
   };
 
   return (
@@ -127,10 +128,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <PostHogProvider>
+          {children}
+        </PostHogProvider>
       </body>
     </html>
   );
