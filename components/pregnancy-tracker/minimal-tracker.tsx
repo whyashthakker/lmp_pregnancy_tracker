@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { format } from 'date-fns';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -52,6 +53,7 @@ const MinimalPregnancyTracker: React.FC = () => {
   const [isEditingDate, setIsEditingDate] = useState(false);
   const [showSymptomForm, setShowSymptomForm] = useState(false);
   const [newSymptom, setNewSymptom] = useState({ name: '', severity: 1, notes: '' });
+  const [calendarMonth, setCalendarMonth] = useState<Date>();
 
   // Derived state
   const lmpDate = pregnancyData.lmpDate ? new Date(pregnancyData.lmpDate) : null;
@@ -70,7 +72,9 @@ const MinimalPregnancyTracker: React.FC = () => {
         const parsedData = JSON.parse(savedData);
         setPregnancyData(parsedData);
         if (parsedData.lmpDate) {
-          setSelectedDate(new Date(parsedData.lmpDate));
+          const lmpDate = new Date(parsedData.lmpDate);
+          setSelectedDate(lmpDate);
+          setCalendarMonth(lmpDate);
         }
       } catch (error) {
         console.error('Error parsing saved pregnancy data:', error);
@@ -126,15 +130,20 @@ const MinimalPregnancyTracker: React.FC = () => {
       <div className="bg-white/60 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-6 py-6">
           <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-3xl font-light text-gray-800">
-                Your Journey
-              </h1>
-              {lmpDate && (
-                <p className="text-gray-500 mt-1">
-                  Week {weeksPregnant} • {format(new Date(), 'MMMM d, yyyy')}
-                </p>
-              )}
+            <div className="flex items-center gap-3">
+              <Image src="/baby.svg" alt="Pregnancy Tracker" width={32} height={32} className="rounded-full" />
+              <div>
+                <h1 className="text-2xl font-light text-gray-800">
+                  Your Journey
+                </h1>
+                {lmpDate ? (
+                  <p className="text-gray-500 text-sm">
+                    Week {weeksPregnant} • {format(new Date(), 'MMMM d, yyyy')}
+                  </p>
+                ) : (
+                  <p className="text-gray-500 text-sm">Pregnancy Tracker</p>
+                )}
+              </div>
             </div>
             <div className="flex items-center gap-6">
               <nav className="hidden sm:flex items-center gap-6">
@@ -183,7 +192,10 @@ const MinimalPregnancyTracker: React.FC = () => {
                     selected={selectedDate}
                     onSelect={handleDateSelect}
                     disabled={(date) => date > new Date() || date < new Date("1900-01-01")}
-                    initialFocus
+                    month={calendarMonth}
+                    onMonthChange={setCalendarMonth}
+                    defaultMonth={selectedDate || calendarMonth}
+                    fixedWeeks
                   />
                 </PopoverContent>
               </Popover>
@@ -200,21 +212,24 @@ const MinimalPregnancyTracker: React.FC = () => {
               )}
             </div>
           ) : (
-            <div className="flex items-center justify-between py-8 border-b border-gray-100">
-              <div>
-                <p className="text-sm text-gray-500 uppercase tracking-wide">Last Period Started</p>
-                <p className="text-xl font-light text-gray-800">{format(lmpDate, "MMMM d, yyyy")}</p>
-                <p className="text-sm text-gray-500 mt-1">Due date: {dueDate ? format(dueDate, "MMMM d, yyyy") : "Unknown"}</p>
+            <div className="py-8 border-b border-gray-100">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm text-gray-500 uppercase tracking-wide">Last Period Started</p>
+                  <p className="text-xl font-light text-gray-800">{format(lmpDate, "MMMM d, yyyy")}</p>
+                  <p className="text-sm text-gray-500 mt-1">Due date: {dueDate ? format(dueDate, "MMMM d, yyyy") : "Unknown"}</p>
+                </div>
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  onClick={() => setIsEditingDate(true)}
+                  className="text-gray-500 hover:text-gray-700 shrink-0 self-start sm:self-center"
+                >
+                  <Edit3 className="w-4 h-4 mr-2" />
+                  <span className="hidden sm:inline">Edit Date</span>
+                  <span className="sm:hidden">Edit</span>
+                </Button>
               </div>
-              <Button 
-                variant="ghost" 
-                size="sm"
-                onClick={() => setIsEditingDate(true)}
-                className="text-gray-500 hover:text-gray-700"
-              >
-                <Edit3 className="w-4 h-4 mr-2" />
-                Edit Date
-              </Button>
             </div>
           )}
         </div>

@@ -58,6 +58,7 @@ const EnhancedPregnancyTracker: React.FC = () => {
   const [isEditingDate, setIsEditingDate] = useState(false);
   const [showSymptomForm, setShowSymptomForm] = useState(false);
   const [newSymptom, setNewSymptom] = useState({ name: '', severity: 1, notes: '' });
+  const [calendarMonth, setCalendarMonth] = useState<Date>();
 
   // Derived state
   const lmpDate = pregnancyData.lmpDate ? new Date(pregnancyData.lmpDate) : null;
@@ -76,7 +77,9 @@ const EnhancedPregnancyTracker: React.FC = () => {
         const parsedData = JSON.parse(savedData);
         setPregnancyData(parsedData);
         if (parsedData.lmpDate) {
-          setSelectedDate(new Date(parsedData.lmpDate));
+          const lmpDate = new Date(parsedData.lmpDate);
+          setSelectedDate(lmpDate);
+          setCalendarMonth(lmpDate);
         }
       } catch (error) {
         console.error('Error parsing saved pregnancy data:', error);
@@ -143,21 +146,23 @@ const EnhancedPregnancyTracker: React.FC = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-3">
-                <Image src="/baby.svg" alt="Baby Tracker" width={40} height={40} className="rounded-full" />
+                <Image src="/baby.svg" alt="Pregnancy Tracker" width={32} height={32} className="rounded-full" />
                 <div>
-                  <h1 className="text-2xl font-semibold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+                  <h1 className="text-xl font-semibold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
                     Your Journey
                   </h1>
-                  {lmpDate && (
-                    <p className="text-sm text-gray-500">
+                  {lmpDate ? (
+                    <p className="text-xs text-gray-500">
                       Week {weeksPregnant} • Day {daysRemaining + 1} • {format(new Date(), 'MMM d, yyyy')}
                     </p>
+                  ) : (
+                    <p className="text-xs text-gray-500">Pregnancy Tracker</p>
                   )}
                 </div>
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <nav className="hidden sm:flex items-center gap-6">
+              <nav className="flex items-center gap-6">
                 <Link href="/blog" className="text-gray-600 hover:text-pink-600 transition-colors text-sm font-medium">
                   Blog
                 </Link>
@@ -206,7 +211,10 @@ const EnhancedPregnancyTracker: React.FC = () => {
                     selected={selectedDate}
                     onSelect={handleDateSelect}
                     disabled={(date) => date > new Date() || date < new Date("1900-01-01")}
-                    initialFocus
+                    month={calendarMonth}
+                    onMonthChange={setCalendarMonth}
+                    defaultMonth={selectedDate || calendarMonth}
+                    fixedWeeks
                   />
                 </PopoverContent>
               </Popover>
@@ -227,15 +235,15 @@ const EnhancedPregnancyTracker: React.FC = () => {
           <>
             {/* Quick Info Bar */}
             <section className="mb-8 p-4 rounded-xl bg-white/60 backdrop-blur-sm border border-gray-100/60">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-6">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 flex-1 min-w-0">
                   <div className="text-sm">
                     <span className="text-gray-500">Started:</span>
-                    <span className="font-medium ml-2">{format(lmpDate, "MMM d, yyyy")}</span>
+                    <span className="font-medium ml-2 break-words">{format(lmpDate, "MMM d, yyyy")}</span>
                   </div>
                   <div className="text-sm">
                     <span className="text-gray-500">Due:</span>
-                    <span className="font-medium ml-2">{dueDate ? format(dueDate, "MMM d, yyyy") : "Unknown"}</span>
+                    <span className="font-medium ml-2 break-words">{dueDate ? format(dueDate, "MMM d, yyyy") : "Unknown"}</span>
                   </div>
                   <div className="text-sm">
                     <span className="text-gray-500">Progress:</span>
@@ -246,7 +254,7 @@ const EnhancedPregnancyTracker: React.FC = () => {
                   variant="ghost" 
                   size="sm"
                   onClick={() => setIsEditingDate(true)}
-                  className="text-gray-500 hover:text-gray-700 text-xs"
+                  className="text-gray-500 hover:text-gray-700 text-xs shrink-0 self-start sm:self-center"
                 >
                   <Edit3 className="w-3 h-3 mr-1" />
                   Edit

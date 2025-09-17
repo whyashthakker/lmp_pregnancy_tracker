@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Calendar, ArrowRight, Heart, Baby, Sparkles } from 'lucide-react';
+import { Navigation } from '@/components/ui/navigation';
 
 export const metadata: Metadata = {
   title: 'Pregnancy Blog - Tips, Guides & Insights',
@@ -68,35 +69,7 @@ const blogPosts = [
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
-      {/* Enhanced Header */}
-      <header className="bg-white/80 backdrop-blur-md border-b border-gray-200/60 sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <Link href="/" className="text-pink-600 hover:text-pink-700 font-medium flex items-center gap-2 transition-colors">
-                ← <span>Back to Tracker</span>
-              </Link>
-              <div className="hidden sm:block w-px h-6 bg-gray-300"></div>
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 flex items-center justify-center text-white text-sm font-bold">
-                  📚
-                </div>
-                <div>
-                  <h1 className="text-xl font-semibold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-                    Pregnancy Blog
-                  </h1>
-                  <p className="text-xs text-gray-500">Expert advice for your journey</p>
-                </div>
-              </div>
-            </div>
-            <nav className="hidden md:flex items-center gap-4">
-              <Link href="/about" className="text-gray-600 hover:text-pink-600 transition-colors text-sm font-medium">
-                About
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Navigation />
 
       <div className="max-w-6xl mx-auto px-6 py-16">
         {/* Hero Section */}
