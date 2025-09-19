@@ -3,8 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { format } from 'date-fns';
-import Link from 'next/link';
-import Image from 'next/image';
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -120,14 +118,6 @@ const EnhancedPregnancyTracker: React.FC = () => {
     setShowSymptomForm(false);
   };
 
-  const getTrimesterGradient = () => {
-    switch (trimester) {
-      case 1: return 'from-pink-400 to-rose-500';
-      case 2: return 'from-purple-400 to-indigo-500';
-      case 3: return 'from-blue-400 to-cyan-500';
-      default: return 'from-gray-400 to-gray-500';
-    }
-  };
 
   const getTrimesterBg = () => {
     switch (trimester) {
@@ -140,46 +130,6 @@ const EnhancedPregnancyTracker: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
-      {/* Enhanced Header */}
-      <header className="bg-white/80 backdrop-blur-md border-b border-gray-200/60 sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-3">
-                <Image src="/baby.svg" alt="Pregnancy Tracker" width={32} height={32} className="rounded-full" />
-                <div>
-                  <h1 className="text-xl font-semibold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-                    Your Journey
-                  </h1>
-                  {lmpDate ? (
-                    <p className="text-xs text-gray-500">
-                      Week {weeksPregnant} • Day {daysRemaining + 1} • {format(new Date(), 'MMM d, yyyy')}
-                    </p>
-                  ) : (
-                    <p className="text-xs text-gray-500">Pregnancy Tracker</p>
-                  )}
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <nav className="flex items-center gap-6">
-                <Link href="/blog" className="text-gray-600 hover:text-pink-600 transition-colors text-sm font-medium">
-                  Blog
-                </Link>
-                <Link href="/about" className="text-gray-600 hover:text-pink-600 transition-colors text-sm font-medium">
-                  About
-                </Link>
-              </nav>
-              {lmpDate && (
-                <div className={`px-3 py-1.5 rounded-full bg-gradient-to-r ${getTrimesterGradient()} text-white text-sm font-medium shadow-sm`}>
-                  {trimester === 1 ? '1st' : trimester === 2 ? '2nd' : '3rd'} Trimester
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </header>
-
       <main className="max-w-6xl mx-auto px-6 py-8">
         {/* Date Selection Section */}
         {!lmpDate || isEditingDate ? (
@@ -233,31 +183,21 @@ const EnhancedPregnancyTracker: React.FC = () => {
           </section>
         ) : (
           <>
-            {/* Quick Info Bar */}
-            <section className="mb-8 p-4 rounded-xl bg-white/60 backdrop-blur-sm border border-gray-100/60">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 flex-1 min-w-0">
-                  <div className="text-sm">
-                    <span className="text-gray-500">Started:</span>
-                    <span className="font-medium ml-2 break-words">{format(lmpDate, "MMM d, yyyy")}</span>
-                  </div>
-                  <div className="text-sm">
-                    <span className="text-gray-500">Due:</span>
-                    <span className="font-medium ml-2 break-words">{dueDate ? format(dueDate, "MMM d, yyyy") : "Unknown"}</span>
-                  </div>
-                  <div className="text-sm">
-                    <span className="text-gray-500">Progress:</span>
-                    <span className="font-medium ml-2">{Math.round(progressPercentage)}% complete</span>
-                  </div>
+            {/* Minimal Date Bar */}
+            <section className="mb-8 p-3 rounded-lg bg-white/40 backdrop-blur-sm border border-gray-100/40">
+              <div className="flex items-center justify-between">
+                <div className="text-sm text-gray-600">
+                  <span className="font-medium">{format(lmpDate, "MMM d, yyyy")}</span>
+                  <span className="text-gray-400 mx-2">•</span>
+                  <span>Week {weeksPregnant}</span>
                 </div>
                 <Button 
                   variant="ghost" 
                   size="sm"
                   onClick={() => setIsEditingDate(true)}
-                  className="text-gray-500 hover:text-gray-700 text-xs shrink-0 self-start sm:self-center"
+                  className="text-gray-400 hover:text-gray-600 text-xs p-1 h-6 w-6"
                 >
-                  <Edit3 className="w-3 h-3 mr-1" />
-                  Edit
+                  <Edit3 className="w-3 h-3" />
                 </Button>
               </div>
             </section>

@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Calendar, ArrowRight, Heart, Baby, Sparkles } from 'lucide-react';
-import { Navigation } from '@/components/ui/navigation';
 
 export const metadata: Metadata = {
   title: 'Pregnancy Blog - Tips, Guides & Insights',
@@ -11,10 +10,37 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    slug: 'pregnancy-symptoms-week-by-week',
+    title: 'Pregnancy Symptoms Week by Week: Complete Guide',
+    excerpt: 'Comprehensive guide to pregnancy symptoms week by week. Track normal symptoms, warning signs, and what to expect during each trimester.',
+    date: '2025-09-15',
+    readTime: '12 min read',
+    category: 'Symptoms',
+    icon: Heart
+  },
+  {
+    slug: 'pregnancy-due-date-calculator',
+    title: 'Pregnancy Due Date Calculator: Accurate Delivery Date Prediction',
+    excerpt: 'Calculate your pregnancy due date with our accurate due date calculator. Learn about LMP method, ultrasound dating, and factors affecting delivery timing.',
+    date: '2025-09-10',
+    readTime: '10 min read',
+    category: 'Calculator',
+    icon: Calendar
+  },
+  {
+    slug: 'third-trimester-symptoms',
+    title: 'Third Trimester Symptoms: Complete Guide to Weeks 28-40',
+    excerpt: 'Comprehensive guide to third trimester pregnancy symptoms including sleep issues, breathing problems, and signs of labor.',
+    date: '2025-09-05',
+    readTime: '14 min read',
+    category: 'Late Pregnancy',
+    icon: Baby
+  },
+  {
     slug: 'first-trimester-guide',
     title: 'Your First Trimester: What to Expect',
     excerpt: 'A comprehensive guide to navigating the first 12 weeks of pregnancy, from early symptoms to important milestones.',
-    date: '2024-01-15',
+    date: '2025-08-20',
     readTime: '8 min read',
     category: 'Guides',
     icon: Baby
@@ -23,7 +49,7 @@ const blogPosts = [
     slug: 'pregnancy-nutrition-essentials',
     title: 'Pregnancy Nutrition: Essential Foods for Every Trimester',
     excerpt: 'Discover the key nutrients you and your baby need during each stage of pregnancy, plus meal planning tips.',
-    date: '2024-01-12',
+    date: '2025-08-15',
     readTime: '6 min read',
     category: 'Nutrition',
     icon: Heart
@@ -32,7 +58,7 @@ const blogPosts = [
     slug: 'partner-support-guide',
     title: 'How Partners Can Support During Pregnancy',
     excerpt: 'Practical tips for partners to provide emotional and physical support throughout the pregnancy journey.',
-    date: '2024-01-10',
+    date: '2025-08-10',
     readTime: '5 min read',
     category: 'Relationships',
     icon: Sparkles
@@ -41,7 +67,7 @@ const blogPosts = [
     slug: 'managing-pregnancy-symptoms',
     title: 'Managing Common Pregnancy Symptoms Naturally',
     excerpt: 'Safe, natural ways to cope with morning sickness, fatigue, and other common pregnancy discomforts.',
-    date: '2024-01-08',
+    date: '2025-08-05',
     readTime: '7 min read',
     category: 'Health',
     icon: Heart
@@ -50,7 +76,7 @@ const blogPosts = [
     slug: 'second-trimester-changes',
     title: 'Second Trimester: The Golden Period of Pregnancy',
     excerpt: 'Why weeks 13-27 are often considered the best time of pregnancy and what changes to expect.',
-    date: '2024-01-05',
+    date: '2025-07-25',
     readTime: '6 min read',
     category: 'Guides',
     icon: Baby
@@ -59,7 +85,7 @@ const blogPosts = [
     slug: 'preparing-for-birth',
     title: 'Third Trimester: Preparing for Birth',
     excerpt: 'Essential preparations for the final stretch of pregnancy and welcoming your baby.',
-    date: '2024-01-01',
+    date: '2025-07-20',
     readTime: '9 min read',
     category: 'Birth Prep',
     icon: Sparkles
@@ -69,8 +95,6 @@ const blogPosts = [
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
-      <Navigation />
-
       <div className="max-w-6xl mx-auto px-6 py-16">
         {/* Hero Section */}
         <div className="text-center mb-16">

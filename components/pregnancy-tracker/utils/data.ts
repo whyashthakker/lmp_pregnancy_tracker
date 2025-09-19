@@ -473,6 +473,17 @@ export const weeklyNotes: WeeklyNotes = {
           "Sweat glands forming"
         ]
       },
+      21: {
+        symptoms: "Stronger baby movements, possible backaches, stretch marks appearing, increased appetite, heartburn.",
+        husbandTips: "🎮 QUEST: Movement Tracker\n- Help track baby's movement patterns\n- Create a kick count chart together\n- Research baby's sleep patterns\n- Plan comfortable seating arrangements",
+        nutrition: "Calcium and vitamin D remain crucial for bone development. Include dairy or alternatives, leafy greens.",
+        exercise: "Continue prenatal yoga or swimming. Avoid exercises lying flat on your back after 20 weeks.",
+        developmentHighlights: [
+          "Eyebrows and eyelids fully formed",
+          "Can swallow amniotic fluid",
+          "Bone marrow begins producing blood cells"
+        ]
+      },
       22: {
         symptoms: "More visible fetal movement, stretch marks, possible leg cramps, swelling in feet/ankles, backaches.",
         husbandTips: "🎮 QUEST: Comfort Specialist\n- Learn foot and leg massage techniques\n- Help elevate feet when resting\n- Create a pregnancy comfort station with essentials\n- Research birth classes together",
@@ -482,6 +493,17 @@ export const weeklyNotes: WeeklyNotes = {
           "Sense of touch developing fully",
           "Responds to sounds and light",
           "Developing coordinated movements"
+        ]
+      },
+      23: {
+        symptoms: "Regular sleep cycles disrupted, increased back pain, possible varicose veins, continued swelling.",
+        husbandTips: "🎮 QUEST: Sleep Optimizer\n- Create optimal sleep environment\n- Help with pillow arrangement for comfort\n- Research comfortable maternity clothes\n- Plan relaxing evening routines",
+        nutrition: "Focus on foods rich in fiber to prevent constipation. Stay hydrated to help with swelling.",
+        exercise: "Gentle stretching before bed can help with sleep. Avoid vigorous exercise close to bedtime.",
+        developmentHighlights: [
+          "Practicing breathing movements",
+          "Distinctive sleep cycles",
+          "Inner ear fully developed for balance"
         ]
       },
       24: {
@@ -495,6 +517,39 @@ export const weeklyNotes: WeeklyNotes = {
           "Baby responds more strongly to familiar sounds like mother's voice"
         ]
       },
+      25: {
+        symptoms: "Increased baby movements, possible hemorrhoids, continued heartburn, possible restless leg syndrome.",
+        husbandTips: "🎮 QUEST: Circulation Helper\n- Encourage regular position changes\n- Help with leg elevation during rest\n- Research hemorrhoid prevention methods\n- Plan comfortable workstation setup",
+        nutrition: "High-fiber foods help prevent hemorrhoids. Iron-rich foods combat fatigue and support blood volume.",
+        exercise: "Walking and swimming help with circulation. Avoid sitting or standing for long periods.",
+        developmentHighlights: [
+          "Blood vessels in lungs developing",
+          "More fat accumulating",
+          "Hand grasp reflex developed"
+        ]
+      },
+      26: {
+        symptoms: "Eye puffiness, possible carpal tunnel symptoms, increased urination, possible dizziness when standing.",
+        husbandTips: "🎮 QUEST: Stability Support\n- Help with slow position changes\n- Monitor for signs of preeclampsia\n- Create hand/wrist exercise routine\n- Ensure adequate hydration",
+        nutrition: "Adequate protein and fluids help reduce swelling. Avoid excessive sodium intake.",
+        exercise: "Hand and wrist stretches for carpal tunnel. Continue gentle cardio for circulation.",
+        developmentHighlights: [
+          "Eyes begin to open",
+          "Brain wave activity for hearing",
+          "Inhaling and exhaling amniotic fluid"
+        ]
+      },
+      27: {
+        symptoms: "Possible snoring, increased appetite, visible baby movements, possible skin darkening (melasma).",
+        husbandTips: "🎮 QUEST: Third Trimester Prep\n- Prepare for increased snoring\n- Help track baby's movement patterns\n- Research skin care for pregnancy changes\n- Begin third trimester preparations",
+        nutrition: "Folate-rich foods help with skin health. Omega-3s support baby's brain development.",
+        exercise: "Regular activity helps regulate weight gain. Prenatal yoga supports flexibility.",
+        developmentHighlights: [
+          "REM sleep occurring",
+          "Can distinguish sweet tastes",
+          "Brain developing rapidly"
+        ]
+      },
       28: {
         symptoms: "Shortness of breath, frequent urination returns, continued Braxton Hicks, possible heartburn intensifying.",
         husbandTips: "🎮 QUEST: Final Preparation\n- Pack hospital bag together\n- Install car seat and have it checked\n- Prepare frozen meals for after birth\n- Finalize birth plan and communication plan",
@@ -504,6 +559,39 @@ export const weeklyNotes: WeeklyNotes = {
           "Eyes can open and close",
           "Lungs developed enough for survival with intensive care if born early",
           "Brain developing rapidly"
+        ]
+      },
+      29: {
+        symptoms: "Increased fatigue, possible leaking colostrum, swelling in hands and feet, back pain intensifying.",
+        husbandTips: "🎮 QUEST: Energy Conservation\n- Take over more household tasks\n- Help create comfortable rest areas\n- Monitor swelling levels\n- Prepare for colostrum leaking",
+        nutrition: "Calcium and magnesium may help with muscle cramps. Stay hydrated to help with swelling.",
+        exercise: "Swimming provides relief from weight and swelling. Gentle stretching helps with back pain.",
+        developmentHighlights: [
+          "Developing more fat stores",
+          "Brain can regulate primitive breathing",
+          "Can detect light and dark"
+        ]
+      },
+      30: {
+        symptoms: "Difficulty finding comfortable sleep positions, increased Braxton Hicks, possible mood swings.",
+        husbandTips: "🎮 QUEST: Comfort Engineer\n- Invest in pregnancy support pillows\n- Practice labor breathing techniques together\n- Be patient with emotional changes\n- Create calming bedtime routine",
+        nutrition: "Complex carbohydrates help stabilize mood and energy. Magnesium may help with sleep.",
+        exercise: "Prenatal yoga can help with flexibility and relaxation. Avoid overexertion.",
+        developmentHighlights: [
+          "Fingernails and toenails grown",
+          "Brain connections increasing rapidly",
+          "More coordinated movements"
+        ]
+      },
+      31: {
+        symptoms: "Increased pressure on bladder, possible constipation, shortness of breath increasing, forgetfulness.",
+        husbandTips: "🎮 QUEST: Memory Assistant\n- Help with organization and reminders\n- Encourage frequent bathroom breaks\n- Support high-fiber diet choices\n- Practice breathing exercises together",
+        nutrition: "High-fiber foods and plenty of water help with constipation. Iron continues to be important.",
+        exercise: "Pelvic floor exercises become increasingly important. Walking aids digestion.",
+        developmentHighlights: [
+          "Can turn head side to side",
+          "Immune system developing",
+          "Developing sleeping patterns"
         ]
       },
       32: {
@@ -517,6 +605,39 @@ export const weeklyNotes: WeeklyNotes = {
           "Most organ systems fully developed"
         ]
       },
+      33: {
+        symptoms: "Increased pelvic pressure, possible heartburn intensifying, difficulty getting comfortable, possible insomnia.",
+        husbandTips: "🎮 QUEST: Late Pregnancy Support\n- Help with position changes frequently\n- Create multiple comfortable resting spots\n- Practice massage techniques for comfort\n- Research natural heartburn remedies",
+        nutrition: "Small, frequent meals help with heartburn. Avoid lying down immediately after eating.",
+        exercise: "Gentle stretching and prenatal yoga. Swimming offers relief from pressure and weight.",
+        developmentHighlights: [
+          "Lungs developing rapidly",
+          "Coordinating sucking and swallowing",
+          "Pupillary light reflex functioning"
+        ]
+      },
+      34: {
+        symptoms: "Baby movements feel different (less space), increased fatigue, possible nesting urges, round ligament pain.",
+        husbandTips: "🎮 QUEST: Nesting Helper\n- Support nesting activities but encourage rest\n- Help with baby room final preparations\n- Monitor for signs of early labor\n- Assist with organizing baby supplies",
+        nutrition: "Continue focus on protein and healthy fats. Hydration remains crucial.",
+        exercise: "Listen to your body - some days rest is more important than exercise.",
+        developmentHighlights: [
+          "Fingernails reach fingertips",
+          "Nearly fully developed lungs",
+          "Skin becoming smoother"
+        ]
+      },
+      35: {
+        symptoms: "Increased urination frequency, possible lightning crotch, stretch mark growth, emotional fluctuations.",
+        husbandTips: "🎮 QUEST: Emotional Anchor\n- Be extra patient and understanding\n- Plan bathroom accessible outings\n- Help with stretch mark care if wanted\n- Provide constant reassurance and support",
+        nutrition: "Vitamin E-rich foods may help with skin elasticity. Continue prenatal vitamins.",
+        exercise: "Gentle walks and stretching. Avoid activities that cause lightning crotch pain.",
+        developmentHighlights: [
+          "Kidney function maturing",
+          "Liver processing waste",
+          "Most organ systems maturing"
+        ]
+      },
       36: {
         symptoms: "Increased pelvic pressure, more frequent Braxton Hicks, difficulty sleeping, possible lightening (baby dropping).",
         husbandTips: "🎮 QUEST: Birth Ready\n- Ensure hospital route is planned\n- Keep phone charged and ready\n- Review labor support techniques\n- Be ready for middle-of-night hospital trips",
@@ -526,6 +647,39 @@ export const weeklyNotes: WeeklyNotes = {
           "Gaining about half a pound per week",
           "Lungs nearly fully mature",
           "Immune system receiving antibodies from mother"
+        ]
+      },
+      37: {
+        symptoms: "Baby considered full-term, possible mucus plug loss, irregular contractions, nesting instinct strong.",
+        husbandTips: "🎮 QUEST: Early Term Support\n- Know signs of true vs. false labor\n- Have hospital bag by the door\n- Time contractions accurately\n- Stay calm and supportive during false alarms",
+        nutrition: "High-energy foods prepare for labor. Stay hydrated and maintain regular eating.",
+        exercise: "Walking may help encourage labor. Bouncing on birth ball can provide comfort.",
+        developmentHighlights: [
+          "Considered early term",
+          "Most systems fully developed",
+          "Head may begin to descend"
+        ]
+      },
+      38: {
+        symptoms: "Full-term baby, increased pressure, possible water breaking, stronger Braxton Hicks, emotional readiness.",
+        husbandTips: "🎮 QUEST: Labor Partner\n- Practice labor support techniques\n- Know when to go to hospital\n- Keep important numbers accessible\n- Prepare for the big day with excitement",
+        nutrition: "Focus on easily digestible, energy-rich foods. Labor can be long and energy-demanding.",
+        exercise: "Gentle movement as comfortable. Save energy for labor and delivery.",
+        developmentHighlights: [
+          "Full term",
+          "Lungs likely mature",
+          "Strong sucking reflex"
+        ]
+      },
+      39: {
+        symptoms: "Anticipation high, possible pre-labor symptoms, continued discomfort, emotional preparation for birth.",
+        husbandTips: "🎮 QUEST: Final Countdown\n- Maintain calm and positive attitude\n- Help distract during early labor\n- Ensure all preparations are complete\n- Focus on the excitement of meeting baby soon",
+        nutrition: "Maintain regular eating pattern. Labor can start at any time.",
+        exercise: "Gentle activities as tolerated. Rest when possible to conserve energy.",
+        developmentHighlights: [
+          "Brain growth continuing",
+          "Chest prominent",
+          "Firm grasp and strong reflexes"
         ]
       },
       40: {

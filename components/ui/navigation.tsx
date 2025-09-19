@@ -3,7 +3,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
+import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 interface NavigationProps {
   className?: string;
@@ -11,12 +20,17 @@ interface NavigationProps {
 
 export function Navigation({ className }: NavigationProps) {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
   const isActive = (path: string) => {
     if (path === '/') {
       return pathname === '/';
     }
     return pathname.startsWith(path);
+  };
+
+  const closeSheet = () => {
+    setIsOpen(false);
   };
 
   return (
@@ -41,7 +55,8 @@ export function Navigation({ className }: NavigationProps) {
             </Link>
           </div>
           
-          <nav className="flex items-center gap-6">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-6">
             <Link 
               href="/" 
               className={cn(
@@ -72,6 +87,57 @@ export function Navigation({ className }: NavigationProps) {
               About
             </Link>
           </nav>
+
+          {/* Mobile Sheet Menu */}
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild>
+              <button
+                className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                aria-label="Toggle mobile menu"
+              >
+                <Menu className="w-5 h-5 text-gray-600" />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <SheetHeader>
+                <SheetTitle className="text-left">Navigation</SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col gap-4 mt-6">
+                <Link 
+                  href="/" 
+                  className={cn(
+                    "text-sm font-medium transition-colors hover:text-pink-600 px-3 py-2 rounded-md",
+                    isActive('/') && !isActive('/blog') && !isActive('/about')
+                      ? "text-pink-600 bg-pink-50" 
+                      : "text-gray-600"
+                  )}
+                  onClick={closeSheet}
+                >
+                  Tracker
+                </Link>
+                <Link 
+                  href="/blog" 
+                  className={cn(
+                    "text-sm font-medium transition-colors hover:text-pink-600 px-3 py-2 rounded-md",
+                    isActive('/blog') ? "text-pink-600 bg-pink-50" : "text-gray-600"
+                  )}
+                  onClick={closeSheet}
+                >
+                  Blog
+                </Link>
+                <Link 
+                  href="/about" 
+                  className={cn(
+                    "text-sm font-medium transition-colors hover:text-pink-600 px-3 py-2 rounded-md",
+                    isActive('/about') ? "text-pink-600 bg-pink-50" : "text-gray-600"
+                  )}
+                  onClick={closeSheet}
+                >
+                  About
+                </Link>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
