@@ -264,7 +264,7 @@ export default function PartnersHelpDuringLabor() {
                 <li>Avoid making decisions without consulting her</li>
                 <li>Don't leave her side unless she asks</li>
                 <li>Avoid being on your phone excessively</li>
-              </div>
+              </ul>
             </div>
 
             <div className="bg-blue-50 border-l-4 border-blue-400 p-6">
