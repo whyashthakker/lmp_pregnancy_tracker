@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
-import { Baby, Heart, Sparkles, Calendar, Users } from 'lucide-react';
+import { Baby, Heart, Sparkles, Calendar } from 'lucide-react';
 
 export default function BabyGenderPredictorClient() {
   const [birthDate, setBirthDate] = useState('');

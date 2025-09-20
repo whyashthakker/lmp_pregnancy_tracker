@@ -41,7 +41,7 @@ export default function FathersPregnancyTimeline() {
               <h2 className="text-xl font-semibold text-gray-800 mb-4">Understanding Pregnancy Dating</h2>
               <p className="text-gray-700 text-sm mb-3">
                 Pregnancy is calculated from the Last Menstrual Period (LMP), not conception. This means your partner is considered 
-                "pregnant" for about 2 weeks before conception actually occurs.
+                &quot;pregnant&quot; for about 2 weeks before conception actually occurs.
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
                 <li>Full-term pregnancy: 37-42 weeks from LMP</li>
@@ -58,7 +58,7 @@ export default function FathersPregnancyTimeline() {
                 <h3 className="text-xl font-medium text-gray-800 mb-4">Weeks 1-4: Pre-Conception to Implantation</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-medium text-gray-700 mb-2">What's Happening</h4>
+                    <h4 className="font-medium text-gray-700 mb-2">What&apos;s Happening</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
                       <li>Week 1-2: Last menstrual period</li>
                       <li>Week 2: Ovulation and conception</li>
@@ -82,7 +82,7 @@ export default function FathersPregnancyTimeline() {
 
               <div className="border-l-4 border-purple-400 pl-6">
                 <h3 className="text-xl font-medium text-gray-800 mb-4">Weeks 5-8: Confirmation and First Appointment</h3>
-                <div class="bg-purple-50 rounded-lg p-4 mb-4">
+                <div className="bg-purple-50 rounded-lg p-4 mb-4">
                   <h4 className="font-medium text-purple-800 mb-2">🏥 First Prenatal Appointment (Week 6-8)</h4>
                   <p className="text-purple-700 text-sm mb-2">This is a big moment for both of you!</p>
                 </div>
@@ -145,7 +145,7 @@ export default function FathersPregnancyTimeline() {
             
             <div className="space-y-8 mb-12">
               <div className="border-l-4 border-green-400 pl-6">
-                <h3 className="text-xl font-medium text-gray-800 mb-4">Weeks 13-16: The "Golden Period" Begins</h3>
+                <h3 className="text-xl font-medium text-gray-800 mb-4">Weeks 13-16: The &quot;Golden Period&quot; Begins</h3>
                 <div className="bg-green-50 rounded-lg p-4 mb-4">
                   <h4 className="font-medium text-green-800 mb-2">🏥 Regular Prenatal Visits (Every 4 weeks)</h4>
                   <p className="text-green-700 text-sm">Routine monitoring begins</p>
@@ -166,7 +166,7 @@ export default function FathersPregnancyTimeline() {
                     <h4 className="font-medium text-gray-700 mb-2">Your Involvement</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
                       <li>Attend appointments when possible</li>
-                      <li>Listen to baby's heartbeat</li>
+                      <li>Listen to baby&apos;s heartbeat</li>
                       <li>Start discussing birth preferences</li>
                       <li>Begin planning nursery</li>
                       <li>Consider announcing pregnancy</li>
@@ -198,7 +198,7 @@ export default function FathersPregnancyTimeline() {
                       <li>Discuss testing preferences</li>
                       <li>Consider your family histories</li>
                       <li>Understand what tests can and cannot detect</li>
-                      <li>Talk about how you'd handle results</li>
+                      <li>Talk about how you&apos;d handle results</li>
                       <li>Support her decision either way</li>
                     </ul>
                   </div>
@@ -208,14 +208,14 @@ export default function FathersPregnancyTimeline() {
               <div className="border-l-4 border-orange-400 pl-6">
                 <h3 className="text-xl font-medium text-gray-800 mb-4">Weeks 18-22: The Big Ultrasound</h3>
                 <div className="bg-orange-50 rounded-lg p-4 mb-4">
-                  <h4 className="font-medium text-orange-800 mb-2">📱 Anatomy Scan - Don't Miss This!</h4>
-                  <p className="text-orange-700 text-sm">This is when you'll see your baby in detail and possibly learn the gender</p>
+                  <h4 className="font-medium text-orange-800 mb-2">📱 Anatomy Scan - Don&apos;t Miss This!</h4>
+                  <p className="text-orange-700 text-sm">This is when you&apos;ll see your baby in detail and possibly learn the gender</p>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-medium text-gray-700 mb-2">What the Scan Shows</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
-                      <li>Baby's anatomy and development</li>
+                      <li>Baby&apos;s anatomy and development</li>
                       <li>Growth measurements</li>
                       <li>Placenta location</li>
                       <li>Amniotic fluid levels</li>
@@ -243,7 +243,7 @@ export default function FathersPregnancyTimeline() {
                   <div>
                     <h4 className="font-medium text-gray-700 mb-2">Exciting Developments</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
-                      <li>You might feel baby's kicks</li>
+                      <li>You might feel baby&apos;s kicks</li>
                       <li>Baby responds to sounds</li>
                       <li>Viability milestone reached (24 weeks)</li>
                       <li>Her energy levels are good</li>
@@ -305,7 +305,7 @@ export default function FathersPregnancyTimeline() {
                   <div>
                     <h4 className="font-medium text-gray-700 mb-2">Medical Monitoring</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
-                      <li>Baby's position assessment</li>
+                      <li>Baby&apos;s position assessment</li>
                       <li>Growth monitoring</li>
                       <li>Blood pressure checks</li>
                       <li>Protein in urine testing</li>
@@ -368,7 +368,7 @@ export default function FathersPregnancyTimeline() {
                     <h4 className="font-medium text-gray-700 mb-2">What Doctors Monitor</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
                       <li>Cervical dilation and effacement</li>
-                      <li>Baby's position and station</li>
+                      <li>Baby&apos;s position and station</li>
                       <li>Blood pressure and weight</li>
                       <li>Signs of preeclampsia</li>
                       <li>Fetal heart rate</li>
@@ -437,10 +437,10 @@ export default function FathersPregnancyTimeline() {
             <div className="bg-blue-50 border-l-4 border-blue-400 p-6">
               <h3 className="font-medium text-blue-800 mb-2">Your Journey as an Expectant Father</h3>
               <p className="text-blue-700">
-                This timeline helps you stay informed and involved throughout your partner's pregnancy. Remember, 
+                This timeline helps you stay informed and involved throughout your partner&apos;s pregnancy. Remember, 
                 every pregnancy is unique, so some timelines may vary. The most important thing is to be present, 
                 supportive, and engaged in this incredible journey to parenthood. Your involvement and support 
-                make a real difference in your partner's experience and your baby's health.
+                make a real difference in your partner&apos;s experience and your baby&apos;s health.
               </p>
             </div>
           </div>

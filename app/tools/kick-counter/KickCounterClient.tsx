@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Activity, Plus, RotateCcw, CheckCircle, AlertTriangle, Clock } from 'lucide-react';
+import { Activity, Plus, RotateCcw, CheckCircle, Clock } from 'lucide-react';
 
 interface KickSession {
   id: number;
@@ -374,7 +374,7 @@ export default function KickCounterClient() {
             </CardHeader>
             <CardContent>
               <div className="space-y-3 max-h-64 overflow-y-auto">
-                {sessions.slice(0, 10).map((session, index) => {
+                {sessions.slice(0, 10).map((session) => {
                   const duration = session.endTime 
                     ? Math.floor((session.endTime.getTime() - session.startTime.getTime()) / 1000)
                     : null;

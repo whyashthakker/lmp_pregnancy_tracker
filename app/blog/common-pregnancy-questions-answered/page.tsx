@@ -41,7 +41,7 @@ export default function CommonPregnancyQuestions() {
             
             <div className="space-y-6 mb-8">
               <div className="bg-gradient-to-r from-pink-50 to-purple-50 rounded-lg p-6">
-                <h3 className="text-lg font-medium text-gray-800 mb-2">How do I know if I'm really pregnant?</h3>
+                <h3 className="text-lg font-medium text-gray-800 mb-2">How do I know if I&apos;m really pregnant?</h3>
                 <p className="text-gray-700 text-sm mb-3">
                   Early pregnancy signs include missed period, nausea, breast tenderness, fatigue, and frequent urination. 
                   Home pregnancy tests are 99% accurate when used correctly after a missed period.
@@ -162,7 +162,7 @@ export default function CommonPregnancyQuestions() {
                   <div>
                     <h4 className="font-medium text-gray-700 mb-1">When to Call Doctor:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
-                      <li>Can't keep fluids down</li>
+                      <li>Can&apos;t keep fluids down</li>
                       <li>Losing weight</li>
                       <li>Signs of dehydration</li>
                       <li>Vomiting blood</li>
@@ -251,7 +251,7 @@ export default function CommonPregnancyQuestions() {
                 <h3 className="text-lg font-medium text-gray-800 mb-2">Is it normal to feel anxious about pregnancy?</h3>
                 <p className="text-gray-700 text-sm mb-3">
                   Anxiety and worry are completely normal during pregnancy. Many women experience concerns about 
-                  their baby's health, birth, and becoming a parent.
+                  their baby&apos;s health, birth, and becoming a parent.
                 </p>
                 <h4 className="font-medium text-gray-700 mb-1">Coping Strategies:</h4>
                 <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
@@ -282,8 +282,8 @@ export default function CommonPregnancyQuestions() {
             <div className="bg-blue-50 border-l-4 border-blue-400 p-6">
               <h3 className="font-medium text-blue-800 mb-2">Remember</h3>
               <p className="text-blue-700">
-                Every pregnancy is unique, and what's normal for one person may not be for another. 
-                Always trust your instincts and don't hesitate to contact your healthcare provider 
+                Every pregnancy is unique, and what&apos;s normal for one person may not be for another. 
+                Always trust your instincts and don&apos;t hesitate to contact your healthcare provider 
                 with any concerns, no matter how small they may seem.
               </p>
             </div>

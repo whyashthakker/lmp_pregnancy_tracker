@@ -58,7 +58,7 @@ export default function PregnancySleepTips() {
                   <li>Better than back sleeping</li>
                   <li>Switch between sides during night</li>
                   <li>Use pillows for support</li>
-                  <li>Listen to your body's comfort</li>
+                  <li>Listen to your body&apos;s comfort</li>
                 </ul>
               </div>
             </div>
@@ -195,7 +195,7 @@ export default function PregnancySleepTips() {
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Sleep Hygiene Tips</h2>
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
-                <h3 className="font-medium text-gray-800 mb-3">Do's</h3>
+                <h3 className="font-medium text-gray-800 mb-3">Do&apos;s</h3>
                 <ul className="list-disc list-inside space-y-1 text-gray-600">
                   <li>Maintain regular sleep schedule</li>
                   <li>Create relaxing bedtime routine</li>
@@ -205,13 +205,13 @@ export default function PregnancySleepTips() {
                 </ul>
               </div>
               <div>
-                <h3 className="font-medium text-gray-800 mb-3">Don'ts</h3>
+                <h3 className="font-medium text-gray-800 mb-3">Don&apos;ts</h3>
                 <ul className="list-disc list-inside space-y-1 text-gray-600">
                   <li>Avoid caffeine late in day</li>
-                  <li>Don't eat large meals before bed</li>
+                  <li>Don&apos;t eat large meals before bed</li>
                   <li>Limit screen time before sleep</li>
                   <li>Avoid intense exercise at night</li>
-                  <li>Don't force sleep if not tired</li>
+                  <li>Don&apos;t force sleep if not tired</li>
                 </ul>
               </div>
             </div>

@@ -129,7 +129,7 @@ export default function PartnersHelpDuringLabor() {
                     <h4 className="font-medium text-gray-700 mb-2">Encouragement</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
                       <li>Offer constant verbal encouragement</li>
-                      <li>Remind her she's doing great</li>
+                      <li>Remind her she&apos;s doing great</li>
                       <li>Help her focus on one contraction at a time</li>
                       <li>Celebrate progress milestones</li>
                       <li>Remind her of her strength</li>
@@ -180,7 +180,7 @@ export default function PartnersHelpDuringLabor() {
             <div className="space-y-6 mb-8">
               <div className="border-l-4 border-green-400 pl-6">
                 <h3 className="text-lg font-medium text-gray-800 mb-2">Transition Phase (8-10cm)</h3>
-                <p className="text-gray-600 text-sm mb-3">This is often the most intense phase. She may feel overwhelmed, nauseous, or say she "can't do this."</p>
+                <p className="text-gray-600 text-sm mb-3">This is often the most intense phase. She may feel overwhelmed, nauseous, or say she &quot;can&apos;t do this.&quot;</p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <h4 className="font-medium text-gray-700 mb-2">What to Expect</h4>
@@ -258,11 +258,11 @@ export default function PartnersHelpDuringLabor() {
             <div className="bg-red-50 border-l-4 border-red-400 p-6 mb-6">
               <h3 className="font-medium text-red-800 mb-2">Things to Avoid</h3>
               <ul className="list-disc list-inside space-y-1 text-red-700 text-sm">
-                <li>Don't take her behavior during labor personally</li>
-                <li>Avoid saying "just relax" or "calm down"</li>
-                <li>Don't compare her labor to others</li>
+                <li>Don&apos;t take her behavior during labor personally</li>
+                <li>Avoid saying &quot;just relax&quot; or &quot;calm down&quot;</li>
+                <li>Don&apos;t compare her labor to others</li>
                 <li>Avoid making decisions without consulting her</li>
-                <li>Don't leave her side unless she asks</li>
+                <li>Don&apos;t leave her side unless she asks</li>
                 <li>Avoid being on your phone excessively</li>
               </ul>
             </div>
@@ -270,7 +270,7 @@ export default function PartnersHelpDuringLabor() {
             <div className="bg-blue-50 border-l-4 border-blue-400 p-6">
               <h3 className="font-medium text-blue-800 mb-2">Remember</h3>
               <p className="text-blue-700">
-                Your presence, support, and love are the most important things you can offer. Every woman's labor is different, 
+                Your presence, support, and love are the most important things you can offer. Every woman&apos;s labor is different, 
                 so stay flexible and responsive to her needs. Trust in her strength and your ability to support her through 
                 this incredible journey of bringing your baby into the world.
               </p>

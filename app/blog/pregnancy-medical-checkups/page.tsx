@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Heart, AlertCircle, CheckCircle, Clock, TrendingUp } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Pregnancy Medical Checkups and Prenatal Care Schedule | Your Journey',
@@ -39,7 +39,7 @@ export default function PregnancyMedicalCheckups() {
             </h2>
             <p className="text-gray-600 leading-relaxed">
               Regular prenatal checkups are crucial for ensuring a healthy pregnancy. Your healthcare provider will monitor your health 
-              and your baby's development through a series of scheduled appointments. The frequency of these visits increases as your 
+              and your baby&apos;s development through a series of scheduled appointments. The frequency of these visits increases as your 
               pregnancy progresses.
             </p>
           </div>
@@ -201,7 +201,7 @@ export default function PregnancyMedicalCheckups() {
                   <div className="grid md:grid-cols-2 gap-4">
                     <ul className="list-disc list-inside space-y-1 text-red-700 text-sm">
                       <li>Cervical dilation and effacement</li>
-                      <li>Baby's position and station</li>
+                      <li>Baby&apos;s position and station</li>
                       <li>Blood pressure monitoring</li>
                       <li>Weight and swelling check</li>
                     </ul>
@@ -259,7 +259,7 @@ export default function PregnancyMedicalCheckups() {
             <div className="bg-blue-50 border-l-4 border-blue-400 p-4">
               <p className="text-blue-800">
                 <strong>Remember:</strong> This schedule may vary based on your individual circumstances, 
-                health conditions, and healthcare provider preferences. Always follow your doctor's specific 
+                health conditions, and healthcare provider preferences. Always follow your doctor&apos;s specific 
                 recommendations for your pregnancy care.
               </p>
             </div>

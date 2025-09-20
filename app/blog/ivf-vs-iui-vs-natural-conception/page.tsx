@@ -134,7 +134,7 @@ export default function IVFvsIUIvsNaturalConception() {
                   <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs font-bold">2</div>
                   <div>
                     <h4 className="font-medium">Sperm Preparation</h4>
-                    <p className="text-sm">Sperm is collected and "washed" to concentrate healthy sperm</p>
+                    <p className="text-sm">Sperm is collected and &quot;washed&quot; to concentrate healthy sperm</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -362,7 +362,7 @@ export default function IVFvsIUIvsNaturalConception() {
                 <h3 className="font-medium text-blue-800 mb-3">Consider IUI</h3>
                 <ul className="text-sm text-blue-700 space-y-2">
                   <li>• Mild fertility issues</li>
-                  <li>• Natural conception hasn't worked</li>
+                  <li>• Natural conception hasn&apos;t worked</li>
                   <li>• Using donor sperm</li>
                   <li>• Cervical or ovulation problems</li>
                   <li>• Want less invasive treatment first</li>
@@ -427,8 +427,8 @@ export default function IVFvsIUIvsNaturalConception() {
                 specific situation.
               </p>
               <p className="text-blue-700 text-sm">
-                <strong>Remember:</strong> There's no "right" or "wrong" way to conceive. The best approach is the one 
-                that works for your body, your situation, and your family's needs.
+                <strong>Remember:</strong> There&apos;s no &quot;right&quot; or &quot;wrong&quot; way to conceive. The best approach is the one 
+                that works for your body, your situation, and your family&apos;s needs.
               </p>
             </div>
           </div>

@@ -60,7 +60,7 @@ export default function PregnancyGuideForFathers() {
                 <h3 className="text-xl font-medium text-gray-800 mb-3">First Trimester (Weeks 1-12)</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-medium text-gray-700 mb-3">What She's Experiencing</h4>
+                    <h4 className="font-medium text-gray-700 mb-3">What She&apos;s Experiencing</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
                       <li>Morning sickness and nausea</li>
                       <li>Extreme fatigue</li>
@@ -88,7 +88,7 @@ export default function PregnancyGuideForFathers() {
                 <h3 className="text-xl font-medium text-gray-800 mb-3">Second Trimester (Weeks 13-26)</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-medium text-gray-700 mb-3">What She's Experiencing</h4>
+                    <h4 className="font-medium text-gray-700 mb-3">What She&apos;s Experiencing</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
                       <li>Increased energy levels</li>
                       <li>Growing belly and body changes</li>
@@ -116,7 +116,7 @@ export default function PregnancyGuideForFathers() {
                 <h3 className="text-xl font-medium text-gray-800 mb-3">Third Trimester (Weeks 27-40)</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-medium text-gray-700 mb-3">What She's Experiencing</h4>
+                    <h4 className="font-medium text-gray-700 mb-3">What She&apos;s Experiencing</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
                       <li>Physical discomfort and fatigue</li>
                       <li>Difficulty sleeping</li>
@@ -146,7 +146,7 @@ export default function PregnancyGuideForFathers() {
               <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-lg p-6">
                 <h3 className="font-medium text-gray-800 mb-4">Emotional Support</h3>
                 <ul className="space-y-2 text-gray-600 text-sm">
-                  <li>• Listen without trying to "fix" everything</li>
+                  <li>• Listen without trying to &quot;fix&quot; everything</li>
                   <li>• Validate her feelings and experiences</li>
                   <li>• Be patient with mood swings</li>
                   <li>• Offer encouragement and reassurance</li>
@@ -205,7 +205,7 @@ export default function PregnancyGuideForFathers() {
 
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Managing Your Own Emotions</h2>
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-6">
-              <h3 className="font-medium text-yellow-800 mb-3">It's Normal to Feel</h3>
+              <h3 className="font-medium text-yellow-800 mb-3">It&apos;s Normal to Feel</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <ul className="list-disc list-inside space-y-1 text-yellow-700 text-sm">
                   <li>Excited and anxious at the same time</li>
@@ -237,7 +237,7 @@ export default function PregnancyGuideForFathers() {
               <div>
                 <h3 className="font-medium text-gray-800 mb-3">What to Avoid</h3>
                 <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
-                  <li>Dismissing her concerns as "hormones"</li>
+                  <li>Dismissing her concerns as &quot;hormones&quot;</li>
                   <li>Making decisions without consulting her</li>
                   <li>Comparing her to other pregnant women</li>
                   <li>Complaining about pregnancy inconveniences</li>
@@ -250,7 +250,7 @@ export default function PregnancyGuideForFathers() {
               <h3 className="font-medium text-blue-800 mb-2">Remember</h3>
               <p className="text-blue-700">
                 Your journey to fatherhood starts now, not when the baby is born. By being present, supportive, 
-                and engaged throughout pregnancy, you're already becoming the father your child needs. 
+                and engaged throughout pregnancy, you&apos;re already becoming the father your child needs. 
                 Trust yourself, communicate openly, and enjoy this incredible journey together.
               </p>
             </div>

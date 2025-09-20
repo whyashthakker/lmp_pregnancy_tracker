@@ -218,8 +218,8 @@ export default function GestationalDiabetesGuide() {
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-8">
               <h3 className="font-medium text-yellow-800 mb-3">Insulin Treatment</h3>
               <p className="text-yellow-700 text-sm mb-3">
-                If diet and exercise don't adequately control blood sugar levels, insulin may be prescribed. 
-                Insulin is safe during pregnancy and doesn't cross the placenta.
+                If diet and exercise don&apos;t adequately control blood sugar levels, insulin may be prescribed. 
+                Insulin is safe during pregnancy and doesn&apos;t cross the placenta.
               </p>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
@@ -280,7 +280,7 @@ export default function GestationalDiabetesGuide() {
                   <li>• May need IV insulin during labor</li>
                   <li>• Possible induction if baby is large</li>
                   <li>• C-section may be recommended</li>
-                  <li>• Baby's blood sugar checked after birth</li>
+                  <li>• Baby&apos;s blood sugar checked after birth</li>
                   <li>• Immediate skin-to-skin contact encouraged</li>
                 </ul>
               </div>

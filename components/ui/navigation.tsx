@@ -60,13 +60,20 @@ export function Navigation({ className }: NavigationProps) {
             <Link 
               href="/" 
               className={cn(
-                "text-sm font-medium transition-colors hover:text-pink-600",
-                isActive('/') && !isActive('/blog') && !isActive('/about')
-                  ? "text-pink-600" 
-                  : "text-gray-600"
+                "bg-gradient-to-r from-pink-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-all hover:from-pink-700 hover:to-purple-700 hover:shadow-lg",
+                isActive('/') && !isActive('/blog') && !isActive('/about') && "ring-2 ring-pink-300"
               )}
             >
-              Tracker
+              Track Your Pregnancy
+            </Link>
+            <Link 
+              href="/tools" 
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-pink-600",
+                isActive('/tools') ? "text-pink-600" : "text-gray-600"
+              )}
+            >
+              Tools
             </Link>
             <Link 
               href="/blog" 
@@ -106,14 +113,22 @@ export function Navigation({ className }: NavigationProps) {
                 <Link 
                   href="/" 
                   className={cn(
-                    "text-sm font-medium transition-colors hover:text-pink-600 px-3 py-2 rounded-md",
-                    isActive('/') && !isActive('/blog') && !isActive('/about')
-                      ? "text-pink-600 bg-pink-50" 
-                      : "text-gray-600"
+                    "bg-gradient-to-r from-pink-600 to-purple-600 text-white px-4 py-3 rounded-full text-sm font-medium text-center transition-all hover:from-pink-700 hover:to-purple-700 hover:shadow-lg",
+                    isActive('/') && !isActive('/blog') && !isActive('/about') && "ring-2 ring-pink-300"
                   )}
                   onClick={closeSheet}
                 >
-                  Tracker
+                  Track Your Pregnancy
+                </Link>
+                <Link 
+                  href="/tools" 
+                  className={cn(
+                    "text-sm font-medium transition-colors hover:text-pink-600 px-3 py-2 rounded-md",
+                    isActive('/tools') ? "text-pink-600 bg-pink-50" : "text-gray-600"
+                  )}
+                  onClick={closeSheet}
+                >
+                  Tools
                 </Link>
                 <Link 
                   href="/blog" 

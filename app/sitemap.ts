@@ -116,6 +116,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    {
+      url: 'https://www.egspect.com/blog/fathers-pregnancy-timeline-tests',
+      lastModified: new Date('2025-09-03'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
     // Free Pregnancy Tools
     {
       url: 'https://www.egspect.com/tools',

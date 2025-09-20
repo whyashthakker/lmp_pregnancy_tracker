@@ -8,6 +8,17 @@ import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import { Apple, Milk, Wheat, Carrot, CheckCircle, AlertTriangle } from 'lucide-react';
 
+interface NutritionData {
+  calories?: number;
+  protein?: number;
+  folate?: number;
+  iron?: number;
+  calcium?: number;
+  vitamin_d?: number;
+  omega3?: number;
+  fiber?: number;
+}
+
 const nutritionTargets = {
   calories: { pregnant: 2200, lactating: 2500 },
   protein: { pregnant: 71, lactating: 71 }, // grams
@@ -19,7 +30,7 @@ const nutritionTargets = {
   fiber: { pregnant: 28, lactating: 29 } // grams
 };
 
-const foodDatabase = {
+const foodDatabase: Record<string, NutritionData> = {
   'Spinach (1 cup)': { folate: 58, iron: 0.8, calcium: 30, protein: 0.9, calories: 7 },
   'Salmon (3 oz)': { protein: 22, omega3: 1200, calcium: 12, calories: 175 },
   'Greek Yogurt (1 cup)': { protein: 20, calcium: 230, calories: 130 },
@@ -56,17 +67,17 @@ export default function PregnancyNutritionTrackerClient() {
     Object.fromEntries(Object.entries(nutritionTargets).map(([key, value]) => [key, value.pregnant]));
 
   const addFood = (food: string) => {
-    const nutrition = foodDatabase[food as keyof typeof foodDatabase];
+    const nutrition = foodDatabase[food];
     
     setCurrentIntake(prev => ({
-      calories: prev.calories + (nutrition.calories || 0),
-      protein: prev.protein + (nutrition.protein || 0),
-      folate: prev.folate + (nutrition.folate || 0),
-      iron: prev.iron + (nutrition.iron || 0),
-      calcium: prev.calcium + (nutrition.calcium || 0),
-      vitamin_d: prev.vitamin_d + (nutrition.vitamin_d || 0),
-      omega3: prev.omega3 + (nutrition.omega3 || 0),
-      fiber: prev.fiber + (nutrition.fiber || 0)
+      calories: prev.calories + (nutrition?.calories || 0),
+      protein: prev.protein + (nutrition?.protein || 0),
+      folate: prev.folate + (nutrition?.folate || 0),
+      iron: prev.iron + (nutrition?.iron || 0),
+      calcium: prev.calcium + (nutrition?.calcium || 0),
+      vitamin_d: prev.vitamin_d + (nutrition?.vitamin_d || 0),
+      omega3: prev.omega3 + (nutrition?.omega3 || 0),
+      fiber: prev.fiber + (nutrition?.fiber || 0)
     }));
     
     setSelectedFoods(prev => [...prev, food]);
@@ -74,17 +85,17 @@ export default function PregnancyNutritionTrackerClient() {
 
   const removeFood = (index: number) => {
     const food = selectedFoods[index];
-    const nutrition = foodDatabase[food as keyof typeof foodDatabase];
+    const nutrition = foodDatabase[food];
     
     setCurrentIntake(prev => ({
-      calories: Math.max(0, prev.calories - (nutrition.calories || 0)),
-      protein: Math.max(0, prev.protein - (nutrition.protein || 0)),
-      folate: Math.max(0, prev.folate - (nutrition.folate || 0)),
-      iron: Math.max(0, prev.iron - (nutrition.iron || 0)),
-      calcium: Math.max(0, prev.calcium - (nutrition.calcium || 0)),
-      vitamin_d: Math.max(0, prev.vitamin_d - (nutrition.vitamin_d || 0)),
-      omega3: Math.max(0, prev.omega3 - (nutrition.omega3 || 0)),
-      fiber: Math.max(0, prev.fiber - (nutrition.fiber || 0))
+      calories: Math.max(0, prev.calories - (nutrition?.calories || 0)),
+      protein: Math.max(0, prev.protein - (nutrition?.protein || 0)),
+      folate: Math.max(0, prev.folate - (nutrition?.folate || 0)),
+      iron: Math.max(0, prev.iron - (nutrition?.iron || 0)),
+      calcium: Math.max(0, prev.calcium - (nutrition?.calcium || 0)),
+      vitamin_d: Math.max(0, prev.vitamin_d - (nutrition?.vitamin_d || 0)),
+      omega3: Math.max(0, prev.omega3 - (nutrition?.omega3 || 0)),
+      fiber: Math.max(0, prev.fiber - (nutrition?.fiber || 0))
     }));
     
     setSelectedFoods(prev => prev.filter((_, i) => i !== index));
@@ -104,12 +115,6 @@ export default function PregnancyNutritionTrackerClient() {
     setSelectedFoods([]);
   };
 
-  const getProgressColor = (percentage: number) => {
-    if (percentage >= 100) return 'bg-green-500';
-    if (percentage >= 75) return 'bg-yellow-500';
-    if (percentage >= 50) return 'bg-orange-500';
-    return 'bg-red-500';
-  };
 
   const getProgressStatus = (current: number, target: number) => {
     const percentage = (current / target) * 100;

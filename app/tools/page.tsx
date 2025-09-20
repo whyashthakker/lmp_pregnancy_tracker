@@ -142,7 +142,6 @@ const categories = {
 
 export default function FreePregancyTools() {
   const popularTools = tools.filter(tool => tool.popular);
-  const otherTools = tools.filter(tool => !tool.popular);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">

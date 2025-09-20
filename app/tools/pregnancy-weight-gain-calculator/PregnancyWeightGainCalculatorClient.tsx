@@ -120,7 +120,13 @@ export default function PregnancyWeightGainCalculatorClient() {
   };
 
   const getStatusMessage = () => {
-    if (!result) return '';
+    if (!result) return {
+      message: '',
+      color: '',
+      bgColor: '',
+      borderColor: '',
+      icon: null
+    };
     
     switch (result.status) {
       case 'under':
@@ -301,14 +307,19 @@ export default function PregnancyWeightGainCalculatorClient() {
                 </div>
 
                 {/* Status Alert */}
-                <div className={`p-4 rounded-lg border ${getStatusMessage().bgColor} ${getStatusMessage().borderColor}`}>
-                  <div className="flex items-start gap-3">
-                    {getStatusMessage().icon}
-                    <p className={`text-sm ${getStatusMessage().color}`}>
-                      {getStatusMessage().message}
-                    </p>
-                  </div>
-                </div>
+                {(() => {
+                  const statusMsg = getStatusMessage();
+                  return (
+                    <div className={`p-4 rounded-lg border ${statusMsg.bgColor} ${statusMsg.borderColor}`}>
+                      <div className="flex items-start gap-3">
+                        {statusMsg.icon}
+                        <p className={`text-sm ${statusMsg.color}`}>
+                          {statusMsg.message}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })()}
 
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">

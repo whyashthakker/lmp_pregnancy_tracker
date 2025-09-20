@@ -13,10 +13,82 @@ const blogPosts = [
     slug: 'pregnancy-symptoms-week-by-week',
     title: 'Pregnancy Symptoms Week by Week: Complete Guide',
     excerpt: 'Comprehensive guide to pregnancy symptoms week by week. Track normal symptoms, warning signs, and what to expect during each trimester.',
-    date: '2025-09-15',
+    date: '2025-09-19',
     readTime: '12 min read',
     category: 'Symptoms',
     icon: Heart
+  },
+  {
+    slug: 'pregnancy-medical-checkups',
+    title: 'Pregnancy Medical Checkups and Prenatal Care Schedule',
+    excerpt: 'Complete guide to pregnancy medical checkups, prenatal appointments, tests, and what to expect at each visit throughout your pregnancy.',
+    date: '2025-09-18',
+    readTime: '10 min read',
+    category: 'Medical Care',
+    icon: Calendar
+  },
+  {
+    slug: 'pregnancy-warning-signs',
+    title: 'Pregnancy Warning Signs: When to Call Your Doctor',
+    excerpt: 'Learn the important pregnancy warning signs that require immediate medical attention. Know when to contact your healthcare provider during pregnancy.',
+    date: '2025-09-17',
+    readTime: '8 min read',
+    category: 'Health & Safety',
+    icon: Heart
+  },
+  {
+    slug: 'pregnancy-weight-gain-calculator',
+    title: 'Pregnancy Weight Gain Calculator: Track Your Healthy Progress',
+    excerpt: 'Track your pregnancy weight gain and ensure you&apos;re maintaining a healthy range based on your pre-pregnancy BMI and current week of pregnancy.',
+    date: '2025-09-16',
+    readTime: '6 min read',
+    category: 'Health & Fitness',
+    icon: Sparkles
+  },
+  {
+    slug: 'pregnancy-exercise-guide',
+    title: 'Pregnancy Exercise Guide: Safe Workouts for Every Trimester',
+    excerpt: 'Safe and effective exercise routines for pregnant women. Learn which exercises are best for each trimester and how to stay active safely.',
+    date: '2025-09-15',
+    readTime: '9 min read',
+    category: 'Health & Fitness',
+    icon: Heart
+  },
+  {
+    slug: 'pregnancy-sleep-tips',
+    title: 'Pregnancy Sleep Tips and Safe Positions',
+    excerpt: 'Get better sleep during pregnancy with our comprehensive guide on safe sleeping positions, common sleep problems, and practical solutions.',
+    date: '2025-09-14',
+    readTime: '7 min read',
+    category: 'Health & Wellness',
+    icon: Baby
+  },
+  {
+    slug: 'pregnancy-myths-vs-facts',
+    title: 'Pregnancy Myths vs Facts: What to Really Believe',
+    excerpt: 'Separate pregnancy myths from facts with evidence-based information. Get the truth about common pregnancy beliefs and old wives tales.',
+    date: '2025-09-13',
+    readTime: '8 min read',
+    category: 'Education',
+    icon: Sparkles
+  },
+  {
+    slug: 'pregnancy-guide-for-fathers',
+    title: 'Complete Pregnancy Guide for Fathers & Partners',
+    excerpt: 'Essential guide for expectant fathers and partners. Learn how to support your pregnant partner, prepare for fatherhood, and understand pregnancy from a partner perspective.',
+    date: '2025-09-12',
+    readTime: '11 min read',
+    category: 'For Partners',
+    icon: Heart
+  },
+  {
+    slug: 'how-partners-can-help-during-labor',
+    title: 'How Partners Can Help During Labor and Delivery',
+    excerpt: 'Practical ways for partners to provide support during labor and delivery. Learn about comfort measures, advocacy, and emotional support techniques.',
+    date: '2025-09-11',
+    readTime: '9 min read',
+    category: 'For Partners',
+    icon: Baby
   },
   {
     slug: 'pregnancy-due-date-calculator',
@@ -28,10 +100,28 @@ const blogPosts = [
     icon: Calendar
   },
   {
+    slug: 'gestational-diabetes-guide',
+    title: 'Gestational Diabetes Guide: Prevention, Management & Treatment',
+    excerpt: 'Comprehensive guide to gestational diabetes including risk factors, prevention strategies, management during pregnancy, and long-term health considerations.',
+    date: '2025-09-09',
+    readTime: '12 min read',
+    category: 'Health Conditions',
+    icon: Heart
+  },
+  {
+    slug: 'common-pregnancy-questions-answered',
+    title: 'Common Pregnancy Questions Answered by Experts',
+    excerpt: 'Get answers to the most frequently asked pregnancy questions from healthcare professionals. Clear, evidence-based information for expecting mothers.',
+    date: '2025-09-08',
+    readTime: '10 min read',
+    category: 'Q&A',
+    icon: Sparkles
+  },
+  {
     slug: 'third-trimester-symptoms',
     title: 'Third Trimester Symptoms: Complete Guide to Weeks 28-40',
     excerpt: 'Comprehensive guide to third trimester pregnancy symptoms including sleep issues, breathing problems, and signs of labor.',
-    date: '2025-09-05',
+    date: '2025-09-07',
     readTime: '14 min read',
     category: 'Late Pregnancy',
     icon: Baby
@@ -40,7 +130,7 @@ const blogPosts = [
     slug: 'first-trimester-guide',
     title: 'Your First Trimester: What to Expect',
     excerpt: 'A comprehensive guide to navigating the first 12 weeks of pregnancy, from early symptoms to important milestones.',
-    date: '2025-08-20',
+    date: '2025-09-06',
     readTime: '8 min read',
     category: 'Guides',
     icon: Baby
@@ -49,46 +139,28 @@ const blogPosts = [
     slug: 'pregnancy-nutrition-essentials',
     title: 'Pregnancy Nutrition: Essential Foods for Every Trimester',
     excerpt: 'Discover the key nutrients you and your baby need during each stage of pregnancy, plus meal planning tips.',
-    date: '2025-08-15',
+    date: '2025-09-05',
     readTime: '6 min read',
     category: 'Nutrition',
     icon: Heart
   },
   {
-    slug: 'partner-support-guide',
-    title: 'How Partners Can Support During Pregnancy',
-    excerpt: 'Practical tips for partners to provide emotional and physical support throughout the pregnancy journey.',
-    date: '2025-08-10',
-    readTime: '5 min read',
-    category: 'Relationships',
+    slug: 'ivf-vs-iui-vs-natural-conception',
+    title: 'IVF vs IUI vs Natural Conception: Understanding Your Options',
+    excerpt: 'Compare different conception methods including IVF, IUI, and natural conception. Learn about success rates, costs, and what to expect from each approach.',
+    date: '2025-09-04',
+    readTime: '11 min read',
+    category: 'Fertility',
     icon: Sparkles
   },
   {
-    slug: 'managing-pregnancy-symptoms',
-    title: 'Managing Common Pregnancy Symptoms Naturally',
-    excerpt: 'Safe, natural ways to cope with morning sickness, fatigue, and other common pregnancy discomforts.',
-    date: '2025-08-05',
-    readTime: '7 min read',
-    category: 'Health',
+    slug: 'fathers-pregnancy-timeline-tests',
+    title: 'Father&apos;s Pregnancy Timeline: Tests, Milestones & Support Guide',
+    excerpt: 'A comprehensive timeline for expectant fathers covering important tests, milestones, and ways to support your partner throughout the pregnancy journey.',
+    date: '2025-09-03',
+    readTime: '13 min read',
+    category: 'For Partners',
     icon: Heart
-  },
-  {
-    slug: 'second-trimester-changes',
-    title: 'Second Trimester: The Golden Period of Pregnancy',
-    excerpt: 'Why weeks 13-27 are often considered the best time of pregnancy and what changes to expect.',
-    date: '2025-07-25',
-    readTime: '6 min read',
-    category: 'Guides',
-    icon: Baby
-  },
-  {
-    slug: 'preparing-for-birth',
-    title: 'Third Trimester: Preparing for Birth',
-    excerpt: 'Essential preparations for the final stretch of pregnancy and welcoming your baby.',
-    date: '2025-07-20',
-    readTime: '9 min read',
-    category: 'Birth Prep',
-    icon: Sparkles
   }
 ];
 

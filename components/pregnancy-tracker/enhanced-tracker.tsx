@@ -31,7 +31,6 @@ import {
 } from './types';
 
 import { 
-  calculateDueDate, 
   calculatePregnancyProgress, 
   getCurrentTrimester,
   getBabySize,

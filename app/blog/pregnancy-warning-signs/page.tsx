@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Heart, AlertCircle, CheckCircle, Clock, TrendingUp } from 'lucide-react';
+import { AlertCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Pregnancy Warning Signs: When to Call Your Doctor | Your Journey',
@@ -26,8 +26,8 @@ export default function PregnancyWarningSigns() {
             Pregnancy Warning Signs: When to Call Your Doctor
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            While most pregnancies progress smoothly, it's important to recognize warning signs that may indicate 
-            complications requiring immediate medical attention. Trust your instincts and don't hesitate to seek help.
+            While most pregnancies progress smoothly, it&apos;s important to recognize warning signs that may indicate 
+            complications requiring immediate medical attention. Trust your instincts and don&apos;t hesitate to seek help.
           </p>
         </div>
 
@@ -38,7 +38,7 @@ export default function PregnancyWarningSigns() {
               Your Health is Our Priority
             </h2>
             <p className="text-gray-600 leading-relaxed">
-              Being aware of potential warning signs during pregnancy helps ensure both your safety and your baby's well-being. 
+              Being aware of potential warning signs during pregnancy helps ensure both your safety and your baby&apos;s well-being. 
               This guide will help you understand when to contact your healthcare provider and what situations require immediate 
               medical attention.
             </p>
@@ -50,7 +50,7 @@ export default function PregnancyWarningSigns() {
               <ul className="space-y-2 text-red-700">
                 <li>• Heavy bleeding (soaking more than one pad per hour)</li>
                 <li>• Severe chest pain or shortness of breath</li>
-                <li>• Severe headache that won't go away</li>
+                <li>• Severe headache that won&apos;t go away</li>
                 <li>• Vision changes (blurred vision, seeing spots, light sensitivity)</li>
                 <li>• Signs of stroke (facial drooping, arm weakness, speech difficulty)</li>
                 <li>• Severe abdominal pain</li>
@@ -70,7 +70,7 @@ export default function PregnancyWarningSigns() {
                       <li>Heavy bleeding (like a period or heavier)</li>
                       <li>Bleeding with severe cramping</li>
                       <li>Passing tissue or clots</li>
-                      <li>Bright red bleeding that doesn't stop</li>
+                      <li>Bright red bleeding that doesn&apos;t stop</li>
                     </ul>
                   </div>
                   <div>
@@ -91,7 +91,7 @@ export default function PregnancyWarningSigns() {
                   <div>
                     <h4 className="font-medium text-gray-700 mb-2">Severe Morning Sickness</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
-                      <li>Can't keep fluids down for 24 hours</li>
+                      <li>Can&apos;t keep fluids down for 24 hours</li>
                       <li>Vomiting blood</li>
                       <li>Signs of dehydration</li>
                       <li>Rapid weight loss</li>
@@ -191,7 +191,7 @@ export default function PregnancyWarningSigns() {
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6">
                 <h3 className="text-lg font-medium text-gray-800 mb-4">Decreased Fetal Movement</h3>
                 <p className="text-gray-700 text-sm mb-3">
-                  After 28 weeks, monitor your baby's movements daily:
+                  After 28 weeks, monitor your baby&apos;s movements daily:
                 </p>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -209,7 +209,7 @@ export default function PregnancyWarningSigns() {
                       <li>Fewer than 10 movements in 2 hours</li>
                       <li>Significant decrease from normal pattern</li>
                       <li>No movement for several hours</li>
-                      <li>Baby doesn't respond to stimulation</li>
+                      <li>Baby doesn&apos;t respond to stimulation</li>
                     </ul>
                   </div>
                 </div>
@@ -237,7 +237,7 @@ export default function PregnancyWarningSigns() {
                       <li>Contractions 5 min apart for 1 hour</li>
                       <li>Water breaks (call immediately)</li>
                       <li>Heavy bleeding</li>
-                      <li>Baby's movements decrease significantly</li>
+                      <li>Baby&apos;s movements decrease significantly</li>
                       <li>You feel something is wrong</li>
                     </ul>
                   </div>
@@ -251,14 +251,14 @@ export default function PregnancyWarningSigns() {
               <h3 className="text-lg font-medium text-gray-800 mb-4">Trust Your Instincts</h3>
               <p className="text-gray-700 mb-4">
                 You know your body better than anyone. If something feels wrong or different, 
-                don't hesitate to contact your healthcare provider.
+                don&apos;t hesitate to contact your healthcare provider.
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-medium text-gray-700 mb-2">It's Better to Call If You Have:</h4>
+                  <h4 className="font-medium text-gray-700 mb-2">It&apos;s Better to Call If You Have:</h4>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
                     <li>Any symptom that worries you</li>
-                    <li>Something that doesn't feel normal</li>
+                    <li>Something that doesn&apos;t feel normal</li>
                     <li>Persistent symptoms</li>
                     <li>Questions about your health</li>
                   </ul>
@@ -269,7 +269,7 @@ export default function PregnancyWarningSigns() {
                     <li>Any concerns, big or small</li>
                     <li>Changes in your condition</li>
                     <li>Questions about symptoms</li>
-                    <li>Anything that feels "off"</li>
+                    <li>Anything that feels &quot;off&quot;</li>
                   </ul>
                 </div>
               </div>
@@ -282,7 +282,7 @@ export default function PregnancyWarningSigns() {
                   Most practices have an on-call system for urgent concerns outside office hours.
                 </p>
                 <ul className="list-disc list-inside space-y-1 text-blue-600 text-sm">
-                  <li>Call your provider's after-hours line</li>
+                  <li>Call your provider&apos;s after-hours line</li>
                   <li>Be prepared to describe symptoms clearly</li>
                   <li>Have your due date and medical info ready</li>
                 </ul>
@@ -290,7 +290,7 @@ export default function PregnancyWarningSigns() {
               <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4">
                 <h3 className="font-medium text-yellow-800 mb-2">Emergency Situations</h3>
                 <p className="text-yellow-700 text-sm mb-2">
-                  Don't wait to call your provider if you have emergency symptoms.
+                  Don&apos;t wait to call your provider if you have emergency symptoms.
                 </p>
                 <ul className="list-disc list-inside space-y-1 text-yellow-600 text-sm">
                   <li>Call 911 for life-threatening symptoms</li>
@@ -304,8 +304,8 @@ export default function PregnancyWarningSigns() {
               <h3 className="font-medium text-green-800 mb-2">Remember</h3>
               <p className="text-green-700">
                 Healthcare providers would rather see you for a false alarm than miss something important. 
-                Your safety and your baby's safety are the top priority. Never feel embarrassed about 
-                seeking medical attention when you're concerned.
+                Your safety and your baby&apos;s safety are the top priority. Never feel embarrassed about 
+                seeking medical attention when you&apos;re concerned.
               </p>
             </div>
           </div>

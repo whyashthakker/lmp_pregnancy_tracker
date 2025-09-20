@@ -189,7 +189,7 @@ export default function BabyNameGeneratorClient() {
                     <Button
                       key={styleOption}
                       variant={style === styleOption ? 'default' : 'outline'}
-                      onClick={() => setStyle(styleOption as any)}
+                      onClick={() => setStyle(styleOption as 'popular' | 'unique' | 'traditional' | 'nature' | 'strong' | 'elegant')}
                       className="h-auto py-2 capitalize"
                     >
                       {styleOption}

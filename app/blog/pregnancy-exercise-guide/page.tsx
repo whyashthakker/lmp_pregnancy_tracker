@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Heart, AlertCircle, CheckCircle, Clock, TrendingUp } from 'lucide-react';
+import { TrendingUp } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Safe Pregnancy Exercise Guide | Your Journey',
@@ -131,7 +131,7 @@ export default function PregnancyExerciseGuide() {
                 <h3 className="font-medium text-gray-800 mb-2">General Guidelines</h3>
                 <ul className="list-disc list-inside space-y-1 text-gray-600">
                   <li>Aim for 150 minutes of moderate exercise weekly</li>
-                  <li>Start slowly if you're new to exercise</li>
+                  <li>Start slowly if you&apos;re new to exercise</li>
                   <li>Stay hydrated before, during, and after</li>
                   <li>Wear comfortable, supportive clothing</li>
                   <li>Exercise in well-ventilated areas</li>
