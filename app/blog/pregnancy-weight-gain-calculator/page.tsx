@@ -107,7 +107,7 @@ export default function PregnancyWeightGainCalculator() {
               <li>Stay hydrated with plenty of water</li>
               <li>Engage in regular, moderate exercise (with doctor approval)</li>
               <li>Monitor weight gain weekly, not daily</li>
-              <li>Don't diet during pregnancy - focus on healthy eating</li>
+              <li>Don&apos;t diet during pregnancy - focus on healthy eating</li>
             </ul>
           </div>
         </article>

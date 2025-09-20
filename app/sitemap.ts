@@ -109,6 +109,79 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date('2025-09-05'),
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: 'https://www.egspect.com/blog/ivf-vs-iui-vs-natural-conception',
+      lastModified: new Date('2025-09-04'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    // Free Pregnancy Tools
+    {
+      url: 'https://www.egspect.com/tools',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: 'https://www.egspect.com/tools/due-date-calculator',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: 'https://www.egspect.com/tools/pregnancy-week-calculator',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.egspect.com/tools/baby-name-generator',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.egspect.com/tools/pregnancy-weight-gain-calculator',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.egspect.com/tools/ovulation-calculator',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.egspect.com/tools/baby-gender-predictor',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.egspect.com/tools/baby-size-comparison',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.egspect.com/tools/contraction-timer',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.egspect.com/tools/kick-counter',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.egspect.com/tools/pregnancy-nutrition-tracker',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
     }
   ]
 }

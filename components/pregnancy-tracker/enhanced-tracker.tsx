@@ -60,7 +60,7 @@ const EnhancedPregnancyTracker: React.FC = () => {
 
   // Derived state
   const lmpDate = pregnancyData.lmpDate ? new Date(pregnancyData.lmpDate) : null;
-  const dueDate = lmpDate ? calculateDueDate(lmpDate) : null;
+  // const dueDate = lmpDate ? calculateDueDate(lmpDate) : null;
   const { weeksPregnant, daysRemaining, progressPercentage } = lmpDate ? 
     calculatePregnancyProgress(lmpDate) : { weeksPregnant: 0, daysRemaining: 0, progressPercentage: 0 };
   const trimester = getCurrentTrimester(weeksPregnant);

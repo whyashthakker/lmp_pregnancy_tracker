@@ -1,63 +1,51 @@
 {
-  "name": "Pregnancy Tracker",
-  "short_name": "Pregnancy Tracker",
+  "name": "Egspect - Pregnancy Tracker",
+  "short_name": "Egspect",
   "description": "Simple and intuitive pregnancy tracking app. Monitor your baby's growth, track symptoms, and stay informed about your pregnancy journey week by week.",
-  "start_url": "/",
+  "start_url": "https://egspect.com/",
   "display": "standalone",
-  "background_color": "#fef7f0",
+  "background_color": "#ffffff",
   "theme_color": "#ec4899",
   "orientation": "portrait",
-  "scope": "/",
+  "scope": "https://egspect.com/",
   "lang": "en",
   "categories": ["health", "medical", "lifestyle"],
   "icons": [
     {
-      "src": "/icon-72x72.png",
+      "src": "https://egspect.com/baby-icon-72.png",
       "sizes": "72x72",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
-      "src": "/icon-96x96.png",
+      "src": "https://egspect.com/baby-icon-96.png",
       "sizes": "96x96",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
-      "src": "/icon-128x128.png",
+      "src": "https://egspect.com/baby-icon-128.png",
       "sizes": "128x128",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
-      "src": "/icon-144x144.png",
+      "src": "https://egspect.com/baby-icon-144.png",
       "sizes": "144x144",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
-      "src": "/icon-152x152.png",
-      "sizes": "152x152",
-      "type": "image/png",
-      "purpose": "maskable any"
-    },
-    {
-      "src": "/icon-192x192.png",
+      "src": "https://egspect.com/baby-icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "maskable"
     },
     {
-      "src": "/icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "maskable any"
-    },
-    {
-      "src": "/icon-512x512.png",
+      "src": "https://egspect.com/baby-icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "maskable"
     }
   ]
 }
