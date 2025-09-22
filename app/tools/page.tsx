@@ -11,12 +11,14 @@ import {
   Timer, 
   Activity, 
   Flower,
-  Target
+  Target,
+  Search,
+  Briefcase
 } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Free Pregnancy Tools - Essential Calculators & Trackers | Your Journey',
-  description: 'Access 10 free pregnancy tools including due date calculator, week tracker, baby name generator, nutrition tracker, and more. Essential tools for expecting parents.',
+  description: 'Access 13 free pregnancy tools including due date calculator, symptom checker, hospital bag checklist, safe foods checker, and more. Essential tools for expecting parents.',
   keywords: 'free pregnancy tools, pregnancy calculator, due date calculator, baby name generator, pregnancy tracker, pregnancy planning tools',
   openGraph: {
     title: 'Free Pregnancy Tools - Essential Calculators & Trackers',
@@ -118,6 +120,34 @@ const tools = [
     color: 'from-green-500 to-yellow-500',
     bgColor: 'bg-green-50',
     iconColor: 'text-green-600'
+  },
+  {
+    title: 'Symptom Checker',
+    description: 'Quick guidance on pregnancy symptoms - find out if what you\'re experiencing is normal.',
+    href: '/tools/pregnancy-symptom-checker',
+    icon: Search,
+    color: 'from-blue-500 to-green-500',
+    bgColor: 'bg-blue-50',
+    iconColor: 'text-blue-600',
+    popular: true
+  },
+  {
+    title: 'Hospital Bag Checklist',
+    description: 'Interactive packing checklist for labor and delivery - never forget essential items.',
+    href: '/tools/hospital-bag-checklist',
+    icon: Briefcase,
+    color: 'from-purple-500 to-pink-500',
+    bgColor: 'bg-purple-50',
+    iconColor: 'text-purple-600'
+  },
+  {
+    title: 'Safe Foods Checker',
+    description: 'Quickly check if foods are safe to eat during pregnancy with instant answers.',
+    href: '/tools/pregnancy-safe-foods',
+    icon: Apple,
+    color: 'from-green-500 to-blue-500',
+    bgColor: 'bg-green-50',
+    iconColor: 'text-green-600'
   }
 ];
 
@@ -125,6 +155,10 @@ const categories = {
   planning: {
     title: 'Planning & Early Pregnancy',
     tools: ['ovulation-calculator', 'due-date-calculator', 'pregnancy-week-calculator']
+  },
+  health: {
+    title: 'Health & Safety',
+    tools: ['pregnancy-symptom-checker', 'pregnancy-safe-foods', 'hospital-bag-checklist']
   },
   tracking: {
     title: 'Pregnancy Tracking',
