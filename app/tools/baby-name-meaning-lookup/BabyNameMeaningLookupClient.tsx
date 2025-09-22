@@ -517,8 +517,8 @@ export default function BabyNameMeaningLookupClient() {
             Found the Perfect Name?
           </h2>
           <p className="text-purple-100 mb-6 leading-relaxed">
-            Explore more tools to help you prepare for your little one's arrival. 
-            From tracking your pregnancy to preparing for labor, we're here to support your journey.
+            Explore more tools to help you prepare for your little one&apos;s arrival. 
+            From tracking your pregnancy to preparing for labor, we&apos;re here to support your journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 

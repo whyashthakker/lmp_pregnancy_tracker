@@ -225,7 +225,7 @@ export default function WhatIsMiscarriage() {
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
             A comprehensive guide to early pregnancy loss, including causes, symptoms, types, 
-            and recovery. You're not alone in this journey - support and understanding are available.
+            and recovery. You&apos;re not alone in this journey - support and understanding are available.
           </p>
         </div>
 
@@ -236,7 +236,7 @@ export default function WhatIsMiscarriage() {
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
             Miscarriage, also called spontaneous abortion, is the natural loss of a pregnancy before 20 weeks gestation. 
-            It's the most common complication of early pregnancy, affecting 10-25% of clinically recognized pregnancies. 
+            It&apos;s the most common complication of early pregnancy, affecting 10-25% of clinically recognized pregnancies. 
             Most miscarriages occur in the first trimester (before 12 weeks).
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -357,7 +357,7 @@ export default function WhatIsMiscarriage() {
               <div>
                 <h3 className="text-lg font-semibold text-yellow-800 mb-2">Important to Remember</h3>
                 <p className="text-yellow-700">
-                  Having risk factors doesn't mean you will have a miscarriage. Many women with risk factors 
+                  Having risk factors doesn&apos;t mean you will have a miscarriage. Many women with risk factors 
                   have healthy pregnancies, and many miscarriages occur without any identifiable risk factors.
                 </p>
               </div>
@@ -410,7 +410,7 @@ export default function WhatIsMiscarriage() {
           </h2>
           <p className="text-gray-600 mb-8 leading-relaxed">
             Miscarriage is not just a physical loss but an emotional one. Grief is natural and necessary. 
-            Everyone processes loss differently, and there's no "right" timeline for healing.
+            Everyone processes loss differently, and there&apos;s no &ldquo;right&rdquo; timeline for healing.
           </p>
           <div className="space-y-4">
             {emotionalStages.map((stage, index) => (
@@ -546,7 +546,7 @@ export default function WhatIsMiscarriage() {
             You Are Not Alone
           </h2>
           <p className="text-purple-100 mb-6 leading-relaxed">
-            If you're experiencing pregnancy loss, remember that it's not your fault. 
+            If you&apos;re experiencing pregnancy loss, remember that it&apos;s not your fault. 
             Seek support, take time to heal, and know that hope remains for the future.
           </p>
           <Link 

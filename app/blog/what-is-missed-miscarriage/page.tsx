@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Heart, AlertTriangle, Clock, Eye, Baby, CheckCircle, XCircle, Stethoscope } from 'lucide-react';
+import { Heart, AlertTriangle, Clock, Eye, CheckCircle, XCircle, Stethoscope } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'What is Missed Miscarriage? Silent Pregnancy Loss Explained',
@@ -288,7 +288,7 @@ export default function WhatIsMissedMiscarriage() {
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
             A missed miscarriage, also known as a silent miscarriage or missed abortion, occurs when an embryo 
-            or fetus dies but the body doesn't immediately recognize the loss. Unlike other types of miscarriage, 
+            or fetus dies but the body doesn&apos;t immediately recognize the loss. Unlike other types of miscarriage, 
             there may be no bleeding, cramping, or other obvious symptoms. The pregnancy hormone levels may remain 
             elevated, and pregnancy symptoms may continue for a while.
           </p>
@@ -480,7 +480,7 @@ export default function WhatIsMissedMiscarriage() {
                 <h3 className="text-lg font-semibold text-yellow-800 mb-2">Important Note</h3>
                 <p className="text-yellow-700">
                   Most missed miscarriages occur due to random chromosomal abnormalities and are not caused 
-                  by anything you did or didn't do. Having risk factors doesn't guarantee pregnancy loss.
+                  by anything you did or didn&apos;t do. Having risk factors doesn&apos;t guarantee pregnancy loss.
                 </p>
               </div>
             </div>
@@ -502,7 +502,7 @@ export default function WhatIsMissedMiscarriage() {
             Common Myths About Prevention
           </h2>
           <p className="text-gray-600 mb-8 leading-relaxed">
-            It's important to understand that missed miscarriages usually cannot be prevented. 
+            It&apos;s important to understand that missed miscarriages usually cannot be prevented. 
             Here are common myths that may add unnecessary guilt:
           </p>
           <div className="space-y-4">
@@ -513,7 +513,7 @@ export default function WhatIsMissedMiscarriage() {
                   <div className="flex items-start gap-4">
                     <IconComponent className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-gray-800 mb-2">Myth: "{myth.myth}"</h3>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">Myth: &ldquo;{myth.myth}&rdquo;</h3>
                       <p className="text-gray-600"><strong>Reality:</strong> {myth.reality}</p>
                     </div>
                   </div>
@@ -588,7 +588,7 @@ export default function WhatIsMissedMiscarriage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span>Having one missed miscarriage doesn't increase future risk significantly</span>
+                  <span>Having one missed miscarriage doesn&apos;t increase future risk significantly</span>
                 </li>
               </ul>
             </div>

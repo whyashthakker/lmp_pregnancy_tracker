@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { TestTube, TrendingDown, Calendar, Heart, AlertTriangle, CheckCircle, Clock, Info } from 'lucide-react';
+import { TestTube, TrendingDown, Calendar, Heart, AlertTriangle, CheckCircle, Info } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'What is Chemical Pregnancy? Early Pregnancy Loss Explained',
@@ -326,7 +326,7 @@ export default function WhatIsChemicalPregnancy() {
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
             A chemical pregnancy, also called a biochemical pregnancy, is a very early miscarriage that occurs 
-            shortly after implantation. The pregnancy is called "chemical" because it can only be detected 
+            shortly after implantation. The pregnancy is called &ldquo;chemical&rdquo; because it can only be detected 
             through chemical tests (pregnancy tests that measure HCG hormone), not through ultrasound.
           </p>
           <p className="text-gray-700 leading-relaxed mb-6">
@@ -411,7 +411,7 @@ export default function WhatIsChemicalPregnancy() {
             Chemical Pregnancy vs Regular Period
           </h2>
           <p className="text-gray-600 mb-8 leading-relaxed">
-            Chemical pregnancies can be difficult to distinguish from a late period. Here's how they might differ:
+            Chemical pregnancies can be difficult to distinguish from a late period. Here&apos;s how they might differ:
           </p>
           <div className="bg-white/70 backdrop-blur-sm rounded-xl border border-gray-100/80 overflow-hidden">
             <div className="overflow-x-auto">
@@ -506,7 +506,7 @@ export default function WhatIsChemicalPregnancy() {
               <div>
                 <h3 className="text-lg font-semibold text-yellow-800 mb-2">Remember</h3>
                 <p className="text-yellow-700">
-                  Having risk factors doesn't mean you will have a chemical pregnancy. Many women with 
+                  Having risk factors doesn&apos;t mean you will have a chemical pregnancy. Many women with 
                   risk factors have normal pregnancies, and chemical pregnancies often occur without any risk factors.
                 </p>
               </div>
@@ -566,7 +566,7 @@ export default function WhatIsChemicalPregnancy() {
                   <div className="flex items-start gap-4">
                     <IconComponent className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-gray-800 mb-2">Myth: "{myth.myth}"</h3>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">Myth: &ldquo;{myth.myth}&rdquo;</h3>
                       <p className="text-gray-600"><strong>Reality:</strong> {myth.reality}</p>
                     </div>
                   </div>
@@ -607,7 +607,7 @@ export default function WhatIsChemicalPregnancy() {
             Hope for Future Pregnancies
           </h2>
           <p className="text-gray-600 mb-6 leading-relaxed">
-            The good news is that chemical pregnancies usually don't indicate ongoing fertility problems. 
+            The good news is that chemical pregnancies usually don&apos;t indicate ongoing fertility problems. 
             They show that conception can occur, and most women go on to have successful pregnancies.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -629,7 +629,7 @@ export default function WhatIsChemicalPregnancy() {
                 When to Contact Your Healthcare Provider
               </h2>
               <p className="text-orange-700">
-                While one chemical pregnancy usually doesn't require medical intervention, contact your doctor if:
+                While one chemical pregnancy usually doesn&apos;t require medical intervention, contact your doctor if:
               </p>
             </div>
           </div>
@@ -688,7 +688,7 @@ export default function WhatIsChemicalPregnancy() {
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span>It's not your fault - it's usually random</span>
+                  <span>It&apos;s not your fault - it&apos;s usually random</span>
                 </li>
               </ul>
             </div>

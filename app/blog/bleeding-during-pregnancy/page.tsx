@@ -2,6 +2,16 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { AlertTriangle, Phone, Clock, Heart, Baby, CheckCircle, XCircle } from 'lucide-react';
 
+interface BleedingInfo {
+  type: string;
+  timing: string;
+  description: string;
+  characteristics: string[];
+  urgency: string;
+  action: string;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+}
+
 export const metadata: Metadata = {
   title: 'Bleeding During Pregnancy: When to Worry and When to Seek Help',
   description: 'Complete guide to pregnancy bleeding by trimester. Learn about spotting vs bleeding, emergency signs, and when to contact your doctor immediately.',
@@ -214,7 +224,7 @@ const urgencyLevels = {
 
 function UrgencyBadge({ level }: { level: keyof typeof urgencyLevels }) {
   const config = urgencyLevels[level];
-  const colorClasses = {
+  const colorClasses: Record<string, string> = {
     green: "bg-green-100 text-green-800 border-green-200",
     yellow: "bg-yellow-100 text-yellow-800 border-yellow-200", 
     orange: "bg-orange-100 text-orange-800 border-orange-200",
@@ -228,7 +238,7 @@ function UrgencyBadge({ level }: { level: keyof typeof urgencyLevels }) {
   );
 }
 
-function BleedingCard({ bleeding, trimester }: { bleeding: any, trimester: string }) {
+function BleedingCard({ bleeding }: { bleeding: BleedingInfo }) {
   const IconComponent = bleeding.icon;
   
   return (
@@ -331,7 +341,7 @@ export default function BleedingDuringPregnancy() {
           
           <div className="mt-6 p-4 bg-red-100/60 rounded-lg">
             <p className="text-red-800 text-center">
-              <strong>Remember:</strong> It's always better to be safe than sorry. 
+              <strong>Remember:</strong> It&apos;s always better to be safe than sorry. 
               When in doubt, contact your healthcare provider immediately.
             </p>
           </div>
@@ -364,7 +374,7 @@ export default function BleedingDuringPregnancy() {
           </p>
           <div className="space-y-6">
             {firstTrimesterBleeding.map((bleeding, index) => (
-              <BleedingCard key={index} bleeding={bleeding} trimester="first" />
+              <BleedingCard key={index} bleeding={bleeding} />
             ))}
           </div>
         </div>
@@ -380,7 +390,7 @@ export default function BleedingDuringPregnancy() {
           </p>
           <div className="space-y-6">
             {secondTrimesterBleeding.map((bleeding, index) => (
-              <BleedingCard key={index} bleeding={bleeding} trimester="second" />
+              <BleedingCard key={index} bleeding={bleeding} />
             ))}
           </div>
         </div>
@@ -392,11 +402,11 @@ export default function BleedingDuringPregnancy() {
           </h2>
           <p className="text-gray-600 mb-8 leading-relaxed">
             Late pregnancy bleeding can range from normal pre-labor signs to serious emergencies. 
-            Understanding the difference is crucial for both mother and baby's safety.
+            Understanding the difference is crucial for both mother and baby&apos;s safety.
           </p>
           <div className="space-y-6">
             {thirdTrimesterBleeding.map((bleeding, index) => (
-              <BleedingCard key={index} bleeding={bleeding} trimester="third" />
+              <BleedingCard key={index} bleeding={bleeding} />
             ))}
           </div>
         </div>
@@ -410,7 +420,7 @@ export default function BleedingDuringPregnancy() {
                 When to Contact Your Healthcare Provider
               </h2>
               <p className="text-blue-700">
-                Don't wait if you experience any of the following:
+                Don&apos;t wait if you experience any of the following:
               </p>
             </div>
           </div>
@@ -464,7 +474,7 @@ export default function BleedingDuringPregnancy() {
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span>When bleeding started and how long it's lasted</span>
+                  <span>When bleeding started and how long it&apos;s lasted</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />

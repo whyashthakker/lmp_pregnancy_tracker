@@ -382,7 +382,7 @@ export default function LaborSignsCheckerClient() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-medium text-blue-700 mb-2">If You've Had Babies Before:</h4>
+                  <h4 className="font-medium text-blue-700 mb-2">If You&apos;ve Had Babies Before:</h4>
                   <ul className="text-sm text-blue-600 space-y-1">
                     <li>• Labor may progress more quickly</li>
                     <li>• Head to hospital sooner</li>

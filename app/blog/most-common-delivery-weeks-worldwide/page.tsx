@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Globe, Calendar, TrendingUp, Baby, BarChart3, Flag, CheckCircle, AlertTriangle, Clock } from 'lucide-react';
+import { Globe, TrendingUp, BarChart3, Flag, CheckCircle, AlertTriangle } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Most Common Delivery Weeks Worldwide: Global Birth Statistics & India Data',

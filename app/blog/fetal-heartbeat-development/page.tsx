@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Heart, Activity, Stethoscope, TrendingUp, Calendar, Baby, CheckCircle, AlertTriangle } from 'lucide-react';
+import { Heart, Activity, Stethoscope, TrendingUp, Baby, CheckCircle, AlertTriangle } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Fetal Heartbeat Development: Heart Rate Changes Throughout Pregnancy',
@@ -334,7 +334,7 @@ export default function FetalHeartbeatDevelopment() {
             Fetal Heartbeat Development
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            A comprehensive guide to your baby's heart development from the first beat at 6 weeks 
+            A comprehensive guide to your baby&apos;s heart development from the first beat at 6 weeks 
             through birth. Understanding normal heart rates, detection methods, and what changes mean.
           </p>
         </div>
@@ -342,10 +342,10 @@ export default function FetalHeartbeatDevelopment() {
         {/* Overview */}
         <div className="bg-gradient-to-r from-pink-50/60 to-red-50/60 rounded-2xl p-8 mb-12 border border-pink-100/40">
           <h2 className="text-2xl font-semibold text-gray-800 mb-6">
-            The Journey of Baby's First Heartbeat
+            The Journey of Baby&apos;s First Heartbeat
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Your baby's heart is one of the first organs to develop and function. The heartbeat is often 
+            Your baby&apos;s heart is one of the first organs to develop and function. The heartbeat is often 
             the first sign of life that parents experience, creating a profound emotional connection. 
             Understanding how the heart develops and what heart rate patterns mean can help you appreciate 
             this incredible journey.
@@ -483,7 +483,7 @@ export default function FetalHeartbeatDevelopment() {
             Factors That Affect Fetal Heart Rate
           </h2>
           <p className="text-gray-600 mb-8 leading-relaxed">
-            Many normal factors can cause variations in your baby's heart rate. Understanding these 
+            Many normal factors can cause variations in your baby&apos;s heart rate. Understanding these 
             can help you interpret what you hear and when to be concerned.
           </p>
           <div className="space-y-4">
@@ -589,7 +589,7 @@ export default function FetalHeartbeatDevelopment() {
                   <div className="flex items-start gap-4">
                     <IconComponent className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-gray-800 mb-2">Myth: "{myth.myth}"</h3>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">Myth: &ldquo;{myth.myth}&rdquo;</h3>
                       <p className="text-gray-600"><strong>Reality:</strong> {myth.reality}</p>
                     </div>
                   </div>
@@ -662,10 +662,10 @@ export default function FetalHeartbeatDevelopment() {
         <div className="text-center bg-gradient-to-r from-pink-500 to-red-500 rounded-2xl p-8 text-white">
           <Heart className="w-12 h-12 mx-auto mb-4 text-pink-100" />
           <h2 className="text-2xl font-semibold mb-4">
-            Track Your Baby's Development
+            Track Your Baby&apos;s Development
           </h2>
           <p className="text-pink-100 mb-6 leading-relaxed">
-            Monitor your pregnancy milestones and track your baby's heart development journey 
+            Monitor your pregnancy milestones and track your baby&apos;s heart development journey 
             with our comprehensive pregnancy tracker. Record heartbeat detections and share 
             the joy with family.
           </p>

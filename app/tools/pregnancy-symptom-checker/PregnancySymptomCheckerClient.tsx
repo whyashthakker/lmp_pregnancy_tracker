@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { AlertTriangle, CheckCircle, Phone, Clock, Search, Heart } from 'lucide-react';
 
@@ -338,7 +337,7 @@ export default function PregnancySymptomCheckerClient() {
                       <div>
                         <h4 className="font-semibold text-green-700 mb-2 flex items-center gap-2">
                           <CheckCircle className="w-4 h-4" />
-                          When It's Normal:
+                          When It&apos;s Normal:
                         </h4>
                         <p className="text-gray-700 text-sm">{symptom.when_normal}</p>
                       </div>
@@ -399,7 +398,7 @@ export default function PregnancySymptomCheckerClient() {
           </h2>
           <p className="text-blue-100 mb-6 leading-relaxed">
             You know your body best. When in doubt, always contact your healthcare provider. 
-            It's better to be safe and ask questions than to worry in silence.
+            It&apos;s better to be safe and ask questions than to worry in silence.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 

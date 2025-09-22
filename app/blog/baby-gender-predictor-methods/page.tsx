@@ -185,8 +185,8 @@ export default function BabyGenderPredictorMethods() {
             Baby Gender Predictor Methods
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            Discover all the ways to predict your baby's gender, from accurate medical tests 
-            to fun traditional methods. Learn what works, what doesn't, and when you can find out.
+            Discover all the ways to predict your baby&apos;s gender, from accurate medical tests 
+            to fun traditional methods. Learn what works, what doesn&apos;t, and when you can find out.
           </p>
         </div>
 
@@ -198,7 +198,7 @@ export default function BabyGenderPredictorMethods() {
               Try Our Interactive Gender Predictor
             </h2>
             <p className="text-blue-100 mb-6 leading-relaxed">
-              Use multiple prediction methods together and see what they suggest about your baby's gender. 
+              Use multiple prediction methods together and see what they suggest about your baby&apos;s gender. 
               Just for fun - remember, only medical tests are accurate!
             </p>
             <Link 
@@ -319,8 +319,8 @@ export default function BabyGenderPredictorMethods() {
               <div>
                 <h3 className="text-lg font-semibold text-yellow-800 mb-2">Just for Fun!</h3>
                 <p className="text-yellow-700">
-                  These methods are entertaining but have no scientific basis. They're essentially 50/50 guesses - 
-                  perfect for baby shower games and family fun, but don't rely on them for accuracy.
+                  These methods are entertaining but have no scientific basis. They&apos;re essentially 50/50 guesses - 
+                  perfect for baby shower games and family fun, but don&apos;t rely on them for accuracy.
                 </p>
               </div>
             </div>
@@ -367,7 +367,7 @@ export default function BabyGenderPredictorMethods() {
                     {item.verdict}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">"{item.myth}"</h3>
+                    <h3 className="text-lg font-semibold text-gray-800 mb-2">&ldquo;{item.myth}&rdquo;</h3>
                     <p className="text-gray-600">{item.reality}</p>
                   </div>
                 </div>
@@ -379,7 +379,7 @@ export default function BabyGenderPredictorMethods() {
         {/* When to Find Out */}
         <div className="bg-blue-50/60 rounded-2xl border border-blue-100/60 p-8 mb-12">
           <h2 className="text-2xl font-semibold text-gray-800 mb-6">
-            When Can You Find Out Baby's Gender?
+            When Can You Find Out Baby&apos;s Gender?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center">
@@ -429,7 +429,7 @@ export default function BabyGenderPredictorMethods() {
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span>Have backup appointment if baby isn't cooperative</span>
+                  <span>Have backup appointment if baby isn&apos;t cooperative</span>
                 </li>
               </ul>
             </div>
@@ -438,7 +438,7 @@ export default function BabyGenderPredictorMethods() {
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span>Tell your healthcare team you don't want to know</span>
+                  <span>Tell your healthcare team you don&apos;t want to know</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />

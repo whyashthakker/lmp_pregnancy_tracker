@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Briefcase, Baby, Heart, User, Star, CheckCircle, RotateCcw, Download } from 'lucide-react';
+import { Briefcase, Baby, Heart, User, Star, CheckCircle, RotateCcw } from 'lucide-react';
 
 interface ChecklistItem {
   id: string;
@@ -20,7 +20,7 @@ interface ChecklistItem {
 interface BagSection {
   id: string;
   title: string;
-  icon: any;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   description: string;
   items: ChecklistItem[];
 }
@@ -658,11 +658,11 @@ export default function HospitalBagChecklistClient() {
         <div className="mt-12 text-center bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl p-8 text-white">
           <Briefcase className="w-12 h-12 mx-auto mb-4 text-purple-100" />
           <h2 className="text-2xl font-semibold mb-4">
-            You're Almost Ready!
+            You&apos;re Almost Ready!
           </h2>
           <p className="text-purple-100 mb-6 leading-relaxed">
             Having everything packed and ready will give you peace of mind when labor starts. 
-            Don't stress about forgetting something - the hospital has most essentials covered.
+            Don&apos;t stress about forgetting something - the hospital has most essentials covered.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
