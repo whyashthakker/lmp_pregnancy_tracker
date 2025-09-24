@@ -55,7 +55,7 @@ export default function FirstTrimesterGuidePage() {
           <div className="flex items-center justify-center gap-6 text-sm text-gray-500">
             <div className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
-              January 15, 2024
+              January 15, 2025
             </div>
             <span>8 min read</span>
           </div>

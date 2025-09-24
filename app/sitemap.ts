@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: 'https://www.egspect.com',
-      lastModified: new Date('2025-09-22'),
+      lastModified: new Date('2025-09-24'),
       changeFrequency: 'weekly',
       priority: 1,
     },
@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.egspect.com/tools',
-      lastModified: new Date('2025-09-22'),
+      lastModified: new Date('2025-09-24'),
       changeFrequency: 'weekly',
       priority: 0.9,
     },
@@ -69,6 +69,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: 'https://www.egspect.com/tools/baby-cost-calculator',
+      lastModified: new Date('2025-09-24'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: 'https://www.egspect.com/tools/baby-gender-predictor',
       lastModified: new Date('2025-09-20'),
       changeFrequency: 'monthly',
@@ -81,8 +87,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: 'https://www.egspect.com/tools/baby-name-meaning-lookup',
+      lastModified: new Date('2025-09-22'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: 'https://www.egspect.com/tools/baby-size-comparison',
       lastModified: new Date('2025-09-20'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.egspect.com/tools/cost-of-having-a-baby/[slug]',
+      lastModified: new Date('2025-09-24'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
@@ -95,6 +113,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://www.egspect.com/tools/kick-counter',
       lastModified: new Date('2025-09-20'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.egspect.com/tools/labor-signs-checker',
+      lastModified: new Date('2025-09-22'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
@@ -131,6 +155,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://www.egspect.com/blog/common-pregnancy-questions-answered',
       lastModified: new Date('2025-09-20'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.egspect.com/blog/cost-of-having-baby-in-australia',
+      lastModified: new Date('2025-09-24'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.egspect.com/blog/cost-of-having-baby-in-canada',
+      lastModified: new Date('2025-09-24'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.egspect.com/blog/cost-of-having-baby-in-china',
+      lastModified: new Date('2025-09-24'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.egspect.com/blog/cost-of-having-baby-in-india',
+      lastModified: new Date('2025-09-24'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.egspect.com/blog/cost-of-having-baby-in-united-kingdom',
+      lastModified: new Date('2025-09-24'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.egspect.com/blog/cost-of-having-baby-in-united-states',
+      lastModified: new Date('2025-09-24'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },

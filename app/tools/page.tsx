@@ -13,12 +13,13 @@ import {
   Flower,
   Target,
   Search,
-  Briefcase
+  Briefcase,
+  PiggyBank
 } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Free Pregnancy Tools - Essential Calculators & Trackers | Your Journey',
-  description: 'Access 13 free pregnancy tools including due date calculator, symptom checker, hospital bag checklist, safe foods checker, and more. Essential tools for expecting parents.',
+  description: 'Access 14 free pregnancy tools including due date calculator, baby cost calculator, symptom checker, hospital bag checklist, safe foods checker, and more. Essential tools for expecting parents.',
   keywords: 'free pregnancy tools, pregnancy calculator, due date calculator, baby name generator, pregnancy tracker, pregnancy planning tools',
   openGraph: {
     title: 'Free Pregnancy Tools - Essential Calculators & Trackers',
@@ -74,6 +75,16 @@ const tools = [
     color: 'from-rose-500 to-pink-500',
     bgColor: 'bg-rose-50',
     iconColor: 'text-rose-600',
+    popular: true
+  },
+  {
+    title: 'Baby Cost Calculator',
+    description: 'Calculate the cost of having a baby in your country with detailed budget breakdown.',
+    href: '/tools/baby-cost-calculator',
+    icon: PiggyBank,
+    color: 'from-green-500 to-blue-500',
+    bgColor: 'bg-green-50',
+    iconColor: 'text-green-600',
     popular: true
   },
   {
@@ -154,7 +165,7 @@ const tools = [
 const categories = {
   planning: {
     title: 'Planning & Early Pregnancy',
-    tools: ['ovulation-calculator', 'due-date-calculator', 'pregnancy-week-calculator']
+    tools: ['ovulation-calculator', 'due-date-calculator', 'pregnancy-week-calculator', 'baby-cost-calculator']
   },
   health: {
     title: 'Health & Safety',
