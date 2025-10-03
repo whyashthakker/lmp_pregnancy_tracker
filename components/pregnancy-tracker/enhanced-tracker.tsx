@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { format } from 'date-fns';
+import Link from 'next/link';
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -21,7 +22,9 @@ import {
   Activity,
   TrendingUp,
   Clock4,
-  Info
+  Info,
+  Timer,
+  ArrowRight
 } from 'lucide-react';
 import { cn } from "@/lib/utils";
 
@@ -146,7 +149,7 @@ const EnhancedPregnancyTracker: React.FC = () => {
                   <Button
                     variant="outline"
                     className={cn(
-                      "w-80 justify-start text-left font-normal bg-white/90 backdrop-blur-sm border-pink-200/60 hover:bg-white shadow-sm",
+                      "w-full max-w-80 mx-auto justify-start text-left font-normal bg-white/90 backdrop-blur-sm border-pink-200/60 hover:bg-white shadow-sm",
                       !selectedDate && "text-muted-foreground"
                     )}
                   >
@@ -154,7 +157,7 @@ const EnhancedPregnancyTracker: React.FC = () => {
                     {selectedDate ? format(selectedDate, "PPP") : "Select your last period date"}
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-auto p-0" align="start">
+                <PopoverContent className="w-auto p-0 mx-4 max-w-[calc(100vw-2rem)]" align="center" side="bottom">
                   <Calendar
                     mode="single"
                     selected={selectedDate}
@@ -188,7 +191,7 @@ const EnhancedPregnancyTracker: React.FC = () => {
                 <div className="text-sm text-gray-600">
                   <span className="font-medium">{format(lmpDate, "MMM d, yyyy")}</span>
                   <span className="text-gray-400 mx-2">•</span>
-                  <span>Week {weeksPregnant}</span>
+                  <span>{weeksPregnant} weeks, {daysRemaining} days</span>
                 </div>
                 <Button 
                   variant="ghost" 
@@ -290,7 +293,7 @@ const EnhancedPregnancyTracker: React.FC = () => {
                           </span>
                           <span className="text-xs text-gray-500 mt-1">Complete</span>
                           <div className="mt-2 text-xs text-gray-400 font-medium">
-                            Week {weeksPregnant}
+                            {weeksPregnant}w {daysRemaining}d
                           </div>
                         </div>
                       </div>
@@ -360,8 +363,8 @@ const EnhancedPregnancyTracker: React.FC = () => {
                   </h3>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center p-3 rounded-lg bg-pink-50/60">
-                      <div className="text-2xl font-bold text-pink-600">{weeksPregnant}</div>
-                      <div className="text-xs text-gray-500 font-medium">Weeks</div>
+                      <div className="text-lg font-bold text-pink-600">{weeksPregnant}w {daysRemaining}d</div>
+                      <div className="text-xs text-gray-500 font-medium">Progress</div>
                     </div>
                     <div className="text-center p-3 rounded-lg bg-purple-50/60">
                       <div className="text-2xl font-bold text-purple-600">{Math.ceil((280 - (weeksPregnant * 7 + daysRemaining)) / 7)}</div>
@@ -497,8 +500,80 @@ const EnhancedPregnancyTracker: React.FC = () => {
                     )}
                   </div>
                 </div>
+
+                {/* Baby Countdown Timer Link */}
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-pink-50/60 to-purple-50/60 backdrop-blur-sm border border-pink-100/60">
+                  <div className="text-center">
+                    <div className="flex justify-center mb-4">
+                      <div className="p-3 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full">
+                        <Timer className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <h3 className="font-semibold text-gray-800 mb-3 flex items-center justify-center gap-2">
+                      Baby Countdown Timer
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                      Count down every magical moment until you meet your little one!
+                    </p>
+                    <Link href="/tools/baby-countdown-timer">
+                      <Button className="w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white shadow-sm">
+                        <Timer className="w-4 h-4 mr-2" />
+                        Start Countdown
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
               </aside>
             </div>
+
+            {/* Quick Tools Section */}
+            {lmpDate && (
+              <section className="mt-12">
+                <h2 className="text-2xl font-semibold text-gray-800 mb-8 text-center">Helpful Tools for Your Journey</h2>
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <Link href="/tools/baby-countdown-timer" className="group block">
+                    <div className="p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-gray-100/60 hover:bg-white/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-center">
+                      <div className="p-3 bg-gradient-to-r from-pink-100 to-purple-100 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <Timer className="h-6 w-6 text-pink-600" />
+                      </div>
+                      <h3 className="font-semibold text-gray-800 mb-2 group-hover:text-pink-600 transition-colors">Baby Countdown</h3>
+                      <p className="text-sm text-gray-600">Count down to your baby&apos;s arrival</p>
+                    </div>
+                  </Link>
+                  
+                  <Link href="/tools/kick-counter" className="group block">
+                    <div className="p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-gray-100/60 hover:bg-white/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-center">
+                      <div className="p-3 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <Activity className="h-6 w-6 text-blue-600" />
+                      </div>
+                      <h3 className="font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">Kick Counter</h3>
+                      <p className="text-sm text-gray-600">Track baby&apos;s movements</p>
+                    </div>
+                  </Link>
+                  
+                  <Link href="/tools/contraction-timer" className="group block">
+                    <div className="p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-gray-100/60 hover:bg-white/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-center">
+                      <div className="p-3 bg-gradient-to-r from-red-100 to-orange-100 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <Clock4 className="h-6 w-6 text-red-600" />
+                      </div>
+                      <h3 className="font-semibold text-gray-800 mb-2 group-hover:text-red-600 transition-colors">Contraction Timer</h3>
+                      <p className="text-sm text-gray-600">Time labor contractions</p>
+                    </div>
+                  </Link>
+                  
+                  <Link href="/tools" className="group block">
+                    <div className="p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-gray-100/60 hover:bg-white/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-center">
+                      <div className="p-3 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <Sparkles className="h-6 w-6 text-purple-600" />
+                      </div>
+                      <h3 className="font-semibold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">All Tools</h3>
+                      <p className="text-sm text-gray-600">Explore all pregnancy tools</p>
+                    </div>
+                  </Link>
+                </div>
+              </section>
+            )}
           </>
         )}
       </main>

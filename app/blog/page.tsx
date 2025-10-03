@@ -10,6 +10,15 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    slug: 'pregnancy-terms-guide',
+    title: 'Essential Pregnancy Terms Guide: Full-Term, Early, Late & More',
+    excerpt: 'Complete guide to essential pregnancy terminology including full-term, early term, late term, post-term, preterm, and viability. Understand when your baby is considered ready for birth.',
+    date: '2025-10-03',
+    readTime: '15 min read',
+    category: 'Education',
+    icon: Sparkles
+  },
+  {
     slug: 'pregnancy-symptoms-week-by-week',
     title: 'Pregnancy Symptoms Week by Week: Complete Guide',
     excerpt: 'Comprehensive guide to pregnancy symptoms week by week. Track normal symptoms, warning signs, and what to expect during each trimester.',

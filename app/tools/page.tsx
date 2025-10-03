@@ -106,6 +106,16 @@ const tools = [
     iconColor: 'text-orange-600'
   },
   {
+    title: 'Baby Countdown Timer',
+    description: 'Count down every magical moment until you meet your little one with our celebratory timer.',
+    href: '/tools/baby-countdown-timer',
+    icon: Timer,
+    color: 'from-pink-500 to-purple-500',
+    bgColor: 'bg-pink-50',
+    iconColor: 'text-pink-600',
+    popular: true
+  },
+  {
     title: 'Contraction Timer',
     description: 'Time your labor contractions and know when to head to the hospital.',
     href: '/tools/contraction-timer',
@@ -165,7 +175,7 @@ const tools = [
 const categories = {
   planning: {
     title: 'Planning & Early Pregnancy',
-    tools: ['ovulation-calculator', 'due-date-calculator', 'pregnancy-week-calculator', 'baby-cost-calculator']
+    tools: ['ovulation-calculator', 'due-date-calculator', 'pregnancy-week-calculator', 'baby-countdown-timer', 'baby-cost-calculator']
   },
   health: {
     title: 'Health & Safety',
