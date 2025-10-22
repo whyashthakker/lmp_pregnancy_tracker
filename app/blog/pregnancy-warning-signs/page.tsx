@@ -310,8 +310,61 @@ export default function PregnancyWarningSigns() {
             </div>
           </div>
 
+          {/* Related Articles */}
+          <div className="bg-gradient-to-r from-blue-50/60 to-purple-50/60 rounded-2xl p-8 mb-8">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
+              Related Pregnancy Health Topics
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Link 
+                href="/blog/umbilical-cord-around-neck"
+                className="bg-white/70 rounded-xl p-6 hover:shadow-lg transition-all group"
+              >
+                <h3 className="font-semibold text-gray-800 mb-2 group-hover:text-purple-600">
+                  Umbilical Cord Around Baby&apos;s Neck
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Learn about nuchal cord complications, risks, and what to expect during delivery.
+                </p>
+              </Link>
+              <Link 
+                href="/blog/delivery-methods-comparison"
+                className="bg-white/70 rounded-xl p-6 hover:shadow-lg transition-all group"
+              >
+                <h3 className="font-semibold text-gray-800 mb-2 group-hover:text-purple-600">
+                  Delivery Methods Comparison
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Compare cesarean, normal, and vacuum delivery options to plan your birth.
+                </p>
+              </Link>
+              <Link 
+                href="/baby"
+                className="bg-white/70 rounded-xl p-6 hover:shadow-lg transition-all group"
+              >
+                <h3 className="font-semibold text-gray-800 mb-2 group-hover:text-purple-600">
+                  Baby Health Tracking
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Monitor your baby&apos;s development, milestones, and health after birth.
+                </p>
+              </Link>
+              <Link 
+                href="/blog/bleeding-during-pregnancy"
+                className="bg-white/70 rounded-xl p-6 hover:shadow-lg transition-all group"
+              >
+                <h3 className="font-semibold text-gray-800 mb-2 group-hover:text-purple-600">
+                  Bleeding During Pregnancy
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Understanding pregnancy bleeding, from normal spotting to emergency situations.
+                </p>
+              </Link>
+            </div>
+          </div>
+
           {/* Call to Action */}
-          <div className="text-center bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl p-8 text-white mt-12">
+          <div className="text-center bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl p-8 text-white">
             <h2 className="text-2xl font-semibold mb-4">
               Track Your Pregnancy Journey
             </h2>

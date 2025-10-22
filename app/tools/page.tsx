@@ -359,6 +359,10 @@ export default function FreePregancyTools() {
               Pregnancy Blog
             </Link>
             <span className="text-gray-400">•</span>
+            <Link href="/baby" className="text-purple-600 hover:text-purple-700 font-medium">
+              Baby Health Tracking
+            </Link>
+            <span className="text-gray-400">•</span>
             <Link href="/about" className="text-purple-600 hover:text-purple-700 font-medium">
               About Us
             </Link>
@@ -369,6 +373,10 @@ export default function FreePregancyTools() {
             <span className="text-gray-400">•</span>
             <Link href="/blog/pregnancy-exercise-guide" className="text-purple-600 hover:text-purple-700 font-medium">
               Exercise Guide
+            </Link>
+            <span className="text-gray-400">•</span>
+            <Link href="/blog/delivery-methods-comparison" className="text-purple-600 hover:text-purple-700 font-medium">
+              Delivery Options
             </Link>
           </div>
         </div>

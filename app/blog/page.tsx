@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Calendar, ArrowRight, Heart, Baby, Sparkles } from 'lucide-react';
+import { Calendar, ArrowRight, Heart, Baby, Sparkles, Stethoscope, Clock, Shield } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Pregnancy Blog - Tips, Guides & Insights',
@@ -9,6 +9,141 @@ export const metadata: Metadata = {
 };
 
 const blogPosts = [
+  {
+    slug: 'complete-newborn-care-guide',
+    title: 'Complete Newborn Care Guide: Essential Tips for New Parents',
+    excerpt: 'Comprehensive newborn care guide covering feeding, sleeping, bathing, diaper changing, safety tips, and essential care practices for the first weeks of your baby&apos;s life.',
+    date: '2025-10-22',
+    readTime: '40 min read',
+    category: 'Baby Care',
+    icon: Baby
+  },
+  {
+    slug: 'baby-jaundice-prevention-treatment',
+    title: 'Baby Jaundice: Prevention, Peak Times & Treatment Guide',
+    excerpt: 'Complete guide to baby jaundice including prevention strategies, when it peaks, warning signs, and effective treatment options. Learn how to manage newborn jaundice safely.',
+    date: '2025-10-22',
+    readTime: '30 min read',
+    category: 'Baby Health',
+    icon: Shield
+  },
+  {
+    slug: 'first-year-baby-development-guide',
+    title: 'First Year Baby Development Guide: Complete 0-12 Month Milestones',
+    excerpt: 'Comprehensive guide to your baby&apos;s first year development. Month-by-month milestones, growth patterns, feeding changes, and key developmental achievements from 0-12 months.',
+    date: '2025-10-22',
+    readTime: '35 min read',
+    category: 'Baby Development',
+    icon: Baby
+  },
+  {
+    slug: 'third-month-baby-development',
+    title: 'Third Month Baby Development Guide: 8-12 Weeks Growth & Milestones',
+    excerpt: 'Complete guide to your 3-month-old baby&apos;s development. Learn about hand discovery, improved sleep, rolling preparation, and key milestones for 8-12 week old babies.',
+    date: '2025-10-22',
+    readTime: '25 min read',
+    category: 'Baby Development',
+    icon: Baby
+  },
+  {
+    slug: 'second-month-baby-development',
+    title: 'Second Month Baby Development Guide: 4-8 Weeks Growth & Milestones',
+    excerpt: 'Complete guide to your 2-month-old baby&apos;s development. Learn about social smiles, head control, feeding patterns, sleep improvements, and key milestones for 4-8 week old babies.',
+    date: '2025-10-22',
+    readTime: '23 min read',
+    category: 'Baby Development',
+    icon: Baby
+  },
+  {
+    slug: 'first-month-newborn-guide',
+    title: 'First Month Newborn Guide: Complete Development & Care Tips',
+    excerpt: 'Comprehensive guide to your baby&apos;s first month of life. Learn about major milestones, feeding patterns, sleep development, and essential care tips for 0-4 week old newborns.',
+    date: '2025-10-22',
+    readTime: '28 min read',
+    category: 'Baby Development',
+    icon: Baby
+  },
+  {
+    slug: 'newborn-fourth-week-guide',
+    title: 'Newborn Fourth Week Guide: First Social Smiles & Development',
+    excerpt: 'Complete guide to your baby&apos;s fourth week of life. Learn about first social smiles, improved head control, feeding patterns, and important developmental milestones for 3-4 week old newborns.',
+    date: '2025-10-22',
+    readTime: '20 min read',
+    category: 'Baby Development',
+    icon: Baby
+  },
+  {
+    slug: 'newborn-third-week-guide',
+    title: 'Newborn Third Week Guide: Development, Feeding & Care Tips',
+    excerpt: 'Complete guide to your baby&apos;s third week of life. Learn about developmental milestones, feeding patterns, sleep changes, and important care tips for 2-3 week old newborns.',
+    date: '2025-10-22',
+    readTime: '18 min read',
+    category: 'Baby Development',
+    icon: Baby
+  },
+  {
+    slug: 'newborn-second-week-guide',
+    title: 'Newborn Second Week Guide: Development, Growth & Milestones',
+    excerpt: 'Complete guide to your baby&apos;s second week of life. Learn about important developmental milestones, feeding patterns, sleep changes, and care tips for 1-2 week old newborns.',
+    date: '2025-10-22',
+    readTime: '17 min read',
+    category: 'Baby Development',
+    icon: Baby
+  },
+  {
+    slug: 'newborn-first-week-guide',
+    title: 'Newborn First Week Guide: Feeding, Sleep & Development',
+    excerpt: 'Complete guide to your baby&apos;s first week of life. Learn about feeding patterns, diaper output, sleep schedules, and important developmental milestones for newborn care.',
+    date: '2025-10-22',
+    readTime: '25 min read',
+    category: 'Baby Development',
+    icon: Baby
+  },
+  {
+    slug: 'newborn-vaccinations-guide',
+    title: 'Newborn Vaccinations Guide: Essential Immunizations & Schedule',
+    excerpt: 'Complete guide to newborn and infant vaccinations including recommended schedule, vaccine types, side effects, and importance of immunizations for baby health.',
+    date: '2025-10-22',
+    readTime: '22 min read',
+    category: 'Baby Health',
+    icon: Shield
+  },
+  {
+    slug: 'labor-induction-guide',
+    title: 'Labor Induction Guide: Methods, Reasons & What to Expect',
+    excerpt: 'Complete guide to labor induction including medical reasons, induction methods, success rates, risks, and what to expect during the process. Make informed decisions about induced labor.',
+    date: '2025-10-22',
+    readTime: '20 min read',
+    category: 'Birth & Delivery',
+    icon: Stethoscope
+  },
+  {
+    slug: 'stages-of-pre-labor',
+    title: 'Stages of Pre-Labor: Early Signs, Symptoms & What to Expect',
+    excerpt: 'Complete guide to pre-labor stages including early labor signs, prodromal labor, and how to distinguish true labor from false labor. Know when to head to the hospital.',
+    date: '2025-10-22',
+    readTime: '17 min read',
+    category: 'Birth & Delivery',
+    icon: Clock
+  },
+  {
+    slug: 'delivery-methods-comparison',
+    title: 'Cesarean vs Normal vs Vacuum Delivery: Complete Comparison Guide',
+    excerpt: 'Comprehensive comparison of cesarean section, normal vaginal delivery, and vacuum-assisted delivery. Learn about indications, benefits, risks, recovery times, and what to expect.',
+    date: '2025-10-22',
+    readTime: '18 min read',
+    category: 'Birth & Delivery',
+    icon: Baby
+  },
+  {
+    slug: 'umbilical-cord-around-neck',
+    title: 'Umbilical Cord Around Baby\'s Neck: Causes, Risks & What to Expect',
+    excerpt: 'Complete guide to umbilical cord complications including nuchal cord. Learn about causes, risks, detection methods, and delivery options when cord is around baby\'s neck.',
+    date: '2025-10-22',
+    readTime: '16 min read',
+    category: 'Complications',
+    icon: Heart
+  },
   {
     slug: 'pregnancy-terms-guide',
     title: 'Essential Pregnancy Terms Guide: Full-Term, Early, Late & More',
