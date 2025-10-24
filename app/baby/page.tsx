@@ -79,6 +79,24 @@ export default function BabyHealthTracking() {
         </div>
 
 
+        {/* Milestone Tracker Feature */}
+        <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 text-white mb-12">
+          <div className="text-center">
+            <div className="text-4xl mb-4">🎯</div>
+            <h2 className="text-3xl font-bold mb-4">Never Miss a Precious Milestone!</h2>
+            <p className="text-xl mb-6 opacity-90">
+              Track your baby&apos;s development with real-time countdowns for first smile, steps, words, and more.
+            </p>
+            <Link 
+              href="/baby/milestones"
+              className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold hover:bg-purple-50 transition-colors inline-flex items-center gap-2 text-lg"
+            >
+              <span>🕐</span>
+              Start Milestone Tracker
+            </Link>
+          </div>
+        </div>
+
         {/* CTA Section */}
         <div className="text-center bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
           <Baby className="w-12 h-12 mx-auto mb-4 text-blue-100" />
@@ -106,20 +124,24 @@ export default function BabyHealthTracking() {
         <div className="mt-16 text-center">
           <h3 className="text-xl font-semibold text-gray-800 mb-6">Related Resources</h3>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/blog/pregnancy-warning-signs" className="text-blue-600 hover:text-blue-700 font-medium">
-              Pregnancy Warning Signs
+            <Link href="/baby/milestones" className="text-purple-600 hover:text-purple-700 font-medium">
+              Milestone Tracker
             </Link>
             <span className="text-gray-400">•</span>
-            <Link href="/blog/pregnancy-medical-checkups" className="text-blue-600 hover:text-blue-700 font-medium">
-              Medical Checkups Guide
+            <Link href="/blog/baby-development-milestones-when-smiling-playing" className="text-blue-600 hover:text-blue-700 font-medium">
+              Development Milestones
             </Link>
             <span className="text-gray-400">•</span>
-            <Link href="/blog/pregnancy-nutrition-essentials" className="text-blue-600 hover:text-blue-700 font-medium">
-              Nutrition Essentials
+            <Link href="/blog/newborn-vision-development-when-baby-sees-clearly" className="text-blue-600 hover:text-blue-700 font-medium">
+              Vision Development
+            </Link>
+            <span className="text-gray-400">•</span>
+            <Link href="/blog/complete-newborn-care-guide" className="text-blue-600 hover:text-blue-700 font-medium">
+              Newborn Care Guide
             </Link>
             <span className="text-gray-400">•</span>
             <Link href="/tools" className="text-blue-600 hover:text-blue-700 font-medium">
-              Pregnancy Tools
+              Baby Tools
             </Link>
           </div>
         </div>

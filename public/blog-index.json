@@ -1,496 +1,350 @@
 {
-  "generated_at": "2025-10-24T18:22:54.016821",
-  "total_posts": 70,
-  "posts": [
+  "blogs": [
     {
       "slug": "40-days-postpartum-confinement",
-      "title": "40 Days Postpartum Confinement: Benefits, Traditions & Modern Practice | EGSpect",
-      "description": "Explore the 40-day postpartum confinement tradition, its benefits for recovery, cultural practices worldwide, and how to adapt it for modern life.",
-      "last_modified": "2025-10-24",
       "url": "/blog/40-days-postpartum-confinement"
     },
     {
       "slug": "anterior-posterior-placenta-position",
-      "title": "Anterior vs Posterior Placenta: Position, Effects & What It Means for Pregnancy | Pregnancy Tracker",
-      "description": "Complete guide to anterior and posterior placenta positions - what they mean, how they affect pregnancy, delivery implications, and when to be concerned.",
-      "last_modified": "2025-10-24",
       "url": "/blog/anterior-posterior-placenta-position"
     },
     {
       "slug": "baby-crying-sound-guidebook",
-      "title": "Baby Crying Sound Guidebook: Understanding What Your Newborn is Telling You | Pregnancy Tracker",
-      "description": "Complete guide to understanding baby crying sounds and meanings. Learn to identify hunger cries, pain cries, tired cries, and when to call your pediatrician.",
-      "last_modified": "2025-10-24",
       "url": "/blog/baby-crying-sound-guidebook"
     },
     {
+      "slug": "baby-development-milestones-when-smiling-playing",
+      "url": "/blog/baby-development-milestones-when-smiling-playing"
+    },
+    {
       "slug": "baby-ecg-tests-guide-when-needed",
-      "title": "Baby ECG Tests: What They Are & When They&apos;re Needed | Complete Parent Guide",
-      "description": "Comprehensive guide to ECG tests for babies and newborns. Learn what an ECG is, when it&apos;s recommended, what to expect, and how to interpret results.",
-      "last_modified": "2025-10-24",
       "url": "/blog/baby-ecg-tests-guide-when-needed"
     },
     {
       "slug": "baby-gender-predictor-methods",
-      "title": "Baby Gender Predictor Methods: Scientific vs Traditional Ways to Predict Gender",
-      "description": "Comprehensive guide to baby gender prediction methods including medical tests, old wives tales, and fun prediction techniques. Learn accuracy rates and when to find out.",
-      "last_modified": "2025-10-24",
       "url": "/blog/baby-gender-predictor-methods"
     },
     {
       "slug": "baby-jaundice-prevention-treatment",
-      "title": "Baby Jaundice: Prevention, Peak Times & Treatment Guide | EGSpect",
-      "description": "Complete guide to baby jaundice including prevention strategies, when it peaks, warning signs, and effective treatment options. Learn how to manage newborn jaundice safely.",
-      "last_modified": "2025-10-24",
       "url": "/blog/baby-jaundice-prevention-treatment"
     },
     {
       "slug": "baby-massage-after-delivery",
-      "title": "When to Start Baby Massage After Delivery: Complete Guide | EGSpect",
-      "description": "Learn when it\\",
-      "last_modified": "2025-10-24",
       "url": "/blog/baby-massage-after-delivery"
     },
     {
       "slug": "baby-skin-peeling-newborns",
-      "title": "Baby Skin Peeling in Newborns: Normal Process, Care Tips & When to Worry | Pregnancy Tracker",
-      "description": "Complete guide to newborn skin peeling - why it happens, how long it lasts, proper care techniques, and when to contact your pediatrician. Normal vs concerning signs explained.",
-      "last_modified": "2025-10-24",
       "url": "/blog/baby-skin-peeling-newborns"
     },
     {
       "slug": "baby-travel-after-delivery",
-      "title": "When Can Baby Travel After Delivery: Safe Travel Guidelines | EGSpect",
-      "description": "Complete guide to traveling with newborns including when it\\",
-      "last_modified": "2025-10-24",
       "url": "/blog/baby-travel-after-delivery"
     },
     {
       "slug": "baby-weight-classes-classification",
-      "title": "Baby Weight Classes: Full-Term, Early-Term & LBW Classifications Guide | Pregnancy Tracker",
-      "description": "Complete guide to baby weight classifications including full-term, early-term, late-term, low birth weight, and very low birth weight categories with health implications.",
-      "last_modified": "2025-10-24",
       "url": "/blog/baby-weight-classes-classification"
     },
     {
       "slug": "bleeding-during-pregnancy",
-      "title": "Bleeding During Pregnancy: When to Worry and When to Seek Help",
-      "description": "Complete guide to pregnancy bleeding by trimester. Learn about spotting vs bleeding, emergency signs, and when to contact your doctor immediately.",
-      "last_modified": "2025-10-24",
       "url": "/blog/bleeding-during-pregnancy"
     },
     {
       "slug": "common-pregnancy-questions-answered",
-      "title": "Common Pregnancy Questions Answered | Your Journey",
-      "description": "Get answers to the most frequently asked pregnancy questions. Expert advice on pregnancy symptoms, safety concerns, nutrition, and more.",
-      "last_modified": "2025-10-24",
       "url": "/blog/common-pregnancy-questions-answered"
     },
     {
       "slug": "complete-newborn-care-guide",
-      "title": "Complete Newborn Care Guide: Essential Tips for New Parents | EGSpect",
-      "description": "Comprehensive newborn care guide covering feeding, sleeping, bathing, diaper changing, safety tips, and essential care practices for the first weeks of your baby&apos;s life.",
-      "last_modified": "2025-10-24",
       "url": "/blog/complete-newborn-care-guide"
     },
     {
       "slug": "cost-of-having-baby-in-australia",
-      "title": "Complete Guide: Cost of Having a Baby in Australia 🇦🇺 - 2025 Breakdown",
-      "description": "Comprehensive guide to baby costs in Australia from pregnancy to age 5. Detailed breakdown of prenatal care, delivery expenses, and child-rearing costs with Medicare insights and state variations.",
-      "last_modified": "2025-10-24",
       "url": "/blog/cost-of-having-baby-in-australia"
     },
     {
       "slug": "cost-of-having-baby-in-canada",
-      "title": "Complete Guide: Cost of Having a Baby in Canada 🇨🇦 - 2025 Breakdown",
-      "description": "Comprehensive guide to baby costs in Canada from pregnancy to age 5. Detailed breakdown of prenatal care, delivery expenses, and child-rearing costs with healthcare system insights and provincial variations.",
-      "last_modified": "2025-10-24",
       "url": "/blog/cost-of-having-baby-in-canada"
     },
     {
       "slug": "cost-of-having-baby-in-china",
-      "title": "Complete Guide: Cost of Having a Baby in China 🇨🇳 - 2025 Breakdown",
-      "description": "Comprehensive guide to baby costs in China from pregnancy to age 5. Detailed breakdown of prenatal care, delivery expenses, and child-rearing costs with healthcare system insights and city variations.",
-      "last_modified": "2025-10-24",
       "url": "/blog/cost-of-having-baby-in-china"
     },
     {
       "slug": "cost-of-having-baby-in-india",
-      "title": "Complete Guide: Cost of Having a Baby in India 🇮🇳 - 2025 Breakdown",
-      "description": "Comprehensive guide to baby costs in India from pregnancy to age 5. Detailed breakdown of prenatal care, delivery expenses, and child-rearing costs with local insights and age-based planning.",
-      "last_modified": "2025-10-24",
       "url": "/blog/cost-of-having-baby-in-india"
     },
     {
       "slug": "cost-of-having-baby-in-united-kingdom",
-      "title": "Complete Guide: Cost of Having a Baby in the United Kingdom 🇬🇧 - 2025 Breakdown",
-      "description": "Comprehensive guide to baby costs in the UK from pregnancy to age 5. Detailed breakdown of prenatal care, delivery expenses, and child-rearing costs with NHS insights and regional variations.",
-      "last_modified": "2025-10-24",
       "url": "/blog/cost-of-having-baby-in-united-kingdom"
     },
     {
       "slug": "cost-of-having-baby-in-united-states",
-      "title": "Complete Guide: Cost of Having a Baby in the United States 🇺🇸 - 2025 Breakdown",
-      "description": "Comprehensive guide to baby costs in the USA from pregnancy to age 5. Detailed breakdown of prenatal care, delivery expenses, and child-rearing costs with insurance insights and state variations.",
-      "last_modified": "2025-10-24",
       "url": "/blog/cost-of-having-baby-in-united-states"
     },
     {
       "slug": "delivery-methods-comparison",
-      "title": "Cesarean vs Normal vs Vacuum Delivery: Complete Comparison Guide",
-      "description": "Comprehensive comparison of cesarean section, normal vaginal delivery, and vacuum-assisted delivery. Learn about indications, benefits, risks, recovery times, and what to expect.",
-      "last_modified": "2025-10-24",
       "url": "/blog/delivery-methods-comparison"
     },
     {
       "slug": "excess-milk-drinking-newborns",
-      "title": "Excess Milk Drinking in Newborns: Overfeeding Signs, Causes & Solutions | Pregnancy Tracker",
-      "description": "Complete guide to newborn overfeeding - recognizing signs of excess milk intake, causes, health implications, and practical solutions for healthy feeding patterns.",
-      "last_modified": "2025-10-24",
       "url": "/blog/excess-milk-drinking-newborns"
     },
     {
       "slug": "fathers-pregnancy-timeline-tests",
-      "title": "Complete Father\\",
-      "description": "Comprehensive timeline for expectant fathers from LMP to delivery. Know what tests, appointments, and milestones to expect throughout your partner\\",
-      "last_modified": "2025-10-24",
       "url": "/blog/fathers-pregnancy-timeline-tests"
     },
     {
       "slug": "fetal-heartbeat-development",
-      "title": "Fetal Heartbeat Development: Heart Rate Changes Throughout Pregnancy",
-      "description": "Complete guide to fetal heart rate development from 6 weeks to birth. Learn normal ranges, when heartbeat starts, and what changes mean.",
-      "last_modified": "2025-10-24",
       "url": "/blog/fetal-heartbeat-development"
     },
     {
       "slug": "first-month-newborn-guide",
-      "title": "First Month Newborn Guide: Complete Development & Care Tips | EGSpect",
-      "description": "Comprehensive guide to your baby&apos;s first month of life. Learn about major milestones, feeding patterns, sleep development, and essential care tips for 0-4 week old newborns.",
-      "last_modified": "2025-10-24",
       "url": "/blog/first-month-newborn-guide"
     },
     {
       "slug": "first-trimester-guide",
-      "title": "Your First Trimester: What to Expect - Pregnancy Tracker Blog",
-      "description": "A comprehensive guide to navigating the first 12 weeks of pregnancy, from early symptoms to important milestones and what to expect.",
-      "last_modified": "2025-10-24",
       "url": "/blog/first-trimester-guide"
     },
     {
       "slug": "first-year-baby-development-guide",
-      "title": "First Year Baby Development Guide: Complete 0-12 Month Milestones | EGSpect",
-      "description": "Comprehensive guide to your baby&apos;s first year development. Month-by-month milestones, growth patterns, feeding changes, and key developmental achievements from 0-12 months.",
-      "last_modified": "2025-10-24",
       "url": "/blog/first-year-baby-development-guide"
     },
     {
       "slug": "formula-vs-breastfeeding-guide",
-      "title": "Formula vs Breastfeeding: Complete Comparison Guide for New Parents | EGSpect",
-      "description": "Comprehensive comparison of formula feeding vs breastfeeding including benefits, challenges, costs, and practical considerations to help you make the best choice for your family.",
-      "last_modified": "2025-10-24",
       "url": "/blog/formula-vs-breastfeeding-guide"
     },
     {
       "slug": "gestational-diabetes-guide",
-      "title": "Gestational Diabetes: Complete Guide for Expectant Mothers | Your Journey",
-      "description": "Comprehensive guide to gestational diabetes during pregnancy. Learn about symptoms, testing, management, and protecting your baby\\",
-      "last_modified": "2025-10-24",
       "url": "/blog/gestational-diabetes-guide"
     },
     {
+      "slug": "handling-visitors-advice-new-baby-boundaries",
+      "url": "/blog/handling-visitors-advice-new-baby-boundaries"
+    },
+    {
       "slug": "how-much-crying-normal-newborn-guide",
-      "title": "How Much Crying is Normal for Newborns? Complete Guide to Baby Crying | Pregnancy Tracker",
-      "description": "Comprehensive guide to understanding newborn crying patterns. Learn why babies cry, how much is normal, when to worry, and effective soothing techniques for new parents.",
-      "last_modified": "2025-10-24",
       "url": "/blog/how-much-crying-normal-newborn-guide"
     },
     {
       "slug": "how-partners-can-help-during-labor",
-      "title": "How Partners Can Help During Labor and Delivery | Your Journey",
-      "description": "Essential guide for partners on how to provide support during labor and delivery. Learn practical tips, what to expect, and how to be the best birth partner.",
-      "last_modified": "2025-10-24",
       "url": "/blog/how-partners-can-help-during-labor"
     },
     {
       "slug": "how-to-burp-a-baby",
-      "title": "How to Burp a Baby: Complete Guide to Newborn Burping Techniques | EGSpect",
-      "description": "Learn effective baby burping techniques, positions, timing, and troubleshooting tips. Complete guide to helping your newborn release gas and prevent colic.",
-      "last_modified": "2025-10-24",
       "url": "/blog/how-to-burp-a-baby"
     },
     {
       "slug": "ideal-newborn-temperature-guide",
-      "title": "Ideal Baby Temperature: Newborn Temperature Guide & Safety Tips | EGSpect",
-      "description": "Learn about ideal newborn body temperature, how to check baby\\",
-      "last_modified": "2025-10-24",
       "url": "/blog/ideal-newborn-temperature-guide"
     },
     {
+      "slug": "is-this-normal-weird-newborn-symptoms-reddit",
+      "url": "/blog/is-this-normal-weird-newborn-symptoms-reddit"
+    },
+    {
+      "slug": "its-ok-to-hate-newborn-stage-reddit-truth",
+      "url": "/blog/its-ok-to-hate-newborn-stage-reddit-truth"
+    },
+    {
       "slug": "ivf-vs-iui-vs-natural-conception",
-      "title": "IVF vs IUI vs Natural Conception: Complete Comparison Guide | Your Journey",
-      "description": "Compare IVF, IUI, and natural conception methods. Learn about success rates, costs, procedures, and which fertility treatment might be right for you.",
-      "last_modified": "2025-10-24",
       "url": "/blog/ivf-vs-iui-vs-natural-conception"
     },
     {
       "slug": "labor-induction-guide",
-      "title": "Labor Induction Guide: Methods, Reasons & What to Expect",
-      "description": "Complete guide to labor induction including medical reasons, induction methods, success rates, risks, and what to expect during the process. Make informed decisions about induced labor.",
-      "last_modified": "2025-10-24",
       "url": "/blog/labor-induction-guide"
     },
     {
       "slug": "loose-stool-after-delivery",
-      "title": "Loose Stool After Delivery: Postpartum Bowel Changes, Causes & Recovery Tips | Pregnancy Tracker",
-      "description": "Complete guide to loose stools after childbirth - causes, duration, management tips, and when to seek help. Normal postpartum digestive changes explained.",
-      "last_modified": "2025-10-24",
       "url": "/blog/loose-stool-after-delivery"
     },
     {
       "slug": "most-common-delivery-weeks-worldwide",
-      "title": "Most Common Delivery Weeks Worldwide: Global Birth Statistics & India Data",
-      "description": "Discover when babies are most commonly born worldwide and in India. Complete analysis of delivery weeks, full-term vs preterm births, and global birth statistics.",
-      "last_modified": "2025-10-24",
       "url": "/blog/most-common-delivery-weeks-worldwide"
     },
     {
+      "slug": "new-parent-anxiety-catastrophic-thinking-help",
+      "url": "/blog/new-parent-anxiety-catastrophic-thinking-help"
+    },
+    {
+      "slug": "newborn-feeding-questions-every-parent-asks",
+      "url": "/blog/newborn-feeding-questions-every-parent-asks"
+    },
+    {
       "slug": "newborn-first-week-guide",
-      "title": "Newborn First Week Guide: Feeding, Diapers & What to Expect",
-      "description": "Complete guide to your baby&apos;s first week including feeding patterns, diaper output, sleep schedules, and important milestones. Essential information for new parents.",
-      "last_modified": "2025-10-24",
       "url": "/blog/newborn-first-week-guide"
     },
     {
       "slug": "newborn-fourth-week-guide",
-      "title": "Newborn Fourth Week Guide: First Social Smiles & Development | EGSpect",
-      "description": "Complete guide to your baby&apos;s fourth week of life. Learn about first social smiles, improved head control, feeding patterns, and important developmental milestones for 3-4 week old newborns.",
-      "last_modified": "2025-10-24",
       "url": "/blog/newborn-fourth-week-guide"
     },
     {
       "slug": "newborn-growth-charts-head-height",
-      "title": "Newborn Growth Charts: Head, Height & Weight (0-12 Months) | EGSpect",
-      "description": "Complete growth charts and tracking guide for newborn head circumference, height, and weight from birth to 12 months. Understand normal growth patterns and milestones.",
-      "last_modified": "2025-10-24",
       "url": "/blog/newborn-growth-charts-head-height"
     },
     {
       "slug": "newborn-hiccups-guide",
-      "title": "Newborn Hiccups: Causes, Treatment & When to Worry | EGSpect",
-      "description": "Complete guide to baby hiccups including causes, safe treatment methods, prevention tips, and when hiccups in newborns require medical attention.",
-      "last_modified": "2025-10-24",
       "url": "/blog/newborn-hiccups-guide"
     },
     {
       "slug": "newborn-medical-terms-report-readings",
-      "title": "Newborn Medical Terms & Report Readings Guide | Understanding Baby Health Reports",
-      "description": "Complete guide to understanding newborn medical terminology, test results, and health report readings. Learn what APGAR scores, vital signs, and medical abbreviations mean.",
-      "last_modified": "2025-10-24",
       "url": "/blog/newborn-medical-terms-report-readings"
     },
     {
       "slug": "newborn-second-week-guide",
-      "title": "Newborn Second Week Guide: Development & Growing Awareness",
-      "description": "Complete guide to your baby&apos;s second week including increased alertness, developing senses, feeding improvements, and key developmental milestones.",
-      "last_modified": "2025-10-24",
       "url": "/blog/newborn-second-week-guide"
     },
     {
       "slug": "newborn-third-week-guide",
-      "title": "Newborn Third Week Guide: Development, Feeding & Care Tips | EGSpect",
-      "description": "Complete guide to your baby&apos;s third week of life. Learn about developmental milestones, feeding patterns, sleep changes, and important care tips for 2-3 week old newborns.",
-      "last_modified": "2025-10-24",
       "url": "/blog/newborn-third-week-guide"
     },
     {
       "slug": "newborn-vaccinations-guide",
-      "title": "Newborn Vaccinations Guide: Essential Immunizations & Schedule",
-      "description": "Complete guide to newborn and infant vaccinations including recommended schedule, vaccine types, side effects, and importance of immunizations for baby health.",
-      "last_modified": "2025-10-24",
       "url": "/blog/newborn-vaccinations-guide"
     },
     {
+      "slug": "newborn-vision-development-when-baby-sees-clearly",
+      "url": "/blog/newborn-vision-development-when-baby-sees-clearly"
+    },
+    {
+      "slug": "not-missing-newborn-days-parent-confession",
+      "url": "/blog/not-missing-newborn-days-parent-confession"
+    },
+    {
+      "slug": "postpartum-depression-vs-just-exhausted-how-tell",
+      "url": "/blog/postpartum-depression-vs-just-exhausted-how-tell"
+    },
+    {
       "slug": "postpartum-massage-after-cesarean",
-      "title": "When to Start Massaging Yourself After Cesarean: Recovery Guide | EGSpect",
-      "description": "Learn when it\\",
-      "last_modified": "2025-10-24",
       "url": "/blog/postpartum-massage-after-cesarean"
     },
     {
       "slug": "pregnancy-due-date-calculator",
-      "title": "Pregnancy Due Date Calculator: Accurate Delivery Date Prediction 2025",
-      "description": "Calculate your pregnancy due date with our accurate due date calculator. Learn about LMP method, ultrasound dating, and factors affecting delivery timing.",
-      "last_modified": "2025-10-24",
       "url": "/blog/pregnancy-due-date-calculator"
     },
     {
       "slug": "pregnancy-exercise-guide",
-      "title": "Safe Pregnancy Exercise Guide | Your Journey",
-      "description": "Discover safe exercises during pregnancy, workout routines by trimester, and important precautions for expectant mothers.",
-      "last_modified": "2025-10-24",
       "url": "/blog/pregnancy-exercise-guide"
     },
     {
       "slug": "pregnancy-guide-for-fathers",
-      "title": "Complete Pregnancy Guide for Fathers and Partners | Your Journey",
-      "description": "Essential guide for expectant fathers and partners. Learn how to support your pregnant partner, prepare for fatherhood, and understand pregnancy from a partner perspective.",
-      "last_modified": "2025-10-24",
       "url": "/blog/pregnancy-guide-for-fathers"
     },
     {
       "slug": "pregnancy-medical-checkups",
-      "title": "Pregnancy Medical Checkups and Prenatal Care Schedule | Your Journey",
-      "description": "Complete guide to pregnancy medical checkups, prenatal appointments, tests, and what to expect at each visit throughout your pregnancy.",
-      "last_modified": "2025-10-24",
       "url": "/blog/pregnancy-medical-checkups"
     },
     {
       "slug": "pregnancy-myths-vs-facts",
-      "title": "Pregnancy Myths vs Facts: What to Really Believe | Your Journey",
-      "description": "Separate pregnancy myths from facts with evidence-based information. Get the truth about common pregnancy beliefs and old wives tales.",
-      "last_modified": "2025-10-24",
       "url": "/blog/pregnancy-myths-vs-facts"
     },
     {
       "slug": "pregnancy-nutrition-essentials",
-      "title": "Pregnancy Nutrition: Essential Foods for Every Trimester",
-      "description": "Discover the key nutrients you and your baby need during each stage of pregnancy, plus meal planning tips and healthy food choices.",
-      "last_modified": "2025-10-24",
       "url": "/blog/pregnancy-nutrition-essentials"
     },
     {
       "slug": "pregnancy-sleep-tips",
-      "title": "Pregnancy Sleep Tips and Positions | Your Journey",
-      "description": "Get better sleep during pregnancy with our comprehensive guide on safe sleeping positions, common sleep problems, and practical solutions.",
-      "last_modified": "2025-10-24",
       "url": "/blog/pregnancy-sleep-tips"
     },
     {
       "slug": "pregnancy-symptoms-week-by-week",
-      "title": "Pregnancy Symptoms Week by Week: Complete Guide 2025",
-      "description": "Comprehensive guide to pregnancy symptoms week by week. Track normal symptoms, warning signs, and what to expect during each trimester of pregnancy.",
-      "last_modified": "2025-10-24",
       "url": "/blog/pregnancy-symptoms-week-by-week"
     },
     {
       "slug": "pregnancy-terms-guide",
-      "title": "Essential Pregnancy Terms Guide: Full-Term, Early, Late & More | LMP Tracker",
-      "description": "Complete guide to essential pregnancy terminology including full-term, early term, late term, post-term, preterm, and viability. Understand when your baby is considered ready for birth.",
-      "last_modified": "2025-10-24",
       "url": "/blog/pregnancy-terms-guide"
     },
     {
       "slug": "pregnancy-warning-signs",
-      "title": "Pregnancy Warning Signs: When to Call Your Doctor | Your Journey",
-      "description": "Learn the important pregnancy warning signs that require immediate medical attention. Know when to contact your healthcare provider during pregnancy.",
-      "last_modified": "2025-10-24",
       "url": "/blog/pregnancy-warning-signs"
     },
     {
       "slug": "pregnancy-weight-gain-calculator",
-      "title": "Pregnancy Weight Gain Calculator | Your Journey",
-      "description": "Calculate healthy weight gain during pregnancy with our comprehensive calculator. Learn about recommended weight gain by trimester and BMI.",
-      "last_modified": "2025-10-24",
       "url": "/blog/pregnancy-weight-gain-calculator"
     },
     {
+      "slug": "purple-crying-phase-explained",
+      "url": "/blog/purple-crying-phase-explained"
+    },
+    {
       "slug": "second-month-baby-development",
-      "title": "Second Month Baby Development Guide: 4-8 Weeks Growth & Milestones | EGSpect",
-      "description": "Complete guide to your 2-month-old baby&apos;s development. Learn about social smiles, head control, feeding patterns, sleep improvements, and key milestones for 4-8 week old babies.",
-      "last_modified": "2025-10-24",
       "url": "/blog/second-month-baby-development"
     },
     {
+      "slug": "should-you-let-newborn-cry-it-out-reddit-parents",
+      "url": "/blog/should-you-let-newborn-cry-it-out-reddit-parents"
+    },
+    {
       "slug": "stages-of-pre-labor",
-      "title": "Stages of Pre-Labor: Early Signs, Symptoms & What to Expect",
-      "description": "Complete guide to pre-labor stages including early labor signs, prodromal labor, and how to distinguish true labor from false labor. Know when to head to the hospital.",
-      "last_modified": "2025-10-24",
       "url": "/blog/stages-of-pre-labor"
     },
     {
+      "slug": "things-no-one-told-you-about-having-baby",
+      "url": "/blog/things-no-one-told-you-about-having-baby"
+    },
+    {
       "slug": "third-month-baby-development",
-      "title": "Third Month Baby Development Guide: 8-12 Weeks Growth & Milestones | EGSpect",
-      "description": "Complete guide to your 3-month-old baby&apos;s development. Learn about hand discovery, improved sleep, rolling preparation, and key milestones for 8-12 week old babies.",
-      "last_modified": "2025-10-24",
       "url": "/blog/third-month-baby-development"
     },
     {
       "slug": "third-trimester-symptoms",
-      "title": "Third Trimester Symptoms: Complete Guide to Weeks 28-40",
-      "description": "Comprehensive guide to third trimester pregnancy symptoms including sleep issues, breathing problems, and signs of labor. Learn what to expect weeks 28-40.",
-      "last_modified": "2025-10-24",
       "url": "/blog/third-trimester-symptoms"
     },
     {
       "slug": "types-of-swaddling-styles",
-      "title": "Types of Swaddling Styles: Complete Guide to Safe Baby Swaddling Techniques | Pregnancy Tracker",
-      "description": "Learn different swaddling techniques for newborns including traditional wrap, arms-up, hip-healthy, and transitional swaddles. Safe swaddling guide with step-by-step instructions.",
-      "last_modified": "2025-10-24",
       "url": "/blog/types-of-swaddling-styles"
     },
     {
       "slug": "umbilical-cord-around-neck",
-      "title": "Umbilical Cord Around Baby\\",
-      "description": "Complete guide to umbilical cord complications including nuchal cord. Learn about causes, risks, detection methods, and delivery options when cord is around baby\\",
-      "last_modified": "2025-10-24",
       "url": "/blog/umbilical-cord-around-neck"
     },
     {
       "slug": "umbilical-cord-care-guide",
-      "title": "Umbilical Cord Care: When Does It Fall Off & How to Care | EGSpect",
-      "description": "Complete guide to umbilical cord care including when it falls off, daily cleaning routine, signs of infection, and what to expect during healing.",
-      "last_modified": "2025-10-24",
       "url": "/blog/umbilical-cord-care-guide"
     },
     {
       "slug": "vitamin-d-sun-exposure-newborns",
-      "title": "Vitamin D and Sun Exposure for Newborns: Safe Guidelines & Benefits | EGSpect",
-      "description": "Learn about vitamin D requirements for newborns, safe sun exposure practices, supplementation guidelines, and how to protect your baby while ensuring healthy development.",
-      "last_modified": "2025-10-24",
       "url": "/blog/vitamin-d-sun-exposure-newborns"
     },
     {
       "slug": "what-is-chemical-pregnancy",
-      "title": "What is Chemical Pregnancy? Early Pregnancy Loss Explained",
-      "description": "Understanding chemical pregnancy - very early miscarriage after positive pregnancy test. Learn about causes, symptoms, and what it means for future pregnancies.",
-      "last_modified": "2025-10-24",
       "url": "/blog/what-is-chemical-pregnancy"
     },
     {
       "slug": "what-is-miscarriage",
-      "title": "What is Miscarriage? Understanding Early Pregnancy Loss",
-      "description": "Complete guide to miscarriage including causes, symptoms, types, and recovery. Learn about early pregnancy loss, risk factors, and when to seek medical help.",
-      "last_modified": "2025-10-24",
       "url": "/blog/what-is-miscarriage"
     },
     {
       "slug": "what-is-missed-miscarriage",
-      "title": "What is Missed Miscarriage? Silent Pregnancy Loss Explained",
-      "description": "Understanding missed miscarriage (silent miscarriage) - when the embryo stops developing but shows no symptoms. Learn about diagnosis, treatment, and recovery.",
-      "last_modified": "2025-10-24",
       "url": "/blog/what-is-missed-miscarriage"
     },
     {
       "slug": "what-is-vacuum-delivery",
-      "title": "What is Vacuum Delivery: Procedure, Risks & Recovery Guide | EGSpect",
-      "description": "Complete guide to vacuum-assisted delivery including when it\\",
-      "last_modified": "2025-10-24",
       "url": "/blog/what-is-vacuum-delivery"
     },
     {
+      "slug": "when-can-i-stretch-feeding-times-sleep-vs-hunger",
+      "url": "/blog/when-can-i-stretch-feeding-times-sleep-vs-hunger"
+    },
+    {
       "slug": "when-to-plan-baby-photoshoot",
-      "title": "When to Plan Baby Photoshoot: Newborn Photography Timing Guide | EGSpect",
-      "description": "Complete guide to timing your baby photoshoot including newborn sessions, milestone photos, safety considerations, and preparation tips for memorable baby photography.",
-      "last_modified": "2025-10-24",
       "url": "/blog/when-to-plan-baby-photoshoot"
     },
     {
+      "slug": "when-will-my-baby-finally-sleep-through-night",
+      "url": "/blog/when-will-my-baby-finally-sleep-through-night"
+    },
+    {
+      "slug": "why-is-my-baby-so-gassy-reddit-parents-share",
+      "url": "/blog/why-is-my-baby-so-gassy-reddit-parents-share"
+    },
+    {
+      "slug": "why-wont-my-newborn-sleep-unless-holding",
+      "url": "/blog/why-wont-my-newborn-sleep-unless-holding"
+    },
+    {
       "slug": "yoga-positions-normal-delivery-preparation",
-      "title": "Yoga Positions for Normal Delivery Preparation | Prenatal Yoga Guide for Natural Birth",
-      "description": "Complete guide to prenatal yoga positions that help prepare your body for normal delivery. Safe exercises, breathing techniques, and poses for each trimester.",
-      "last_modified": "2025-10-24",
       "url": "/blog/yoga-positions-normal-delivery-preparation"
     }
-  ]
+  ],
+  "total": 86,
+  "lastUpdated": "2025-10-24T21:13:24.275344"
 }

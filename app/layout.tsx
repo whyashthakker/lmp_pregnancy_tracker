@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { PostHogProvider } from "../components/PostHogProvider";
 import { Navigation } from "../components/ui/navigation";
+import { Footer } from "../components/ui/footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -133,6 +134,7 @@ export default function RootLayout({
         <PostHogProvider>
           <Navigation />
           {children}
+          <Footer />
         </PostHogProvider>
       </body>
     </html>

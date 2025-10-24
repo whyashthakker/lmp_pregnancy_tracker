@@ -1,428 +1,519 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://egspect.com/blog/40-days-postpartum-confinement</loc>
+    <loc>https://www.egspect.com/blog/40-days-postpartum-confinement</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/anterior-posterior-placenta-position</loc>
+    <loc>https://www.egspect.com/blog/anterior-posterior-placenta-position</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/baby-crying-sound-guidebook</loc>
+    <loc>https://www.egspect.com/blog/baby-crying-sound-guidebook</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/baby-ecg-tests-guide-when-needed</loc>
+    <loc>https://www.egspect.com/blog/baby-development-milestones-when-smiling-playing</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/baby-gender-predictor-methods</loc>
+    <loc>https://www.egspect.com/blog/baby-ecg-tests-guide-when-needed</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/baby-jaundice-prevention-treatment</loc>
+    <loc>https://www.egspect.com/blog/baby-gender-predictor-methods</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/baby-massage-after-delivery</loc>
+    <loc>https://www.egspect.com/blog/baby-jaundice-prevention-treatment</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/baby-skin-peeling-newborns</loc>
+    <loc>https://www.egspect.com/blog/baby-massage-after-delivery</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/baby-travel-after-delivery</loc>
+    <loc>https://www.egspect.com/blog/baby-skin-peeling-newborns</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/baby-weight-classes-classification</loc>
+    <loc>https://www.egspect.com/blog/baby-travel-after-delivery</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/bleeding-during-pregnancy</loc>
+    <loc>https://www.egspect.com/blog/baby-weight-classes-classification</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/common-pregnancy-questions-answered</loc>
+    <loc>https://www.egspect.com/blog/bleeding-during-pregnancy</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/complete-newborn-care-guide</loc>
+    <loc>https://www.egspect.com/blog/common-pregnancy-questions-answered</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/cost-of-having-baby-in-australia</loc>
+    <loc>https://www.egspect.com/blog/complete-newborn-care-guide</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/cost-of-having-baby-in-canada</loc>
+    <loc>https://www.egspect.com/blog/cost-of-having-baby-in-australia</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/cost-of-having-baby-in-china</loc>
+    <loc>https://www.egspect.com/blog/cost-of-having-baby-in-canada</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/cost-of-having-baby-in-india</loc>
+    <loc>https://www.egspect.com/blog/cost-of-having-baby-in-china</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/cost-of-having-baby-in-united-kingdom</loc>
+    <loc>https://www.egspect.com/blog/cost-of-having-baby-in-india</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/cost-of-having-baby-in-united-states</loc>
+    <loc>https://www.egspect.com/blog/cost-of-having-baby-in-united-kingdom</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/delivery-methods-comparison</loc>
+    <loc>https://www.egspect.com/blog/cost-of-having-baby-in-united-states</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/excess-milk-drinking-newborns</loc>
+    <loc>https://www.egspect.com/blog/delivery-methods-comparison</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/fathers-pregnancy-timeline-tests</loc>
+    <loc>https://www.egspect.com/blog/excess-milk-drinking-newborns</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/fetal-heartbeat-development</loc>
+    <loc>https://www.egspect.com/blog/fathers-pregnancy-timeline-tests</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/first-month-newborn-guide</loc>
+    <loc>https://www.egspect.com/blog/fetal-heartbeat-development</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/first-trimester-guide</loc>
+    <loc>https://www.egspect.com/blog/first-month-newborn-guide</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/first-year-baby-development-guide</loc>
+    <loc>https://www.egspect.com/blog/first-trimester-guide</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/formula-vs-breastfeeding-guide</loc>
+    <loc>https://www.egspect.com/blog/first-year-baby-development-guide</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/gestational-diabetes-guide</loc>
+    <loc>https://www.egspect.com/blog/formula-vs-breastfeeding-guide</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/how-much-crying-normal-newborn-guide</loc>
+    <loc>https://www.egspect.com/blog/gestational-diabetes-guide</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/how-partners-can-help-during-labor</loc>
+    <loc>https://www.egspect.com/blog/handling-visitors-advice-new-baby-boundaries</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/how-to-burp-a-baby</loc>
+    <loc>https://www.egspect.com/blog/how-much-crying-normal-newborn-guide</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/ideal-newborn-temperature-guide</loc>
+    <loc>https://www.egspect.com/blog/how-partners-can-help-during-labor</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/ivf-vs-iui-vs-natural-conception</loc>
+    <loc>https://www.egspect.com/blog/how-to-burp-a-baby</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/labor-induction-guide</loc>
+    <loc>https://www.egspect.com/blog/ideal-newborn-temperature-guide</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/loose-stool-after-delivery</loc>
+    <loc>https://www.egspect.com/blog/is-this-normal-weird-newborn-symptoms-reddit</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/most-common-delivery-weeks-worldwide</loc>
+    <loc>https://www.egspect.com/blog/its-ok-to-hate-newborn-stage-reddit-truth</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/newborn-first-week-guide</loc>
+    <loc>https://www.egspect.com/blog/ivf-vs-iui-vs-natural-conception</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/newborn-fourth-week-guide</loc>
+    <loc>https://www.egspect.com/blog/labor-induction-guide</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/newborn-growth-charts-head-height</loc>
+    <loc>https://www.egspect.com/blog/loose-stool-after-delivery</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/newborn-hiccups-guide</loc>
+    <loc>https://www.egspect.com/blog/most-common-delivery-weeks-worldwide</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/newborn-medical-terms-report-readings</loc>
+    <loc>https://www.egspect.com/blog/new-parent-anxiety-catastrophic-thinking-help</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/newborn-second-week-guide</loc>
+    <loc>https://www.egspect.com/blog/newborn-feeding-questions-every-parent-asks</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/newborn-third-week-guide</loc>
+    <loc>https://www.egspect.com/blog/newborn-first-week-guide</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/newborn-vaccinations-guide</loc>
+    <loc>https://www.egspect.com/blog/newborn-fourth-week-guide</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/postpartum-massage-after-cesarean</loc>
+    <loc>https://www.egspect.com/blog/newborn-growth-charts-head-height</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/pregnancy-due-date-calculator</loc>
+    <loc>https://www.egspect.com/blog/newborn-hiccups-guide</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/pregnancy-exercise-guide</loc>
+    <loc>https://www.egspect.com/blog/newborn-medical-terms-report-readings</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/pregnancy-guide-for-fathers</loc>
+    <loc>https://www.egspect.com/blog/newborn-second-week-guide</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/pregnancy-medical-checkups</loc>
+    <loc>https://www.egspect.com/blog/newborn-third-week-guide</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/pregnancy-myths-vs-facts</loc>
+    <loc>https://www.egspect.com/blog/newborn-vaccinations-guide</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/pregnancy-nutrition-essentials</loc>
+    <loc>https://www.egspect.com/blog/newborn-vision-development-when-baby-sees-clearly</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/pregnancy-sleep-tips</loc>
+    <loc>https://www.egspect.com/blog/not-missing-newborn-days-parent-confession</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/pregnancy-symptoms-week-by-week</loc>
+    <loc>https://www.egspect.com/blog/postpartum-depression-vs-just-exhausted-how-tell</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/pregnancy-terms-guide</loc>
+    <loc>https://www.egspect.com/blog/postpartum-massage-after-cesarean</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/pregnancy-warning-signs</loc>
+    <loc>https://www.egspect.com/blog/pregnancy-due-date-calculator</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/pregnancy-weight-gain-calculator</loc>
+    <loc>https://www.egspect.com/blog/pregnancy-exercise-guide</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/second-month-baby-development</loc>
+    <loc>https://www.egspect.com/blog/pregnancy-guide-for-fathers</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/stages-of-pre-labor</loc>
+    <loc>https://www.egspect.com/blog/pregnancy-medical-checkups</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/third-month-baby-development</loc>
+    <loc>https://www.egspect.com/blog/pregnancy-myths-vs-facts</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/third-trimester-symptoms</loc>
+    <loc>https://www.egspect.com/blog/pregnancy-nutrition-essentials</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/types-of-swaddling-styles</loc>
+    <loc>https://www.egspect.com/blog/pregnancy-sleep-tips</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/umbilical-cord-around-neck</loc>
+    <loc>https://www.egspect.com/blog/pregnancy-symptoms-week-by-week</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/umbilical-cord-care-guide</loc>
+    <loc>https://www.egspect.com/blog/pregnancy-terms-guide</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/vitamin-d-sun-exposure-newborns</loc>
+    <loc>https://www.egspect.com/blog/pregnancy-warning-signs</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/what-is-chemical-pregnancy</loc>
+    <loc>https://www.egspect.com/blog/pregnancy-weight-gain-calculator</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/what-is-miscarriage</loc>
+    <loc>https://www.egspect.com/blog/purple-crying-phase-explained</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/what-is-missed-miscarriage</loc>
+    <loc>https://www.egspect.com/blog/second-month-baby-development</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/what-is-vacuum-delivery</loc>
+    <loc>https://www.egspect.com/blog/should-you-let-newborn-cry-it-out-reddit-parents</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/when-to-plan-baby-photoshoot</loc>
+    <loc>https://www.egspect.com/blog/stages-of-pre-labor</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egspect.com/blog/yoga-positions-normal-delivery-preparation</loc>
+    <loc>https://www.egspect.com/blog/things-no-one-told-you-about-having-baby</loc>
     <lastmod>2025-10-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.egspect.com/blog/third-month-baby-development</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.egspect.com/blog/third-trimester-symptoms</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.egspect.com/blog/types-of-swaddling-styles</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.egspect.com/blog/umbilical-cord-around-neck</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.egspect.com/blog/umbilical-cord-care-guide</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.egspect.com/blog/vitamin-d-sun-exposure-newborns</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.egspect.com/blog/what-is-chemical-pregnancy</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.egspect.com/blog/what-is-miscarriage</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.egspect.com/blog/what-is-missed-miscarriage</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.egspect.com/blog/what-is-vacuum-delivery</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.egspect.com/blog/when-can-i-stretch-feeding-times-sleep-vs-hunger</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.egspect.com/blog/when-to-plan-baby-photoshoot</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.egspect.com/blog/when-will-my-baby-finally-sleep-through-night</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.egspect.com/blog/why-is-my-baby-so-gassy-reddit-parents-share</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.egspect.com/blog/why-wont-my-newborn-sleep-unless-holding</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.egspect.com/blog/yoga-positions-normal-delivery-preparation</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
