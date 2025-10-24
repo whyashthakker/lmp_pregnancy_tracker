@@ -65,7 +65,7 @@ def get_blog_posts(blog_dir):
     blog_posts.sort(key=lambda x: x['slug'])
     return blog_posts
 
-def generate_sitemap_xml(blog_posts, base_url="https://pregnancytracker.com"):
+def generate_sitemap_xml(blog_posts, base_url="https://egspect.com"):
     """Generate XML sitemap content."""
     xml_content = '''<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
