@@ -168,13 +168,13 @@ const emotionalImpact = [
   },
   {
     feeling: "Minimized Grief",
-    description: "Feeling like loss 'doesn't count' because it was early",
+    description: "Feeling like loss 'doesn&apos;t count' because it was early",
     support: "Your grief is valid regardless of how early the loss occurred"
   },
   {
     feeling: "Relief Mixed with Guilt",
     description: "Feeling relieved but guilty about that relief",
-    support: "Complex feelings are normal - don't judge yourself"
+    support: "Complex feelings are normal - don&apos;t judge yourself"
   },
   {
     feeling: "Anxiety About Future",
@@ -190,7 +190,7 @@ const emotionalImpact = [
 
 const commonMyths = [
   {
-    myth: "Chemical pregnancies aren't 'real' pregnancies",
+    myth: "Chemical pregnancies aren&apos;t 'real' pregnancies",
     reality: "Fertilization and implantation occurred - it was a real pregnancy",
     icon: CheckCircle
   },
@@ -200,7 +200,7 @@ const commonMyths = [
     icon: CheckCircle
   },
   {
-    myth: "Having one means you'll have more",
+    myth: "Having one means you&apos;ll have more",
     reality: "Most women go on to have normal pregnancies after one chemical pregnancy",
     icon: CheckCircle
   },

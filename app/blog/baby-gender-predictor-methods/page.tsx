@@ -14,8 +14,8 @@ const medicalMethods = [
     accuracy: "95-99%",
     timing: "18-22 weeks",
     description: "The most common and reliable method used during routine prenatal checkups",
-    howItWorks: "Ultrasound technician examines baby's genital development to determine sex",
-    pros: ["Highly accurate", "Safe and non-invasive", "Part of routine care", "Can see baby's development"],
+    howItWorks: "Ultrasound technician examines baby&apos;s genital development to determine sex",
+    pros: ["Highly accurate", "Safe and non-invasive", "Part of routine care", "Can see baby&apos;s development"],
     cons: ["Baby position can obscure view", "Not 100% accurate before 18 weeks", "Requires medical appointment"],
     icon: Stethoscope
   },
@@ -23,7 +23,7 @@ const medicalMethods = [
     method: "Cell-Free DNA Testing (NIPT)",
     accuracy: "99%+",
     timing: "9-10 weeks",
-    description: "Blood test that analyzes fetal DNA circulating in mother's bloodstream",
+    description: "Blood test that analyzes fetal DNA circulating in mother&apos;s bloodstream",
     howItWorks: "Detects Y chromosome presence to determine if baby is male or female",
     pros: ["Extremely accurate", "Can be done early", "Also screens for genetic conditions", "Simple blood test"],
     cons: ["More expensive", "Not always covered by insurance", "Requires medical prescription"],
@@ -44,7 +44,7 @@ const medicalMethods = [
     accuracy: "100%",
     timing: "10-13 weeks",
     description: "Early diagnostic test that samples placental tissue",
-    howItWorks: "Analyzes chromosomes from placental cells to determine baby's sex",
+    howItWorks: "Analyzes chromosomes from placental cells to determine baby&apos;s sex",
     pros: ["100% accurate", "Earlier than amniocentesis", "Comprehensive genetic screening"],
     cons: ["Invasive procedure", "Small risk of miscarriage", "Only done for medical reasons", "Not for gender alone"],
     icon: AlertTriangle
@@ -55,7 +55,7 @@ const traditionalMethods = [
   {
     method: "Chinese Gender Calendar",
     accuracy: "50%",
-    description: "Ancient chart based on mother's age and conception month",
+    description: "Ancient chart based on mother&apos;s age and conception month",
     howItWorks: "Uses lunar calendar to predict gender based on maternal age and month of conception",
     funFactor: "High - centuries-old tradition",
     icon: Calendar
@@ -63,7 +63,7 @@ const traditionalMethods = [
   {
     method: "Heart Rate Theory",
     accuracy: "50%",
-    description: "Claims baby's heart rate indicates gender",
+    description: "Claims baby&apos;s heart rate indicates gender",
     howItWorks: "Theory: over 140 bpm = girl, under 140 bpm = boy",
     funFactor: "Medium - easy to check during appointments",
     icon: Heart
@@ -81,14 +81,14 @@ const traditionalMethods = [
     accuracy: "50%",
     description: "Severe morning sickness supposedly indicates a girl",
     howItWorks: "Theory: higher hormone levels with girls cause more nausea",
-    funFactor: "Low - not fun when you're nauseous",
+    funFactor: "Low - not fun when you&apos;re nauseous",
     icon: Moon
   },
   {
     method: "Skin and Hair Changes",
     accuracy: "50%",
     description: "Pregnancy glow vs skin problems",
-    howItWorks: "Girls 'steal mother's beauty' while boys give a 'glow'",
+    howItWorks: "Girls 'steal mother&apos;s beauty' while boys give a 'glow'",
     funFactor: "Medium - observable changes",
     icon: Star
   },
@@ -147,17 +147,17 @@ const timeline = [
 const mythBusters = [
   {
     myth: "You can tell gender by how you carry",
-    reality: "Belly shape is determined by baby's position, your body type, and muscle tone - not gender",
+    reality: "Belly shape is determined by baby&apos;s position, your body type, and muscle tone - not gender",
     verdict: "FALSE"
   },
   {
-    myth: "Severe morning sickness means it's a girl",
-    reality: "Morning sickness severity varies greatly and isn't reliably linked to gender",
+    myth: "Severe morning sickness means it&apos;s a girl",
+    reality: "Morning sickness severity varies greatly and isn&apos;t reliably linked to gender",
     verdict: "FALSE"
   },
   {
     myth: "Heart rate over 140 means girl",
-    reality: "Fetal heart rate changes throughout pregnancy and isn't gender-specific",
+    reality: "Fetal heart rate changes throughout pregnancy and isn&apos;t gender-specific",
     verdict: "FALSE"
   },
   {
@@ -167,7 +167,7 @@ const mythBusters = [
   },
   {
     myth: "The ring test works",
-    reality: "Pendulum movements are caused by tiny hand movements, not baby's gender",
+    reality: "Pendulum movements are caused by tiny hand movements, not baby&apos;s gender",
     verdict: "FALSE"
   }
 ];

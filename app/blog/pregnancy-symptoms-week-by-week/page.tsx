@@ -19,7 +19,7 @@ const symptomsByWeek = [
       "Breast tenderness",
       "Fatigue"
     ],
-    description: "Early pregnancy symptoms often mimic PMS. Many women don't realize they're pregnant yet."
+    description: "Early pregnancy symptoms often mimic PMS. Many women don&apos;t realize they&apos;re pregnant yet."
   },
   {
     weeks: "5-8", 
@@ -132,7 +132,7 @@ const symptomsByWeek = [
 ];
 
 const warningSymptoms = [
-  "Severe headaches that don't go away",
+  "Severe headaches that don&apos;t go away",
   "Persistent vomiting (hyperemesis gravidarum)",
   "Severe abdominal pain",
   "Heavy bleeding",

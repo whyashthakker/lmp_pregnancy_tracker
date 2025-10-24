@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const cordComplicationTypes = [
   {
     type: "Simple Nuchal Cord",
-    description: "Single loop of cord around baby's neck",
+    description: "Single loop of cord around baby&apos;s neck",
     frequency: "15-25% of all deliveries",
     riskLevel: "Low",
     icon: CheckCircle,
@@ -58,7 +58,7 @@ const cordComplicationTypes = [
   },
   {
     type: "Cord Around Body",
-    description: "Cord wrapped around baby's body or limbs",
+    description: "Cord wrapped around baby&apos;s body or limbs",
     frequency: "5-10% of deliveries",
     riskLevel: "Variable",
     icon: Activity,
@@ -172,7 +172,7 @@ const deliveryManagement = [
   {
     scenario: "Fetal Distress Present",
     approach: "Emergency Cesarean",
-    description: "Surgical delivery for baby's safety",
+    description: "Surgical delivery for baby&apos;s safety",
     steps: [
       "Signs of fetal compromise",
       "Emergency cesarean section",
@@ -191,7 +191,7 @@ const preventionAndManagement = [
   },
   {
     tip: "Fetal Movement Tracking",
-    description: "Monitor baby's movement patterns, especially after 28 weeks",
+    description: "Monitor baby&apos;s movement patterns, especially after 28 weeks",
     icon: Activity
   },
   {

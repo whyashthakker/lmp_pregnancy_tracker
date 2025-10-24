@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { Heart, Clock, Brain, Stethoscope, Shield, Baby, Droplets, Target, Users, AlertCircle, CheckCircle, Scale } from 'lucide-react'
+import { Heart, Clock, Brain, Stethoscope, Shield, Baby, Target, Users, CheckCircle, Scale } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Formula vs Breastfeeding: Complete Comparison Guide for New Parents | EGSpect',

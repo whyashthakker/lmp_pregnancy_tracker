@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const keyFacts = [
   {
     fact: "No Immediate Symptoms",
-    description: "Body doesn't recognize the pregnancy loss initially",
+    description: "Body doesn&apos;t recognize the pregnancy loss initially",
     icon: Eye
   },
   {
@@ -169,7 +169,7 @@ const emotionalImpact = [
   {
     aspect: "Feeling Betrayed by Body",
     description: "Body didn't signal the pregnancy loss",
-    support: "Your body was trying to protect you - this isn't a failure"
+    support: "Your body was trying to protect you - this isn&apos;t a failure"
   },
   {
     aspect: "Decision Overwhelm",
@@ -217,7 +217,7 @@ const preventionMyths = [
   },
   {
     myth: "Working or exercise causes missed miscarriage",
-    reality: "Normal activities and work don't increase risk",
+    reality: "Normal activities and work don&apos;t increase risk",
     icon: XCircle
   }
 ];

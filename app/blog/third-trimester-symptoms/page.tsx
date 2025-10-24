@@ -125,7 +125,7 @@ const laborSigns = [
   },
   {
     sign: "Consistent Lower Back Pain",
-    description: "Persistent back pain that doesn't improve with position changes",
+    description: "Persistent back pain that doesn&apos;t improve with position changes",
     timing: "May come in waves with contractions",
     action: "Monitor for other labor signs and contact provider"
   }
@@ -133,7 +133,7 @@ const laborSigns = [
 
 const whenToCallDoctor = [
   "Severe headaches or vision changes",
-  "Sudden decrease in baby's movement",
+  "Sudden decrease in baby&apos;s movement",
   "Heavy vaginal bleeding",
   "Severe abdominal pain",
   "Signs of preeclampsia (severe swelling, high blood pressure)",

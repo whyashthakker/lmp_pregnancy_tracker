@@ -62,12 +62,12 @@ const preLaborStages = [
   {
     stage: "Prodromal Labor (False Labor)",
     timing: "Days to weeks before active labor",
-    description: "Irregular contractions that don't progress to active labor",
+    description: "Irregular contractions that don&apos;t progress to active labor",
     icon: Timer,
     duration: "Hours to days, may stop and start",
     keyChanges: [
       "Irregular contractions that may be painful",
-      "Contractions don't increase in intensity",
+      "Contractions don&apos;t increase in intensity",
       "Cervical changes minimal or slow",
       "May stop with rest or position change",
       "Can be exhausting and frustrating"
@@ -160,7 +160,7 @@ const trueVsFalseLabor = [
       "Regular intervals (every 3-5 minutes)",
       "Intervals get shorter over time",
       "Pattern is consistent and predictable",
-      "Timing doesn't vary with position"
+      "Timing doesn&apos;t vary with position"
     ],
     falseLaborSigns: [
       "Irregular intervals (5-20 minutes)",
@@ -204,8 +204,8 @@ const trueVsFalseLabor = [
     trueLaborSigns: [
       "Continues regardless of position",
       "May get stronger with walking",
-      "Rest doesn't stop contractions",
-      "Warm bath may help pain but doesn't stop labor"
+      "Rest doesn&apos;t stop contractions",
+      "Warm bath may help pain but doesn&apos;t stop labor"
     ],
     falseLaborSigns: [
       "May stop with position change",
@@ -234,9 +234,9 @@ const warningSignsToCallDoctor = [
     urgency: "Call Within Hours",
     signs: [
       "Regular contractions 5 minutes apart for 1 hour",
-      "Water breaks (even if contractions haven't started)",
+      "Water breaks (even if contractions haven&apos;t started)",
       "Bloody show with heavy bleeding",
-      "Contractions so painful you can't walk or talk",
+      "Contractions so painful you can&apos;t walk or talk",
       "Persistent vomiting",
       "Strong urge to push"
     ],

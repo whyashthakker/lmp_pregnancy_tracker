@@ -51,7 +51,7 @@ const heartbeatMilestones = [
     heartRate: "120-160 bpm",
     description: "Heart rate audible with handheld Doppler devices",
     detection: "Handheld Doppler, ultrasound",
-    significance: "Can hear baby's heartbeat at home",
+    significance: "Can hear baby&apos;s heartbeat at home",
     icon: CheckCircle
   },
   {
@@ -158,7 +158,7 @@ const normalRangesByTrimester = [
     characteristics: [
       "Continues gradual decrease",
       "Shows increasing nervous system control",
-      "May vary with baby's activity level",
+      "May vary with baby&apos;s activity level",
       "Preparing for newborn heart rate"
     ]
   }
@@ -188,7 +188,7 @@ const factorsAffectingHeartRate = [
   {
     factor: "Maternal Position",
     effect: "Position can affect blood flow and heart rate",
-    explanation: "Lying on back may reduce blood flow and affect baby's heart rate"
+    explanation: "Lying on back may reduce blood flow and affect baby&apos;s heart rate"
   },
   {
     factor: "External Stimuli",
@@ -232,18 +232,18 @@ const concerningSigns = [
 
 const commonMyths = [
   {
-    myth: "Heart rate can predict baby's gender",
+    myth: "Heart rate can predict baby&apos;s gender",
     reality: "No scientific evidence supports heart rate gender prediction",
     icon: CheckCircle
   },
   {
     myth: "Faster heart rate means a healthier baby",
-    reality: "Heart rate varies normally and doesn't indicate baby's health alone",
+    reality: "Heart rate varies normally and doesn&apos;t indicate baby&apos;s health alone",
     icon: CheckCircle
   },
   {
     myth: "You should hear heartbeat at 8 weeks with Doppler",
-    reality: "Doppler detection usually isn't reliable until 10-12 weeks",
+    reality: "Doppler detection usually isn&apos;t reliable until 10-12 weeks",
     icon: CheckCircle
   },
   {

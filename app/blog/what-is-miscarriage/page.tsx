@@ -43,7 +43,7 @@ const miscarriageTypes = [
   },
   {
     type: "Missed Miscarriage",
-    description: "Embryo stops developing but body doesn't recognize the loss",
+    description: "Embryo stops developing but body doesn&apos;t recognize the loss",
     symptoms: ["Pregnancy symptoms may disappear", "No bleeding initially", "No fetal heartbeat", "Uterus stops growing"],
     outcome: "Requires medical or surgical management",
     action: "Medication or D&C to empty uterus",
@@ -146,7 +146,7 @@ const emotionalStages = [
     stage: "Anger and Guilt",
     description: "Questioning 'why me' and self-blame", 
     duration: "Weeks to months",
-    support: "Remember it's not your fault, consider counseling"
+    support: "Remember it&apos;s not your fault, consider counseling"
   },
   {
     stage: "Bargaining",
@@ -174,7 +174,7 @@ const recoveryTips = [
     timeframe: "2-6 weeks",
     tips: [
       "Allow body to heal completely",
-      "Follow doctor's instructions about activity",
+      "Follow doctor&apos;s instructions about activity",
       "Watch for signs of infection",
       "Take recommended supplements"
     ]
@@ -193,7 +193,7 @@ const recoveryTips = [
     aspect: "Trying Again",
     timeframe: "After 1-3 normal cycles",
     tips: [
-      "Wait for doctor's clearance",
+      "Wait for doctor&apos;s clearance",
       "Ensure emotional readiness",
       "Take prenatal vitamins",
       "Address any risk factors"

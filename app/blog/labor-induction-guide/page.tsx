@@ -109,7 +109,7 @@ const inductionReasons = [
       },
       {
         condition: "Decreased Fetal Movement",
-        description: "Significant reduction in baby's movements",
+        description: "Significant reduction in baby&apos;s movements",
         details: "May indicate fetal compromise",
         timing: "When monitoring shows concerns"
       },
@@ -165,7 +165,7 @@ const inductionMethods = [
       "Releases natural prostaglandins"
     ],
     pros: [
-      "Can be done in doctor's office",
+      "Can be done in doctor&apos;s office",
       "Natural hormone release",
       "Lower intervention method",
       "Can be repeated if needed"
@@ -473,7 +473,7 @@ const questionsToAsk = [
   "How long might the induction process take?",
   "What are the risks and benefits for my situation?",
   "What pain management options will be available?",
-  "What happens if the induction doesn't work?",
+  "What happens if the induction doesn&apos;t work?",
   "How will my baby be monitored during the process?",
   "Can I eat or drink during the induction?",
   "What should I expect for recovery after an induced labor?"
