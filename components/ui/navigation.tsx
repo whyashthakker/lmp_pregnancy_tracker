@@ -41,16 +41,16 @@ export function Navigation({ className }: NavigationProps) {
             <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
               <Image 
                 src="/baby.svg" 
-                alt="Pregnancy Tracker" 
+                alt="EGSpect" 
                 width={32} 
                 height={32} 
                 className="rounded-full" 
               />
               <div>
                 <h1 className="text-xl font-semibold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-                  Your Journey
+                  EGSpect
                 </h1>
-                <p className="text-xs text-gray-500 hidden sm:block">Pregnancy Tracker</p>
+                <p className="text-xs text-gray-500 hidden sm:block">Family Health Tracker</p>
               </div>
             </Link>
           </div>
@@ -60,17 +60,35 @@ export function Navigation({ className }: NavigationProps) {
             <Link 
               href="/" 
               className={cn(
-                "bg-gradient-to-r from-pink-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-all hover:from-pink-700 hover:to-purple-700 hover:shadow-lg",
-                isActive('/') && !isActive('/blog') && !isActive('/about') && "ring-2 ring-pink-300"
+                "text-sm font-medium transition-colors hover:text-pink-600",
+                isActive('/') && !isActive('/blog') && !isActive('/about') && !isActive('/baby') && !isActive('/tools') ? "text-pink-600" : "text-gray-600"
               )}
             >
-              Track Your Pregnancy
+              Track Pregnancy
+            </Link>
+            <Link 
+              href="/baby" 
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-blue-600",
+                isActive('/baby') ? "text-blue-600" : "text-gray-600"
+              )}
+            >
+              Track Baby Health
+            </Link>
+            <Link 
+              href="/baby/milestones" 
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-purple-600",
+                isActive('/baby/milestones') ? "text-purple-600" : "text-gray-600"
+              )}
+            >
+              Track Baby Milestones
             </Link>
             <Link 
               href="/tools" 
               className={cn(
-                "text-sm font-medium transition-colors hover:text-pink-600",
-                isActive('/tools') ? "text-pink-600" : "text-gray-600"
+                "text-sm font-medium transition-colors hover:text-green-600",
+                isActive('/tools') ? "text-green-600" : "text-gray-600"
               )}
             >
               Tools
@@ -78,20 +96,11 @@ export function Navigation({ className }: NavigationProps) {
             <Link 
               href="/blog" 
               className={cn(
-                "text-sm font-medium transition-colors hover:text-pink-600",
-                isActive('/blog') ? "text-pink-600" : "text-gray-600"
+                "text-sm font-medium transition-colors hover:text-indigo-600",
+                isActive('/blog') ? "text-indigo-600" : "text-gray-600"
               )}
             >
               Blog
-            </Link>
-            <Link 
-              href="/about" 
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-pink-600",
-                isActive('/about') ? "text-pink-600" : "text-gray-600"
-              )}
-            >
-              About
             </Link>
           </nav>
 
@@ -113,18 +122,38 @@ export function Navigation({ className }: NavigationProps) {
                 <Link 
                   href="/" 
                   className={cn(
-                    "bg-gradient-to-r from-pink-600 to-purple-600 text-white px-4 py-3 rounded-full text-sm font-medium text-center transition-all hover:from-pink-700 hover:to-purple-700 hover:shadow-lg",
-                    isActive('/') && !isActive('/blog') && !isActive('/about') && "ring-2 ring-pink-300"
+                    "text-sm font-medium transition-colors hover:text-pink-600 px-3 py-2 rounded-md",
+                    isActive('/') && !isActive('/blog') && !isActive('/about') && !isActive('/baby') && !isActive('/tools') ? "text-pink-600 bg-pink-50" : "text-gray-600"
                   )}
                   onClick={closeSheet}
                 >
-                  Track Your Pregnancy
+                  Track Pregnancy
+                </Link>
+                <Link 
+                  href="/baby" 
+                  className={cn(
+                    "text-sm font-medium transition-colors hover:text-blue-600 px-3 py-2 rounded-md",
+                    isActive('/baby') && !isActive('/baby/milestones') ? "text-blue-600 bg-blue-50" : "text-gray-600"
+                  )}
+                  onClick={closeSheet}
+                >
+                  Track Baby Health
+                </Link>
+                <Link 
+                  href="/baby/milestones" 
+                  className={cn(
+                    "text-sm font-medium transition-colors hover:text-purple-600 px-3 py-2 rounded-md",
+                    isActive('/baby/milestones') ? "text-purple-600 bg-purple-50" : "text-gray-600"
+                  )}
+                  onClick={closeSheet}
+                >
+                  Track Baby Milestones
                 </Link>
                 <Link 
                   href="/tools" 
                   className={cn(
-                    "text-sm font-medium transition-colors hover:text-pink-600 px-3 py-2 rounded-md",
-                    isActive('/tools') ? "text-pink-600 bg-pink-50" : "text-gray-600"
+                    "text-sm font-medium transition-colors hover:text-green-600 px-3 py-2 rounded-md",
+                    isActive('/tools') ? "text-green-600 bg-green-50" : "text-gray-600"
                   )}
                   onClick={closeSheet}
                 >
@@ -133,22 +162,12 @@ export function Navigation({ className }: NavigationProps) {
                 <Link 
                   href="/blog" 
                   className={cn(
-                    "text-sm font-medium transition-colors hover:text-pink-600 px-3 py-2 rounded-md",
-                    isActive('/blog') ? "text-pink-600 bg-pink-50" : "text-gray-600"
+                    "text-sm font-medium transition-colors hover:text-indigo-600 px-3 py-2 rounded-md",
+                    isActive('/blog') ? "text-indigo-600 bg-indigo-50" : "text-gray-600"
                   )}
                   onClick={closeSheet}
                 >
                   Blog
-                </Link>
-                <Link 
-                  href="/about" 
-                  className={cn(
-                    "text-sm font-medium transition-colors hover:text-pink-600 px-3 py-2 rounded-md",
-                    isActive('/about') ? "text-pink-600 bg-pink-50" : "text-gray-600"
-                  )}
-                  onClick={closeSheet}
-                >
-                  About
                 </Link>
               </nav>
             </SheetContent>
