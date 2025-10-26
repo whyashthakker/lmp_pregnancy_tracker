@@ -3,7 +3,8 @@ import Link from 'next/link';
 import BabyTrackingClient from './BabyTrackingClient';
 import { 
   Baby, 
-  AlertCircle
+  AlertCircle,
+  TrendingUp
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -41,7 +42,7 @@ export default function BabyHealthTracking() {
         </div>
 
         {/* Baby Tracking Tool */}
-        <div className="mb-16">
+        <div id="daily-tracker" className="mb-16">
           <BabyTrackingClient />
         </div>
 
@@ -97,6 +98,109 @@ export default function BabyHealthTracking() {
           </div>
         </div>
 
+        {/* Growth Tracker Feature */}
+        <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-8 text-white mb-12">
+          <div className="text-center">
+            <div className="text-4xl mb-4">📈</div>
+            <h2 className="text-3xl font-bold mb-4">Track Your Baby&apos;s Growth!</h2>
+            <p className="text-xl mb-6 opacity-90">
+              Monitor weight, height, and head circumference with WHO percentile charts. See healthy growth patterns over time.
+            </p>
+            <Link 
+              href="/baby/growth"
+              className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-green-50 transition-colors inline-flex items-center gap-2 text-lg"
+            >
+              <TrendingUp className="w-5 h-5" />
+              Start Growth Tracker
+            </Link>
+          </div>
+        </div>
+
+        {/* Vaccination Tracker Feature */}
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white mb-12">
+          <div className="text-center">
+            <div className="text-4xl mb-4">💉</div>
+            <h2 className="text-3xl font-bold mb-4">Keep Your Baby Protected!</h2>
+            <p className="text-xl mb-6 opacity-90">
+              Never miss important vaccinations with our comprehensive immunization tracker and schedule reminders.
+            </p>
+            <Link 
+              href="/baby/vaccinations"
+              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center gap-2 text-lg"
+            >
+              <span>🛡️</span>
+              Start Vaccination Tracker
+            </Link>
+          </div>
+        </div>
+
+        {/* All Tracking Tools Overview */}
+        <div className="bg-white rounded-2xl shadow-xl p-8 mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Complete Baby Tracking Suite</h2>
+          <p className="text-lg text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+            Everything you need to monitor your baby&apos;s health, development, and daily activities in one place.
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Daily Activities */}
+            <a href="#daily-tracker" className="group block">
+              <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-xl p-6 hover:shadow-lg transition-all">
+                <div className="text-3xl mb-3">🍼</div>
+                <h3 className="font-bold text-gray-900 mb-2">Daily Activities</h3>
+                <p className="text-sm text-gray-600">Track feeding, sleep, diapers, and tummy time</p>
+                <div className="mt-3 text-pink-600 group-hover:text-pink-700 font-medium text-sm">
+                  Start Tracking →
+                </div>
+              </div>
+            </a>
+
+            {/* Milestones */}
+            <Link href="/baby/milestones" className="group">
+              <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 hover:shadow-lg transition-all">
+                <div className="text-3xl mb-3">🎯</div>
+                <h3 className="font-bold text-gray-900 mb-2">Milestones</h3>
+                <p className="text-sm text-gray-600">Development countdowns for first smile, steps, words</p>
+                <div className="mt-3 text-purple-600 group-hover:text-purple-700 font-medium text-sm">
+                  Track Milestones →
+                </div>
+              </div>
+            </Link>
+
+            {/* Growth Tracking */}
+            <Link href="/baby/growth" className="group">
+              <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-xl p-6 hover:shadow-lg transition-all">
+                <div className="text-3xl mb-3">📈</div>
+                <h3 className="font-bold text-gray-900 mb-2">Growth Charts</h3>
+                <p className="text-sm text-gray-600">Weight, height & WHO percentile tracking</p>
+                <div className="mt-3 text-green-600 group-hover:text-green-700 font-medium text-sm">
+                  Track Growth →
+                </div>
+              </div>
+            </Link>
+
+            {/* Vaccinations */}
+            <Link href="/baby/vaccinations" className="group">
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 hover:shadow-lg transition-all">
+                <div className="text-3xl mb-3">💉</div>
+                <h3 className="font-bold text-gray-900 mb-2">Vaccinations</h3>
+                <p className="text-sm text-gray-600">Immunization schedule & completion tracking</p>
+                <div className="mt-3 text-blue-600 group-hover:text-blue-700 font-medium text-sm">
+                  Track Vaccines →
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className="mt-8 text-center">
+            <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6">
+              <h4 className="font-semibold text-gray-900 mb-2">📱 Sync Across All Tools</h4>
+              <p className="text-sm text-gray-600">
+                Your baby&apos;s birth date automatically syncs across all tracking tools for seamless monitoring.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* CTA Section */}
         <div className="text-center bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
           <Baby className="w-12 h-12 mx-auto mb-4 text-blue-100" />
@@ -126,6 +230,14 @@ export default function BabyHealthTracking() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/baby/milestones" className="text-purple-600 hover:text-purple-700 font-medium">
               Milestone Tracker
+            </Link>
+            <span className="text-gray-400">•</span>
+            <Link href="/baby/growth" className="text-green-600 hover:text-green-700 font-medium">
+              Growth Tracker
+            </Link>
+            <span className="text-gray-400">•</span>
+            <Link href="/baby/vaccinations" className="text-blue-600 hover:text-blue-700 font-medium">
+              Vaccination Tracker
             </Link>
             <span className="text-gray-400">•</span>
             <Link href="/blog/baby-development-milestones-when-smiling-playing" className="text-blue-600 hover:text-blue-700 font-medium">

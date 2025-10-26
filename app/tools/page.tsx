@@ -14,12 +14,15 @@ import {
   Target,
   Search,
   Briefcase,
-  PiggyBank
+  PiggyBank,
+  Utensils,
+  Droplets,
+  Moon,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Free Pregnancy Tools - Essential Calculators & Trackers | Your Journey',
-  description: 'Access 14 free pregnancy tools including due date calculator, baby cost calculator, symptom checker, hospital bag checklist, safe foods checker, and more. Essential tools for expecting parents.',
+  description: 'Access 19 free pregnancy tools including due date calculator, baby cost calculator, symptom checker, hospital bag checklist, safe foods checker, and more. Essential tools for expecting parents.',
   keywords: 'free pregnancy tools, pregnancy calculator, due date calculator, baby name generator, pregnancy tracker, pregnancy planning tools',
   openGraph: {
     title: 'Free Pregnancy Tools - Essential Calculators & Trackers',
@@ -169,6 +172,52 @@ const tools = [
     color: 'from-green-500 to-blue-500',
     bgColor: 'bg-green-50',
     iconColor: 'text-green-600'
+  },
+  {
+    title: 'Calorie Calculator',
+    description: 'Calculate your daily calorie needs during pregnancy by trimester and activity level.',
+    href: '/tools/pregnancy-calorie-calculator',
+    icon: Utensils,
+    color: 'from-orange-500 to-yellow-500',
+    bgColor: 'bg-orange-50',
+    iconColor: 'text-orange-600',
+    popular: true
+  },
+  {
+    title: 'Water Intake Calculator',
+    description: 'Determine optimal daily hydration needs during pregnancy and breastfeeding.',
+    href: '/tools/pregnancy-water-intake-calculator',
+    icon: Droplets,
+    color: 'from-cyan-500 to-blue-500',
+    bgColor: 'bg-cyan-50',
+    iconColor: 'text-cyan-600'
+  },
+  {
+    title: 'Baby Feeding Schedule',
+    description: 'Create personalized feeding schedules based on your baby\'s age and needs.',
+    href: '/tools/baby-feeding-schedule-calculator',
+    icon: Baby,
+    color: 'from-blue-500 to-green-500',
+    bgColor: 'bg-blue-50',
+    iconColor: 'text-blue-600'
+  },
+  {
+    title: 'Baby Sleep Schedule',
+    description: 'Get age-appropriate sleep schedules with optimal bedtimes and nap times.',
+    href: '/tools/baby-sleep-schedule-calculator',
+    icon: Moon,
+    color: 'from-indigo-500 to-purple-500',
+    bgColor: 'bg-indigo-50',
+    iconColor: 'text-indigo-600'
+  },
+  {
+    title: 'Symptom Relief Guide',
+    description: 'Find safe, personalized remedies for common pregnancy symptoms and discomforts.',
+    href: '/tools/pregnancy-symptom-relief-calculator',
+    icon: Heart,
+    color: 'from-green-500 to-teal-500',
+    bgColor: 'bg-green-50',
+    iconColor: 'text-green-600'
   }
 ];
 
@@ -179,19 +228,23 @@ const categories = {
   },
   health: {
     title: 'Health & Safety',
-    tools: ['pregnancy-symptom-checker', 'pregnancy-safe-foods', 'hospital-bag-checklist']
+    tools: ['pregnancy-symptom-checker', 'pregnancy-safe-foods', 'hospital-bag-checklist', 'pregnancy-symptom-relief-calculator']
+  },
+  nutrition: {
+    title: 'Nutrition & Wellness',
+    tools: ['pregnancy-calorie-calculator', 'pregnancy-water-intake-calculator', 'pregnancy-nutrition-tracker', 'pregnancy-weight-gain-calculator']
   },
   tracking: {
     title: 'Pregnancy Tracking',
-    tools: ['pregnancy-weight-gain-calculator', 'baby-size-comparison', 'pregnancy-nutrition-tracker']
+    tools: ['baby-size-comparison']
+  },
+  baby: {
+    title: 'Baby Care & Development',
+    tools: ['baby-feeding-schedule-calculator', 'baby-sleep-schedule-calculator', 'kick-counter', 'contraction-timer']
   },
   fun: {
     title: 'Fun & Predictions',
     tools: ['baby-name-generator', 'baby-gender-predictor']
-  },
-  monitoring: {
-    title: 'Baby Monitoring',
-    tools: ['kick-counter', 'contraction-timer']
   }
 };
 

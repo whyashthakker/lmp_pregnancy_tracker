@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Calendar, ArrowRight, Heart, Baby, Sparkles, Stethoscope, Clock, Shield } from 'lucide-react';
+import { Calendar, ArrowRight, Heart, Baby, Sparkles, Stethoscope, Clock, Shield, Activity } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Pregnancy Blog - Tips, Guides & Insights',
@@ -9,6 +9,69 @@ export const metadata: Metadata = {
 };
 
 const blogPosts = [
+  {
+    slug: 'pregnancy-yoga-positions-safe-poses-by-week',
+    title: 'Safe Pregnancy Yoga: Week-by-Week Guide for All Trimesters',
+    excerpt: 'Comprehensive week-by-week guide to safe pregnancy yoga poses. Learn which positions to practice and avoid during each trimester for a healthy, comfortable pregnancy.',
+    date: '2025-10-26',
+    readTime: '18 min read',
+    category: 'Exercise & Wellness',
+    icon: Activity
+  },
+  {
+    slug: 'early-pregnancy-symptoms-signs-guide',
+    title: 'Early Pregnancy Symptoms: Complete Signs & Timeline Guide',
+    excerpt: 'Learn to recognize the earliest signs of pregnancy, understand when symptoms typically start, and distinguish pregnancy symptoms from other conditions.',
+    date: '2025-10-26',
+    readTime: '15 min read',
+    category: 'Early Pregnancy',
+    icon: Heart
+  },
+  {
+    slug: 'pregnancy-foods-to-avoid-safe-eating-guide',
+    title: 'Pregnancy Food Safety: Complete Guide to Foods to Avoid & Safe Eating',
+    excerpt: 'Essential nutrition guidelines for expectant mothers, including foods to avoid, safe alternatives, and healthy eating recommendations for each trimester.',
+    date: '2025-10-26',
+    readTime: '20 min read',
+    category: 'Nutrition & Safety',
+    icon: Shield
+  },
+  {
+    slug: 'postpartum-recovery-guide-complete-healing-timeline',
+    title: 'Postpartum Recovery Guide: Complete 6-Week Healing Timeline',
+    excerpt: 'A comprehensive guide to postpartum recovery covering physical healing, emotional wellbeing, breastfeeding support, and what to expect during your 6-week recovery journey.',
+    date: '2025-10-26',
+    readTime: '25 min read',
+    category: 'Postpartum Care',
+    icon: Heart
+  },
+  {
+    slug: 'complete-breastfeeding-guide-tips-problems-solutions',
+    title: 'Complete Breastfeeding Guide: Tips, Common Problems & Solutions',
+    excerpt: 'Everything you need to know about successful breastfeeding, from getting started to troubleshooting common challenges. Expert tips for new and experienced nursing mothers.',
+    date: '2025-10-26',
+    readTime: '30 min read',
+    category: 'Breastfeeding Support',
+    icon: Baby
+  },
+  {
+    slug: 'baby-sleep-training-methods-guide-when-to-start',
+    title: 'Baby Sleep Training Methods Guide: When to Start & Gentle Techniques',
+    excerpt: 'Comprehensive guide to baby sleep training with gentle methods, age-appropriate techniques, and expert advice for establishing healthy sleep patterns.',
+    date: '2025-10-26',
+    readTime: '25 min read',
+    category: 'Sleep Training',
+    icon: Clock
+  },
+  {
+    slug: 'pregnancy-emergency-warning-signs-when-call-doctor',
+    title: 'Pregnancy Emergency Warning Signs: When to Call Your Doctor Immediately',
+    excerpt: 'Essential guide to recognizing serious pregnancy symptoms that require immediate medical attention. Know the warning signs that could indicate complications.',
+    date: '2025-10-26',
+    readTime: '15 min read',
+    category: 'Emergency Guide',
+    icon: Stethoscope
+  },
   {
     slug: 'complete-newborn-care-guide',
     title: 'Complete Newborn Care Guide: Essential Tips for New Parents',
