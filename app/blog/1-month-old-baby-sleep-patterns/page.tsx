@@ -233,7 +233,7 @@ export default function OneMonthOldBabySleepPatternsPage() {
                         <span>1-3 hours</span>
                       </div>
                       <div className="grid grid-cols-3 gap-4 text-xs text-gray-600">
-                        <span colspan="3">...continues with 2-3 hour eat/wake/sleep cycles throughout 24 hours</span>
+                        <span className="col-span-3">...continues with 2-3 hour eat/wake/sleep cycles throughout 24 hours</span>
                       </div>
                     </div>
                   </div>

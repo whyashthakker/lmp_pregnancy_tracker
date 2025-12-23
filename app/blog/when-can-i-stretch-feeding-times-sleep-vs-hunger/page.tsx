@@ -318,9 +318,9 @@ export default function StretchFeedingTimesPage() {
                       <li>• Wait until baby regains birth weight before stretching feeds</li>
                       <li>• Extend gradually - 15 minutes at a time</li>
                       <li>• Monitor weight gain and diaper output closely</li>
-                      <li>• Every baby is different - dondon&apos;tapos;tapos;t compare to others</li>
+                      <li>• Every baby is different - don&apos;t compare to others</li>
                       <li>• Be flexible during growth spurts and developmental leaps</li>
-                      <li>• Trust your instincts and your baby&apos;sapos;sapos;s cues</li>
+                      <li>• Trust your instincts and your baby&apos;s cues</li>
                       <li>• When in doubt, consult your pediatrician</li>
                     </ul>
                   </div>
